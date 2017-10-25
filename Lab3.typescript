@@ -1,0 +1,2235 @@
+Script started on Wed 18 Oct 2017 09:25:31 AM EDT
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[09:25:32][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m # PDF page 192
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[09:26:04][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m ssh admin@52.203.4.224
+The authenticity of host '52.203.4.224 (52.203.4.224)' can't be established.
+ECDSA key fingerprint is SHA256:ssKNN9v9VJZyaXGLilLaNzQJ8gLxX6MkxsOeuEf/jAk.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '52.203.4.224' (ECDSA) to the list of known hosts.
+Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+Log in as 'admin' to configure
+
+admin@52.203.4.224's password: 
+Last login: Wed Oct 11 21:47:59 2017 from 173.227.38.50
+/usr/bin/xauth:  file /home/admin/.Xauthority does not exist
+Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+Logged in as admin, 2017-10-18 13:35:41.968000 UTC, auth from 198.21.131.140
+controller> copy sn[K[K[K[K[K[K[Ken
+controller# co
+compare    configure  connect    copy      
+controller# copy 
+<file://>                  snapshot://BCF-Config2
+<snapshot://>              snapshot://BCF-Config3
+http://                    snapshot://BCF-Config4
+https://                   snapshot://BCF-Config5
+running-config             snapshot://BCF-Config6
+scp://                     snapshot://BCF-Config7
+snapshot://                snapshot://initial-config
+snapshot://BCF-Config1
+controller# copy s
+scp://                     snapshot://BCF-Config4
+snapshot://                snapshot://BCF-Config5
+snapshot://BCF-Config1     snapshot://BCF-Config6
+snapshot://BCF-Config2     snapshot://BCF-Config7
+snapshot://BCF-Config3     snapshot://initial-config
+controller# copy sn
+snapshot://                snapshot://BCF-Config5
+snapshot://BCF-Config1     snapshot://BCF-Config6
+snapshot://BCF-Config2     snapshot://BCF-Config7
+snapshot://BCF-Config3     snapshot://initial-config
+snapshot://BCF-Config4
+controller# copy snapshot://B
+snapshot://BCF-Config1  snapshot://BCF-Config4  snapshot://BCF-Config7
+snapshot://BCF-Config2  snapshot://BCF-Config5
+snapshot://BCF-Config3  snapshot://BCF-Config6
+controller# copy snapshot://BCF-Config3 run
+controller# conf
+controller(config)# tenant 
+Enter a tenant name
+controller(config)# tenant Red
+controller(config-tenant)# seg 
+Enter a segment name
+controller(config-tenant)# seg Web
+controller(config-tenant-seg)# member interface-group PG-R1H1 vlan untagged 
+controller(config-tenant-seg-interfacegrouprule)# member interface-group PG-R1H1  vlan untagged M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C21[1@ [1P
+controller(config-tenant-seg-interfacegrouprule)# sh thi
+
+! tenant
+tenant Red
+  segment Web
+    member interface-group PG-R1H2 vlan untagged
+controller(config-tenant-seg-interfacegrouprule)# sho run ten
+
+! tenant
+tenant Red
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config-tenant-seg-interfacegrouprule)# seg Web
+controller(config-tenant-seg)# seg Webho run ten[5P thi
+
+! tenant
+tenant Red
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config-tenant-seg)# exit
+controller(config-tenant)# exitsh thi
+
+! tenant
+tenant Red
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config-tenant)# sh ten
+# Tenant Name Origination Total Segments Total endpoints Total ports Multicast Enabled Multicast Active 
+-|-----------|-----------|--------------|---------------|-----------|-----------------|----------------|
+1 Red                     1              0               2           False             False
+controller(config-tenant)# sh seg
+# Tenant Segment Origination Internal VLAN Member VLAN VNI Total endpoints Active endpoints Total ports QoS Traffic Class 
+-|------|-------|-----------|-------------|-----------|---|---------------|----------------|-----------|-----------------|
+1 Red    Web                 2                             0               0                2
+controller(config-tenant)# seg App
+controller(config-tenant-seg)# memb int RG-R2H1 vlan un
+controller(config-tenant-seg-interfacegrouprule)# th thi
+Error: Unknown command: th
+controller(config-tenant-seg-interfacegrouprule)# sh th
+
+! tenant
+tenant Red
+  segment App
+    member interface-group RG-R2H1 vlan untagged
+controller(config-tenant-seg-interfacegrouprule)# ten Green
+controller(config-tenant)# seg QA
+controller(config-tenant-seg)# member PG-R2H2 vlan un
+Error: Command Not Found: Unexpected argument "PG-R2H2"; expected one of "interface-group", "mac", "switch", "virtual-switch", "vlan", "vni"
+controller(config-tenant-seg)# member PG-R2H2 vlan un[1@i[1@ 
+controller(config-tenant-seg-interfacegrouprule)# ten Dev
+controller(config-tenant)# seg Web
+controller(config-tenant-seg)# seg App
+controller(config-tenant-seg)# seg App[K[K[KDB
+controller(config-tenant-seg)# exit
+controller(config-tenant)# sh thi
+
+! tenant
+tenant Dev
+  segment App
+  segment DB
+  segment Web
+controller(config-tenant)# sh et[K[Kten
+# Tenant Name Origination Total Segments Total endpoints Total ports Multicast Enabled Multicast Active 
+-|-----------|-----------|--------------|---------------|-----------|-----------------|----------------|
+1 Red                     2              0               3           False             False
+2 Dev                     3              0               0           False             False
+3 Green                   1              0               1           False             False
+controller(config-tenant)# seg red[K[K[KRed
+controller(config-tenant-seg)# seg Red[1Ph tenhi[2Pexitseg DBAppWebten Devmember i PG-R2H2 vlan un[2P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2@i [C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cten Dev[Kseg WebApp[1PDB[2Pexitsh thi[2Pexit
+controller(config-tenant)# exit
+controller(config)# sh thi
+Error: Command Not Found: Unexpected argument "thi"; expected one of "banner", "bgp", "boot", "bpdu-guard", "clock", "controller", "debug", "dump", ... and 46 more
+controller(config)# sh this
+Error: Command Not Found: Unexpected argument "this"; expected one of "banner", "bgp", "boot", "bpdu-guard", "clock", "controller", "debug", "dump", ... and 46 more
+controller(config)# sho this
+Error: Command Not Found: Unexpected argument "this"; expected one of "banner", "bgp", "boot", "bpdu-guard", "clock", "controller", "debug", "dump", ... and 46 more
+controller(config)# sh run
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-18 13:43:16 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+! group
+group admin
+  associate user admin
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.30 subnet-mask-length 24
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+
+! tenant
+tenant Dev
+  segment App
+  segment DB
+  segment Red
+  segment Web
+
+tenant Green
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  segment App
+    member interface-group RG-R2H1 vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config)# ten dev[K[K[KDev
+controller(config-tenant)# no   segment Red
+controller(config-tenant)# sh run
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-18 13:44:08 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+! group
+group admin
+  associate user admin
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.30 subnet-mask-length 24
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+
+! tenant
+tenant Dev
+  segment App
+  segment DB
+  segment Web
+
+tenant Green
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  segment App
+    member interface-group RG-R2H1 vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config-tenant)# ten Dev
+controller(config-tenant)# 
+controller(config-tenant)#   segment App
+controller(config-tenant-seg)#     member interface-group RG-R2H1 vlan untagged
+Error: Validation failed: Attachment point and VLAN are classified to Tenant Red segment App
+controller(config-tenant-seg)#   segment Web
+controller(config-tenant-seg)#     member interface-group PG-R1H1 vlan untagged
+Error: Validation failed: Attachment point and VLAN are classified to Tenant Red segment Web
+controller(config-tenant-seg)#     member interface-group PG-R1H2 vlan untagged
+Error: Validation failed: Attachment point and VLAN are classified to Tenant Red segment Web
+controller(config-tenant-seg)#     member interface-group PG-R1H2 vlan untagged1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csegment Web[K  member interface-group RG-R2H1 vlan untagged[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csegment App[K[6Pten Dev[1Psh run
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-18 13:44:28 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+! group
+group admin
+  associate user admin
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.30 subnet-mask-length 24
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+
+! tenant
+tenant Dev
+  segment App
+  segment DB
+  segment Web
+
+tenant Green
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  segment App
+    member interface-group RG-R2H1 vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config-tenant-seg)# te[K[Ksh this
+
+! tenant
+tenant Dev
+  segment Web
+controller(config-tenant-seg)# 
+controller(config-tenant-seg)#   segment App
+controller(config-tenant-seg)#     member interface-group RG-R2H1 vlan untagged
+Error: Validation failed: Attachment point and VLAN are classified to Tenant Red segment App
+controller(config-tenant-seg)#   segment Web
+controller(config-tenant-seg)#     member interface-group PG-R1H1 vlan untagged
+Error: Validation failed: Attachment point and VLAN are classified to Tenant Red segment Web
+controller(config-tenant-seg)#     member interface-group PG-R1H2 vlan untagged
+Error: Validation failed: Attachment point and VLAN are classified to Tenant Red segment Web
+controller(config-tenant-seg)#     member interface-group PG-R1H2 vlan untagged[K[K[K[K[K[K[K[K100
+controller(config-tenant-seg-interfacegrouprule)#     member interface-group PG-RR1H2 vlan 100untagged[C[C[C1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K100
+controller(config-tenant-seg-interfacegrouprule)#     member interface-group PG-RR1H1 vlan 100[C[C[C2[C[C[C[C[C[C[C[C[Cuntagged[C[C[C1[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Psegment Web
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  member interface-group RG-RR2H1 vlan untaggedM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Psegment App
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Psh this[1Prun    member interface-group PG-RR1H2 vlan untagged[C[C[C1[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Psegment Web
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+controller(config-tenant-seg)#  member interface-group PG-R1H1 vlan 100
+controller(config-tenant-seg-interfacegrouprule)# member interface-group PG-R1H2  vlan 100
+controller(config-tenant-seg-interfacegrouprule)# sh this
+
+! tenant
+tenant Dev
+  segment Web
+    member interface-group PG-R1H2 vlan 100
+controller(config-tenant-seg-interfacegrouprule)# exit
+controller(config-tenant-seg)# exitsh this
+
+! tenant
+tenant Dev
+  segment Web
+    member interface-group PG-R1H1 vlan 100
+    member interface-group PG-R1H2 vlan 100
+controller(config-tenant-seg)# exit
+controller(config-tenant)# exitsh this
+
+! tenant
+tenant Dev
+  segment App
+  segment DB
+  segment Web
+    member interface-group PG-R1H1 vlan 100
+    member interface-group PG-R1H2 vlan 100
+controller(config-tenant)# tenant Dev
+controller(config-tenant)#   segment DB
+controller(config-tenant-seg)# member interface-group PG-R1H2 vlan 100[1P[1@2
+controller(config-tenant-seg-interfacegrouprule)# ten App
+controller(config-tenant)# ten Appmember interface-group PG-R2H2 vlan 100[1P[1@1
+Error: Unknown command: member
+controller(config-tenant)# ten Dev[K[K[K[K[K[K[Kmember interface-group PG-R2H1 vlan 100[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cten App[K[1@n[1@o[1@ 
+Warning: submode exited due to deleted object
+controller(config)# ten Dev
+controller(config-tenant)# seg app
+controller(config-tenant-seg)# no !!
+Error: no matching commands
+controller(config-tenant-seg)# no !!seg app[1@n[1@o[1@ 
+Warning: submode exited due to deleted object
+controller(config-tenant)# no seg app!![Kseg app[1PppApp
+controller(config-tenant-seg)# mseg Appno seg app!![Kseg appten Devno ten Appmember interface-group PG-R2H1 vlan 100
+controller(config-tenant-seg-interfacegrouprule)# sh run
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-18 13:58:12 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+! group
+group admin
+  associate user admin
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.30 subnet-mask-length 24
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+
+! tenant
+tenant Dev
+  segment App
+    member interface-group PG-R2H1 vlan 100
+  segment DB
+    member interface-group PG-R2H2 vlan 100
+  segment Web
+    member interface-group PG-R1H1 vlan 100
+    member interface-group PG-R1H2 vlan 100
+
+tenant Green
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  segment App
+    member interface-group RG-R2H1 vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config-tenant-seg-interfacegrouprule)# show member-rule 
+# Tenant Segment Switch Interface Interface Group VLAN     MAC member rule State    
+-|------|-------|------|---------|---------------|--------|---------------|--------|
+1 Red    App                      RG-R2H1         untagged False           Inactive
+2 Red    Web                      PG-R1H2         untagged False           Active
+3 Red    Web                      PG-R1H1         untagged False           Active
+4 Dev    App                      PG-R2H1         100      False           Active
+5 Dev    Web                      PG-R1H2         100      False           Active
+6 Dev    Web                      PG-R1H1         100      False           Active
+7 Dev    DB                       PG-R2H2         100      False           Active
+8 Green  QA                       PG-R2H2         untagged False           Active
+controller(config-tenant-seg-interfacegrouprule)# ! Page (3)
+controller(config-tenant-seg-interfacegrouprule)# ! PDF page 193
+controller(config-tenant-seg-interfacegrouprule)# ssh 10.0.0.2
+Error: Unknown command: ssh
+controller(config-tenant-seg-interfacegrouprule)# sh end
+# Tenant Segment Name MAC                       IP Address IP State        Attachment Point Attach Point State VLAN     State  
+-|------|-------|----|-------------------------|----------|---------------|----------------|------------------|--------|------|
+1 Red    Web          00:00:00:00:00:01 (XEROX) 10.0.0.2   learned-L2 Only PG-R1H1          learned            untagged Active
+2 Red    Web          00:00:00:00:00:02 (XEROX) 10.0.0.3   learned-L2 Only PG-R1H2          learned            untagged Active
+controller(config-tenant-seg-interfacegrouprule)# sh log
+logging         logical-router 
+controller(config-tenant-seg-interfacegrouprule)# sh logical-router 
+None.
+controller(config-tenant-seg-interfacegrouprule)# sh ten
+# Tenant Name Origination Total Segments Total endpoints Total ports Multicast Enabled Multicast Active 
+-|-----------|-----------|--------------|---------------|-----------|-----------------|----------------|
+1 Red                     2              2               3           False             False
+2 Dev                     3              0               4           False             False
+3 Green                   1              0               1           False             False
+controller(config-tenant-seg-interfacegrouprule)# sh seg
+# Tenant Segment Origination Internal VLAN Member VLAN VNI Total endpoints Active endpoints Total ports QoS Traffic Class 
+-|------|-------|-----------|-------------|-----------|---|---------------|----------------|-----------|-----------------|
+1 Red    App                 3                             0               0                1
+2 Red    Web                 2                             2               2                2
+3 Dev    App                 6                             0               0                1
+4 Dev    Web                 5                             0               0                2
+5 Dev    DB                  7                             0               0                1
+6 Green  QA                  4                             0               0                1
+controller(config-tenant-seg-interfacegrouprule)# ! 128 columns for above tables M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ks
+controller(config-tenant-seg-interfacegrouprule)# 
+controller(config-tenant-seg-interfacegrouprule)# 
+controller(config-tenant-seg-interfacegrouprule)# sh fab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : OK (Warnings)
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 0
+# of warnings                                                          : 1
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 3
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 6
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 3
+# of interface-groups configured                                       : 7
+# of bidirectional spine to leaf links                                 : 18
+# of bidirectional links between switches in same leaf group           : 3
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 14
+# of tenants                                                           : 3
+# of segments                                                          : 6
+# of active endpoints                                                  : 2
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 1
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+controller(config-tenant-seg-interfacegrouprule)# sh fab! 128 columns for above tables M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csh seg[K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+# Tenant Segment Origination Internal VLAN Member VLAN VNI Total endpoints Active endpoints Total ports QoS Traffic Class 
+-|------|-------|-----------|-------------|-----------|---|---------------|----------------|-----------|-----------------|
+1 Red    App                 3                             0               0                1
+2 Red    Web                 2                             2               2                2
+3 Dev    App                 6                             0               0                1
+4 Dev    Web                 5                             0               0                2
+5 Dev    DB                  7                             0               0                1
+6 Green  QA                  4                             0               0                1
+controller(config-tenant-seg-interfacegrouprule)# sh segfab! 128 columns for above tables M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csh seg[K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctenlogical-router end[K
+endpoint          endpoint-manager 
+controller(config-tenant-seg-interfacegrouprule)# sh endpoint
+# Tenant Segment Name MAC                       IP Address IP State Attachment Point Attach Point State VLAN     State  
+-|------|-------|----|-------------------------|----------|--------|----------------|------------------|--------|------|
+1 Red    Web          00:00:00:00:00:01 (XEROX)                     PG-R1H1          learned            untagged Active
+2 Red    Web          00:00:00:00:00:02 (XEROX)                     PG-R1H2          learned            untagged Active
+controller(config-tenant-seg-interfacegrouprule)# sh fabric 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : OK (Warnings)
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 0
+# of warnings                                                          : 1
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 3
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 6
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 3
+# of interface-groups configured                                       : 7
+# of bidirectional spine to leaf links                                 : 18
+# of bidirectional links between switches in same leaf group           : 3
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 14
+# of tenants                                                           : 3
+# of segments                                                          : 6
+# of active endpoints                                                  : 2
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 1
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+controller(config-tenant-seg-interfacegrouprule)# sh fabric 
+ <cr>              error              ipam               setting            switch
+connected-devices  inventory          qos                summary            warning
+controller(config-tenant-seg-interfacegrouprule)# sh fabric connected-devices 
+None.
+controller(config-tenant-seg-interfacegrouprule)# sh fabric connected-devices [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K sum
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : OK (Warnings)
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 0
+# of warnings                                                          : 1
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 3
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 6
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 3
+# of interface-groups configured                                       : 7
+# of bidirectional spine to leaf links                                 : 18
+# of bidirectional links between switches in same leaf group           : 3
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 14
+# of tenants                                                           : 3
+# of segments                                                          : 6
+# of active endpoints                                                  : 2
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 1
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+controller(config-tenant-seg-interfacegrouprule)# ! rh1[K[K1h1 can't ping r1h1
+controller(config-tenant-seg-interfacegrouprule)# 
+controller(config-tenant-seg-interfacegrouprule)# ! page(4([K) - pdf p195
+controller(config-tenant-seg-interfacegrouprule)# ten red
+controller(config-tenant)# no ten [K[K[K[K[K[K[Ksh this
+
+! tenant
+tenant red
+controller(config-tenant)# no ten red
+Warning: submode exited due to deleted object
+controller(config)# ten Red
+controller(config-tenant)# l
+local           logical-router  logout         
+controller(config-tenant)# logi
+controller(config-tenant-lrouter)# i s Web
+Error: i is ambiguous: choices "interface-group", "interface"
+controller(config-tenant-lrouter)# i
+interface        interface-group 
+controller(config-tenant-lrouter)# interface s Web[Kb 
+controller(config-tenant-lrouter-seg-iface)# i a 10.0.0.1/24
+Error: i is ambiguous: choices "ipv6-dns-server", "interface", "ipv6-link-local", "ipv6-suppress-ra", "interface-group", "ip", "ipv6-nd-managed", "ipv6-domain-name"
+controller(config-tenant-lrouter-seg-iface)# i
+interface         ip                ipv6-domain-name  ipv6-nd-managed
+interface-group   ipv6-dns-server   ipv6-link-local   ipv6-suppress-ra
+controller(config-tenant-lrouter-seg-iface)# int s[K[K[K[Kp a 10.0.0.1/24
+controller(config-tenant-lrouter-seg-iface-ip)# int seg App 
+Error: int is ambiguous: choices "interface", "interface-group"
+controller(config-tenant-lrouter-seg-iface-ip)# in
+interface        interface-group 
+controller(config-tenant-lrouter-seg-iface-ip)# interface a [K[K
+PG-FW    PG-R1H1  PG-R1H2  PG-R2H1  PG-R2H2  PG-RTR1  PG-RTR2  segment  tenant  
+controller(config-tenant-lrouter-seg-iface-ip)# interface segment App 
+controller(config-tenant-lrouter-seg-iface)# i
+interface         ip                ipv6-domain-name  ipv6-nd-managed
+interface-group   ipv6-dns-server   ipv6-link-local   ipv6-suppress-ra
+controller(config-tenant-lrouter-seg-iface)# ip
+ip                ipv6-dns-server   ipv6-domain-name  ipv6-link-local   ipv6-nd-managed   ipv6-suppress-ra 
+controller(config-tenant-lrouter-seg-iface)# ip address 
+Enter the IP subnet for this interface
+controller(config-tenant-lrouter-seg-iface)# ip address 10.0.1.1/24
+controller(config-tenant-lrouter-seg-iface-ip)# 
+apply             interface         ipv6-nd-managed   nat-profile       private           shutdown
+as-path-list      ip                ipv6-suppress-ra  next-hop-group    route             vtep
+bgp               ipv6-dns-server   logical-router    origination       route-map
+description       ipv6-domain-name  multicast-enable  policy-list       segment
+dhcp-relay        ipv6-link-local   multicast-group   prefix-list       segment-group
+controller(config-tenant-lrouter-seg-iface-ip)# 
+For help on specific commands: help <command>
+All available commands:
+  aaa                   Configure accounting parameters
+  apply                 Apply policy list to this logical router
+  as-path-list          Create an as-path-list on the logical router
+  bgp                   Enter the BGP configuration submode
+  boot                  Configure boot details
+  clear                 Clear debug counters
+  compare               Compare running-configs
+  configure             Enter configure mode
+  connect               Connect to switch
+  controller            Configure controller cluster
+  copy                  Copy to/from running-config
+  debug                 Manage various cli debugging features
+  delete                Delete identified object
+  deploy                Deploy vSphere gui-plugin
+  dhcp-relay            Configure DHCP relay for this interface
+  echo                  Print remaining arguments
+  enable                Enter enable mode
+  end                   End configuration submode
+  exit                  Exit submode
+  fabric                Configure fabric global setting
+  group                 Enter group submode, configure group details
+  help                  Show help
+  history               Show commands recently executed
+  interface             Enter interface-group submode, configure interface-group details
+  interface-group       Enter interface-group submode, configure interface-group details
+  ip                    Configure an IP subnet on the logical router interface
+  ipv6-dns-server       Configure DNS server IPv6 address for the interface
+  ipv6-domain-name      Configure IPv6 domain name to be advertised on the interface
+  ipv6-link-local       Configure the IPv6 link local address of this interface
+  ipv6-nd-managed       To enable managed mode address configuration
+  ipv6-suppress-ra      To suppress RA on the interface segment
+  jobs                  Show suspended jobs
+  local                 Local Node Configuration
+  logical-router        Enter the logical router configuration submode
+  logout                Logout
+  mac-classify-pool     Configure the attachment point pool for MAC based classification
+  multicast-enable      Enable Multicast on Tenant
+  multicast-group       Create a multicast-group and/or enter multicast-group submode
+  nat-pool              Configure a pool of switches providing NAT for the fabric
+  nat-profile           Create a NAT profile on the logical router
+  next-hop-group        Create an next hop group on the logical router
+  no                    Prefix existing commands to delete item
+  ping                  Send echo messages
+  ping6                 Send echo messages
+  policy-list           Create a policy list on the logical router
+  prefix-list           Create a prefix list on the logical router
+  private               Make the segment interface private to this tenant
+  radius                Set RADIUS defaults, server IP address(es), timeout and keys
+  reauth                Reauthenticate
+  reset                 Reset current user password
+  route                 Add an IP subnet route on the logical router
+  route-map             Create a route-map on the logical router
+  secure                Configure secure conrol plane
+  segment               Create a segment and/or enter segment submode
+  segment-group         Assign the segment interface to a segment group
+  set                   Manage CLI sessions settings
+  sflow                 Enter sflow submode, configure sflow session
+  show                  Show various information
+  shutdown              Shutdown the logical router interface
+  span-fabric           Enter span-fabric submode, configure span-fabric session details
+  span-local            Enter span-local submode, configure span-local session details
+  storm-control-profile Enter storm-control-profile submode, configure profile details
+  support               Generate diagnostic data bundle for technical support
+  switch                Enter switch submode, configure switch details
+  sync                  Sync between config and identified operational state
+  system                System and switch operations (reload, reset, etc)
+  tacacs                Set TACACS defaults, server IP address(es), timeouts and keys
+  tenant                Create a tenant and/or enter tenant submode
+  terminal              Manage CLI sessions settings
+  test                  Start test
+  top                   Move to the top of the configuration hierarchy
+  traceroute            Traceroute an IP address from the controller
+  upgrade               Upgrade controller/cluster
+  user                  Enter user submode, configure user details
+  vcenter               Enter vCenter config submode
+  version               Move to a specific version of command syntax
+  vtep                  Create local source VTEP
+  vxlan-termination     Enter vxlan-termination submode, configure vxlan parameters
+  watch                 Show output of other commands
+  whoami                Identify the current authenticated account
+Commands:
+  description           Configure the description of this interface ip subnet
+  origination           Configure the origination of this segment interface ip subnet
+controller(config-tenant-lrouter-seg-iface-ip)# sh run
+Error: sh is ambiguous: choices "show", "shutdown"
+controller(config-tenant-lrouter-seg-iface-ip)# sho run
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-18 14:18:38 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+! group
+group admin
+  associate user admin
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.30 subnet-mask-length 24
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+
+! tenant
+tenant Dev
+  segment App
+    member interface-group PG-R2H1 vlan 100
+  segment DB
+    member interface-group PG-R2H2 vlan 100
+  segment Web
+    member interface-group PG-R1H1 vlan 100
+    member interface-group PG-R1H2 vlan 100
+
+tenant Green
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  logical-router
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+  segment App
+    member interface-group RG-R2H1 vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config-tenant-lrouter-seg-iface-ip)# sh thi
+Error: sh is ambiguous: choices "show", "shutdown"
+controller(config-tenant-lrouter-seg-iface-ip)# sho thi
+
+! tenant
+tenant Red
+  logical-router
+    interface segment App
+      ip address 10.0.1.1/24
+controller(config-tenant-lrouter-seg-iface-ip)# exit
+controller(config-tenant-lrouter-seg-iface)# exitsho thi
+
+! tenant
+tenant Red
+  logical-router
+    interface segment App
+      ip address 10.0.1.1/24
+controller(config-tenant-lrouter-seg-iface)# 
+controller(config-tenant-lrouter-seg-iface)# 
+controller(config-tenant-lrouter-seg-iface)# 
+controller(config-tenant-lrouter-seg-iface)# sho thi[3Pexit;sho this
+
+! tenant
+tenant Red
+  logical-router
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+controller(config-tenant-lrouter)# exit;sho this
+
+! tenant
+tenant Red
+  logical-router
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+  segment App
+    member interface-group RG-R2H1 vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config-tenant)# exit;sho this
+Error: Command Not Found: Unexpected argument "this"; expected one of "banner", "bgp", "boot", "bpdu-guard", "clock", "controller", "debug", "dump", ... and 46 more
+controller(config)# exit;sho this[1P[1P[1P[1P[1P[C[C[C[C[C[C[C[C ten
+Error: Command Not Found: Unexpected argument "this"; expected one of "banner", "bgp", "boot", "bpdu-guard", "clock", "controller", "debug", "dump", ... and 46 more
+controller(config)# sho logical-router 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Logical Router State Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name VRF Id Router MAC                     Connected to System Router Default route state Inbound policy Inbound policy state Vswitch Only 
+-|-----------|------|------------------------------|--------------------------|-------------------|--------------|--------------------|------------|
+1 Red         1      5c:16:c7:0b:ee:9e (Big Switch) not configured                                                                     False
+controller(config)# ! columns 148
+controller(config)# ssh r1h1
+Error: Unknown command: ssh
+controller(config)# 
+aaa                    interface-group        radius                 storm-control-profile  version
+banner                 local                  secure                 switch                 vxlan-termination
+controller             logging                sflow                  tacacs
+end                    mac-classify-pool      snmp-server            tenant
+fabric                 nat-pool               span-fabric            user
+group                  ntp                    span-local             vcenter
+controller(config)# ssh r1h1! columns 148sho logical-router 
+ <cr>                   dhcp                    interface               policy-list             vtep
+applied-policy          dynamic-route-next-hop  nat-profile             prefix-list
+as-path-list            floating-ip             next-hop-group          route
+detail                  incomplete              pat-profile             route-map
+controller(config)# sho logical-router r
+route      route-map 
+controller(config)# sho logical-router route
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Route Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name Dest Cidr   Type      Next Hop Tenant Next Hop          Next Hop IP Status 
+-|-----------|-----------|---------|---------------|-----------------|-----------|------|
+1 Red         10.0.0.0/24 connected Red             Segment Iface Web             Active
+2 Red         10.0.1.0/24 connected Red             Segment Iface App             Active
+controller(config)# sho run
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-18 14:26:22 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+! group
+group admin
+  associate user admin
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.30 subnet-mask-length 24
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+
+! tenant
+tenant Dev
+  segment App
+    member interface-group PG-R2H1 vlan 100
+  segment DB
+    member interface-group PG-R2H2 vlan 100
+  segment Web
+    member interface-group PG-R1H1 vlan 100
+    member interface-group PG-R1H2 vlan 100
+
+tenant Green
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  logical-router
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+  segment App
+    member interface-group RG-R2H1 vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config)# sho log
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Logical Router State Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name VRF Id Router MAC                     Connected to System Router Default route state Inbound policy Inbound policy state Vswitch Only 
+-|-----------|------|------------------------------|--------------------------|-------------------|--------------|--------------------|------------|
+1 Red         1      5c:16:c7:0b:ee:9e (Big Switch) not configured                                                                     False
+controller(config)# sho run ten Red
+
+! tenant
+tenant Red
+  logical-router
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+  segment App
+    member interface-group RG-R2H1 vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config)# sho member-rule 
+# Tenant Segment Switch Interface Interface Group VLAN     MAC member rule State    
+-|------|-------|------|---------|---------------|--------|---------------|--------|
+1 Red    App                      RG-R2H1         untagged False           Inactive
+2 Red    Web                      PG-R1H2         untagged False           Active
+3 Red    Web                      PG-R1H1         untagged False           Active
+4 Dev    App                      PG-R2H1         100      False           Active
+5 Dev    Web                      PG-R1H2         100      False           Active
+6 Dev    Web                      PG-R1H1         100      False           Active
+7 Dev    DB                       PG-R2H2         100      False           Active
+8 Green  QA                       PG-R2H2         untagged False           Active
+controller(config)# sho run interface-group 
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+controller(config)# ten Red
+controller(config-tenant)#   segment App
+controller(config-tenant-seg)# no     member interface-group RG-R2H1 vlan untagg ed
+controller(config-tenant-seg)#     member interface-group RG-R2H1 vlan untagged
+controller(config-tenant-seg-interfacegrouprule)#     member interface-group RG-RR2H1 vlan untaggedM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cno     member interface-group R[3@G-R[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Warning: submode exited due to deleted object
+controller(config-tenant-seg)# no     member interface-group RG-R2H1 vlan untaggeedM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P    member interface-group RG-R2H1 vlan untagged
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1@p[1P[1@R[1P[1@P
+controller(config-tenant-seg-interfacegrouprule)#     member interface-group PG-RR2H1 vlan untaggedM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cno     member interface-group R[3@G-R[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C    member interface-group RG-R[3P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cno     member interface-group R[3@G-R[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17P  segment App
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pten Redsho run interface-group 
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+controller(config-tenant-seg-interfacegrouprule)# sho run interface-group     member interface-group PG-RR2H1 vlan untaggedM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cno     member interface-group R[3@G-R[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C    member interface-group RG-R[3P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cno     member interface-group R[3@G-R[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17P  segment App
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pten Redsho run interface-group 
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+controller(config-tenant-seg-interfacegrouprule)# sho run interface-group     member interface-group PG-RR2H1 vlan untaggedM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cno     member interface-group R[3@G-R[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C    member interface-group RG-R[3P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cno     member interface-group R[3@G-R[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17P  segment App
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[6Pten Redsho run interface-group [8Pmember-rule[C
+# Tenant Segment Switch Interface Interface Group VLAN     MAC member rule State  
+-|------|-------|------|---------|---------------|--------|---------------|------|
+1 Red    App                      PG-R2H1         untagged False           Active
+2 Red    Web                      PG-R1H2         untagged False           Active
+3 Red    Web                      PG-R1H1         untagged False           Active
+4 Dev    App                      PG-R2H1         100      False           Active
+5 Dev    Web                      PG-R1H2         100      False           Active
+6 Dev    Web                      PG-R1H1         100      False           Active
+7 Dev    DB                       PG-R2H2         100      False           Active
+8 Green  QA                       PG-R2H2         untagged False           Active
+controller(config-tenant-seg-interfacegrouprule)# ! can ping now!
+controller(config-tenant-seg-interfacegrouprule)# sho en
+endpoint          endpoint-manager  environment      
+controller(config-tenant-seg-interfacegrouprule)# sho end
+endpoint          endpoint-manager 
+controller(config-tenant-seg-interfacegrouprule)# sho endpoint
+# Tenant Segment Name MAC                       IP Address IP State Attachment Point Attach Point State VLAN     State  
+-|------|-------|----|-------------------------|----------|--------|----------------|------------------|--------|------|
+1 Red    App          00:00:00:00:00:03 (XEROX) 10.0.1.2   learned  PG-R2H1          learned            untagged Active
+2 Red    Web          00:00:00:00:00:01 (XEROX) 10.0.0.2   learned  PG-R1H1          learned            untagged Active
+controller(config-tenant-seg-interfacegrouprule)# ping 10.0.0.3
+Error: Unexpected end of command
+controller(config-tenant-seg-interfacegrouprule)# ping 10.0.0.3[1Psho endpoint
+# Tenant Segment Name MAC                       IP Address IP State Attachment Point Attach Point State VLAN     State  
+-|------|-------|----|-------------------------|----------|--------|----------------|------------------|--------|------|
+1 Red    App          00:00:00:00:00:03 (XEROX) 10.0.1.2   learned  PG-R2H1          learned            untagged Active
+2 Red    Web          00:00:00:00:00:01 (XEROX) 10.0.0.2   learned  PG-R1H1          learned            untagged Active
+3 Red    Web          00:00:00:00:00:02 (XEROX) 10.0.0.3   learned  PG-R1H2          learned            untagged Active
+controller(config-tenant-seg-interfacegrouprule)# ! pdf p196, lab page(5)
+controller(config-tenant-seg-interfacegrouprule)# ten g[KGreen 
+controller(config-tenant)# log
+logical-router  logout         
+controller(config-tenant)# logical-router 
+<cr>
+controller(config-tenant)# logical-router 
+controller(config-tenant-lrouter)# i
+interface        interface-group 
+controller(config-tenant-lrouter)# interface 
+PG-FW    PG-R1H1  PG-R1H2  PG-R2H1  PG-R2H2  PG-RTR1  PG-RTR2  segment  tenant  
+controller(config-tenant-lrouter)# interface segment 
+ <cr>  QA    
+controller(config-tenant-lrouter)# interface segment QA 
+<cr>
+controller(config-tenant-lrouter)# interface segment QA 
+controller(config-tenant-lrouter-seg-iface)# 
+apply             interface         ipv6-nd-managed   nat-profile       private           shutdown
+as-path-list      ip                ipv6-suppress-ra  next-hop-group    route             vtep
+bgp               ipv6-dns-server   logical-router    origination       route-map
+description       ipv6-domain-name  multicast-enable  policy-list       segment
+dhcp-relay        ipv6-link-local   multicast-group   prefix-list       segment-group
+controller(config-tenant-lrouter-seg-iface)# ip address 
+Enter the IP subnet for this interface
+controller(config-tenant-lrouter-seg-iface)# ip address 10.0.2.1/24
+controller(config-tenant-lrouter-seg-iface-ip)# sho end
+# Tenant Segment Name MAC                       IP Address IP State Attachment Point Attach Point State VLAN     State  
+-|------|-------|----|-------------------------|----------|--------|----------------|------------------|--------|------|
+1 Red    App          00:00:00:00:00:03 (XEROX) 10.0.1.2   learned  PG-R2H1          learned            untagged Active
+2 Red    Web          00:00:00:00:00:01 (XEROX) 10.0.0.2   learned  PG-R1H1          learned            untagged Active
+3 Red    Web          00:00:00:00:00:02 (XEROX) 10.0.0.3   learned  PG-R1H2          learned            untagged Active
+controller(config-tenant-lrouter-seg-iface-ip)# 
+Interrupt/exit config
+controller# conf
+controller(config)# sh run ten
+
+! tenant
+tenant Dev
+  segment App
+    member interface-group PG-R2H1 vlan 100
+  segment DB
+    member interface-group PG-R2H2 vlan 100
+  segment Web
+    member interface-group PG-R1H1 vlan 100
+    member interface-group PG-R1H2 vlan 100
+
+tenant Green
+  logical-router
+    interface segment QA
+      ip address 10.0.2.1/24
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  logical-router
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+  segment App
+    member interface-group PG-R2H1 vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config)# sh run ten[6Pconfsho endip address 10.0.2.1/24[1Pnterface segment QA [6Plogical-router[C[5Pten Green[C! pdf p196, lab page(5)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Psho endpoint
+# Tenant Segment Name MAC                       IP Address IP State Attachment Point Attach Point State VLAN     State  
+-|------|-------|----|-------------------------|----------|--------|----------------|------------------|--------|------|
+1 Green  QA           00:00:00:00:00:04 (XEROX) 10.0.2.2   learned  PG-R2H2          learned            untagged Active
+2 Red    App          00:00:00:00:00:03 (XEROX) 10.0.1.2   learned  PG-R2H1          learned            untagged Active
+3 Red    Web          00:00:00:00:00:01 (XEROX) 10.0.0.2   learned  PG-R1H1          learned            untagged Active
+4 Red    Web          00:00:00:00:00:02 (XEROX) 10.0.0.3   learned  PG-R1H2          learned            untagged Active
+controller(config)# ten 
+Dev    Green  Red   
+controller(config)# ten system
+controller(config-tenant)# lo
+local           logical-router  logout         
+controller(config-tenant)# log
+logical-router  logout         
+controller(config-tenant)# logical-router 
+controller(config-tenant-lrouter)# 
+apply             description       multicast-enable  next-hop-group    prefix-list       segment
+as-path-list      interface         multicast-group   origination       route             vtep
+bgp               logical-router    nat-profile       policy-list       route-map
+controller(config-tenant-lrouter)# in
+interface        interface-group 
+controller(config-tenant-lrouter)# interface 
+PG-FW    PG-R1H1  PG-R1H2  PG-R2H1  PG-R2H2  PG-RTR1  PG-RTR2  segment  tenant  
+controller(config-tenant-lrouter)# interface tenant Red 
+controller(config-tenant-lrouter-tenant-iface)# int
+interface        interface-group 
+controller(config-tenant-lrouter-tenant-iface)# interface tenant Green 
+controller(config-tenant-lrouter-tenant-iface)# sho run ten
+
+! tenant
+tenant Dev
+  segment App
+    member interface-group PG-R2H1 vlan 100
+  segment DB
+    member interface-group PG-R2H2 vlan 100
+  segment Web
+    member interface-group PG-R1H1 vlan 100
+    member interface-group PG-R1H2 vlan 100
+
+tenant Green
+  logical-router
+    interface segment QA
+      ip address 10.0.2.1/24
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  logical-router
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+  segment App
+    member interface-group PG-R2H1 vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+
+tenant system
+  logical-router
+    interface tenant Green
+    interface tenant Red
+controller(config-tenant-lrouter-tenant-iface)# ! can't ping each other
+controller(config-tenant-lrouter-tenant-iface)# sh end
+Error: sh is ambiguous: choices "show", "shutdown"
+controller(config-tenant-lrouter-tenant-iface)# sho e
+Error: Ambiguous command: Ambiguous command word "e"; matches ["environment", "endpoint"]
+controller(config-tenant-lrouter-tenant-iface)# sho en
+Error: Ambiguous command: Ambiguous command word "en"; matches ["environment", "endpoint"]
+controller(config-tenant-lrouter-tenant-iface)# sho end
+# Tenant Segment Name MAC                       IP Address IP State Attachment Point Attach Point State VLAN     State  
+-|------|-------|----|-------------------------|----------|--------|----------------|------------------|--------|------|
+1 Green  QA           00:00:00:00:00:04 (XEROX) 10.0.2.2   learned  PG-R2H2          learned            untagged Active
+2 Red    App          00:00:00:00:00:03 (XEROX) 10.0.1.2   learned  PG-R2H1          learned            untagged Active
+3 Red    Web          00:00:00:00:00:01 (XEROX) 10.0.0.2   learned  PG-R1H1          learned            untagged Active
+4 Red    Web          00:00:00:00:00:02 (XEROX) 10.0.0.3   learned  PG-R1H2          learned            untagged Active
+controller(config-tenant-lrouter-tenant-iface)# ! can't ping each other, can pin g gateways
+controller(config-tenant-lrouter-tenant-iface)# reset
+Error: Unexpected end of command
+controller(config-tenant-lrouter-tenant-iface)# reset user-password 
+<cr>
+controller(config-tenant-lrouter-tenant-iface)# reset user-password [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K! pdf page197, lab3 page(6)
+controller(config-tenant-lrouter-tenant-iface)# sh logi
+Error: sh is ambiguous: choices "show", "shutdown"
+controller(config-tenant-lrouter-tenant-iface)# sho logi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Logical Router State Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name VRF Id Router MAC                     Connected to System Router Default route state Inbound policy Inbound policy state Vswitch Only 
+-|-----------|------|------------------------------|--------------------------|-------------------|--------------|--------------------|------------|
+1 Red         1      5c:16:c7:0b:ee:9e (Big Switch) not configured                                                                     False
+2 system      1023   5c:16:c7:0b:ee:9e (Big Switch) self                                                                               False
+3 Green       2      5c:16:c7:0b:ee:9e (Big Switch) not configured                                                                     False
+controller(config-tenant-lrouter-tenant-iface)# ! 150 columns
+controller(config-tenant-lrouter-tenant-iface)# ! 150 columns[5Psho logi 
+ <cr>                   dhcp                    interface               policy-list             vtep
+applied-policy          dynamic-route-next-hop  nat-profile             prefix-list
+as-path-list            floating-ip             next-hop-group          route
+detail                  incomplete              pat-profile             route-map
+controller(config-tenant-lrouter-tenant-iface)# sho logi in
+incomplete  interface  
+controller(config-tenant-lrouter-tenant-iface)# sho logi interface 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Segment Interface State Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name Segment IP Subnet   Primary Withdrawn Mac                            IPv6 Link Local Address   Visibility State  DHCP Configured 
+-|-----------|-------|-----------|-------|---------|------------------------------|-------------------------|----------|------|---------------|
+1 Red         App     10.0.1.1/24 True    False     5c:16:c7:0b:ee:9e (Big Switch) fe80::5e16:c7ff:fe0b:ee9e PUBLIC     Active False
+2 Red         Web     10.0.0.1/24 True    False     5c:16:c7:0b:ee:9e (Big Switch) fe80::5e16:c7ff:fe0b:ee9e PUBLIC     Active False
+3 Green       QA      10.0.2.1/24 True    False     5c:16:c7:0b:ee:9e (Big Switch) fe80::5e16:c7ff:fe0b:ee9e PUBLIC     Active False
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Tenant Interface State Table  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Export Route State Import Route State Tenant Name State               Remote Tenant Name 
+-|------------------|------------------|-----------|-------------------|------------------|
+1 Unconfigured       Unconfigured       system      Remote Disconnected Red
+2 Unconfigured       Unconfigured       system      Remote Disconnected Green
+controller(config-tenant-lrouter-tenant-iface)# sho logical-router incomplete 
+~ Incomplete Segment Interface State Table ~
+None.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~ Incomplete Tenant Interface State Table ~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name Remote Tenant Name Export Route State Import Route State State               
+-|-----------|------------------|------------------|------------------|-------------------|
+1 system      Red                Unconfigured       Unconfigured       Remote Disconnected
+2 system      Green              Unconfigured       Unconfigured       Remote Disconnected
+
+~ Incomplete Route Table ~
+None.
+
+~ Incomplete Next Hop Group Table ~
+None.
+
+~ Incomplete Dynamic Route Next Hop Group Table ~
+None.
+
+~ Incomplete Applied Policy Rule Table ~
+None.
+
+~ Incomplete Policy List Applied to Logical Router ~
+None.
+
+~ Incomplete or inactive NAT profiles ~
+None.
+
+~ Incomplete or inactive PAT profiles ~
+None.
+
+~ Incomplete or inactive floating IPs ~
+None.
+
+~ Incomplete or inactive VTEPs ~
+None.
+controller(config-tenant-lrouter-tenant-iface)# sh run ten
+Error: sh is ambiguous: choices "show", "shutdown"
+controller(config-tenant-lrouter-tenant-iface)# sho run ten
+
+! tenant
+tenant Dev
+  segment App
+    member interface-group PG-R2H1 vlan 100
+  segment DB
+    member interface-group PG-R2H2 vlan 100
+  segment Web
+    member interface-group PG-R1H1 vlan 100
+    member interface-group PG-R1H2 vlan 100
+
+tenant Green
+  logical-router
+    interface segment QA
+      ip address 10.0.2.1/24
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  logical-router
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+  segment App
+    member interface-group PG-R2H1 vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+
+tenant system
+  logical-router
+    interface tenant Green
+    interface tenant Red
+controller(config-tenant-lrouter-tenant-iface)# ten Red 
+controller(config-tenant)# log
+logical-router  logout         
+controller(config-tenant)# logical-router 
+controller(config-tenant-lrouter)# int
+interface        interface-group 
+controller(config-tenant-lrouter)# interface 
+PG-FW    PG-R1H1  PG-R1H2  PG-R2H1  PG-R2H2  PG-RTR1  PG-RTR2  segment  tenant  
+controller(config-tenant-lrouter)# interface tenant 
+ <cr>   Dev     Green   Red     system 
+controller(config-tenant-lrouter)# interface tenant system 
+controller(config-tenant-lrouter-tenant-iface)# interface tenant system [9Plogical-router[C[7Pten Red[Csho run ten[3Pten Red [K[K[K[KGreen 
+controller(config-tenant)# ten Green [14@interface tenant system[C[9Plogical-router[C
+controller(config-tenant-lrouter)# logical-router [5Pten Green[C[14@interface tenant system[C
+controller(config-tenant-lrouter-tenant-iface)# sho logical-router incomplete
+None.
+controller(config-tenant-lrouter-tenant-iface)# sho logical-router incomplete[5Pinterface tenant system [9Plogical-router[C[5Pten Green[C[14@interface tenant system[C[9Plogical-router[C[7Pten Red[Csho run ten[1P[C[C[C[C[C[C[C[Co logical-router incomplete [11P interfac[C[C
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Segment Interface State Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name Segment IP Subnet   Primary Withdrawn Mac                            IPv6 Link Local Address   Visibility State  DHCP Configured 
+-|-----------|-------|-----------|-------|---------|------------------------------|-------------------------|----------|------|---------------|
+1 Red         App     10.0.1.1/24 True    False     5c:16:c7:0b:ee:9e (Big Switch) fe80::5e16:c7ff:fe0b:ee9e PUBLIC     Active False
+2 Red         Web     10.0.0.1/24 True    False     5c:16:c7:0b:ee:9e (Big Switch) fe80::5e16:c7ff:fe0b:ee9e PUBLIC     Active False
+3 Green       QA      10.0.2.1/24 True    False     5c:16:c7:0b:ee:9e (Big Switch) fe80::5e16:c7ff:fe0b:ee9e PUBLIC     Active False
+
+~~~~~~~~~~~~~~~~~~~~~~~~ Tenant Interface State Table  ~~~~~~~~~~~~~~~~~~~~~~~~
+# Export Route State  Import Route State Tenant Name State  Remote Tenant Name 
+-|-------------------|------------------|-----------|------|------------------|
+1 Remote Unconfigured Unconfigured       Red         Active system
+2 Unconfigured        Unconfigured       system      Active Red
+3 Unconfigured        Unconfigured       system      Active Green
+4 Remote Unconfigured Unconfigured       Green       Active system
+controller(config-tenant-lrouter-tenant-iface)# ! p198
+controller(config-tenant-lrouter-tenant-iface)# 
+Timeout: exiting 'config-tenant-lrouter-tenant-iface' mode to 'login' mode
+controller> en
+controller# conf
+controller(config)# sh log
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Logical Router State Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name VRF Id Router MAC                     Connected to System Router Default route state Inbound policy Inbound policy state Vswitch Only 
+-|-----------|------|------------------------------|--------------------------|-------------------|--------------|--------------------|------------|
+1 Red         1      5c:16:c7:0b:ee:9e (Big Switch) connected                                                                          False
+2 system      1023   5c:16:c7:0b:ee:9e (Big Switch) self                                                                               False
+3 Green       2      5c:16:c7:0b:ee:9e (Big Switch) connected                                                                          False
+controller(config)# show tenant Red logical-router r
+route      route-map 
+controller(config)# show tenant Red logical-router route
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Route Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name Dest Cidr   Type      Next Hop Tenant Next Hop          Next Hop IP Status 
+-|-----------|-----------|---------|---------------|-----------------|-----------|------|
+1 Red         10.0.0.0/24 connected Red             Segment Iface Web             Active
+2 Red         10.0.1.0/24 connected Red             Segment Iface App             Active
+controller(config)# ten Red 
+controller(config-tenant)# log
+logical-router  logout         
+controller(config-tenant)# logical-router 
+controller(config-tenant-lrouter)# rou
+route      route-map 
+controller(config-tenant-lrouter)# route 0.0.0.0/0 next-hop 
+ <Next Hop Group>  nat-profile        null               tenant            
+controller(config-tenant-lrouter)# route 0.0.0.0/0 next-hop tenant system [K
+ <cr>   system 
+controller(config-tenant-lrouter)# route 0.0.0.0/0 next-hop tenant system 
+controller(config-tenant-lrouter)# sh end
+# Tenant Segment Name MAC                       IP Address IP State Attachment Point Attach Point State VLAN     State  
+-|------|-------|----|-------------------------|----------|--------|----------------|------------------|--------|------|
+1 Green  QA           00:00:00:00:00:04 (XEROX) 10.0.2.2   learned  PG-R2H2          learned            untagged Active
+2 Red    App          00:00:00:00:00:03 (XEROX) 10.0.1.2   learned  PG-R2H1          learned            untagged Active
+3 Red    Web          00:00:00:00:00:01 (XEROX) 10.0.0.2   learned  PG-R1H1          learned            untagged Active
+4 Red    Web          00:00:00:00:00:02 (XEROX) 10.0.0.3   learned  PG-R1H2          learned            untagged Active
+controller(config-tenant-lrouter)# sh end
+# Tenant Segment Name MAC                       IP Address IP State Attachment Point Attach Point State VLAN     State  
+-|------|-------|----|-------------------------|----------|--------|----------------|------------------|--------|------|
+1 Green  QA           00:00:00:00:00:04 (XEROX) 10.0.2.2   learned  PG-R2H2          learned            untagged Active
+2 Red    App          00:00:00:00:00:03 (XEROX) 10.0.1.2   learned  PG-R2H1          learned            untagged Active
+3 Red    Web          00:00:00:00:00:01 (XEROX) 10.0.0.2   learned  PG-R1H1          learned            untagged Active
+4 Red    Web          00:00:00:00:00:02 (XEROX) 10.0.0.3   learned  PG-R1H2          learned            untagged Active
+controller(config-tenant-lrouter)# sh lo
+local           logging         logical-router 
+controller(config-tenant-lrouter)# sh logical-router 
+ <cr>                   dhcp                    interface               policy-list             vtep
+applied-policy          dynamic-route-next-hop  nat-profile             prefix-list
+as-path-list            floating-ip             next-hop-group          route
+detail                  incomplete              pat-profile             route-map
+controller(config-tenant-lrouter)# sh logical-router r
+route      route-map 
+controller(config-tenant-lrouter)# sh logical-router route 
+ <cr>              connected          imported           summary
+ <route-map-name>  dynamic            static
+controller(config-tenant-lrouter)# sh logical-router route 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Route Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name Dest Cidr   Type      Next Hop Tenant Next Hop            Next Hop IP Status 
+-|-----------|-----------|---------|---------------|-------------------|-----------|------|
+1 Green       10.0.2.0/24 connected Green           Segment Iface QA                Active
+2 Red         0.0.0.0/0   static    system          Tenant iface system             Active
+3 Red         10.0.0.0/24 connected Red             Segment Iface Web               Active
+4 Red         10.0.1.0/24 connected Red             Segment Iface App               Active
+5 system      10.0.0.0/24 imported  Red                                             Active
+6 system      10.0.1.0/24 imported  Red                                             Active
+7 system      10.0.2.0/24 imported  Green                                           Active
+controller(config-tenant-lrouter)# sh tenant Red ro[K[K
+ <cr>                 endpoint              logical-router        nat-endpoint          segment
+bgp                   interface-group       mac-membership        rates                 switch
+counters              ipv6-external-router  member-rule           security-group        vxlan
+controller(config-tenant-lrouter)# sh tenant Red 
+# Tenant Name Origination Total Segments Total endpoints Total ports Multicast Enabled Multicast Active 
+-|-----------|-----------|--------------|---------------|-----------|-----------------|----------------|
+1 Red                     2              3               3           False             False
+controller(config-tenant-lrouter)# sh tenant Red 
+ <cr>                 endpoint              logical-router        nat-endpoint          segment
+bgp                   interface-group       mac-membership        rates                 switch
+counters              ipv6-external-router  member-rule           security-group        vxlan
+controller(config-tenant-lrouter)# sh tenant Red logical-router 
+ <cr>                   dhcp                    interface               policy-counter          route
+applied-policy          dynamic-route-next-hop  nat-profile             policy-list             route-map
+as-path-list            floating-ip             next-hop-group          policy-log              vtep
+detail                  incomplete              pat-profile             prefix-list
+controller(config-tenant-lrouter)# sh tenant Red logical-router r
+route      route-map 
+controller(config-tenant-lrouter)# sh tenant Red logical-router route
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Route Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name Dest Cidr   Type      Next Hop Tenant Next Hop            Next Hop IP Status 
+-|-----------|-----------|---------|---------------|-------------------|-----------|------|
+1 Red         0.0.0.0/0   static    system          Tenant iface system             Active
+2 Red         10.0.0.0/24 connected Red             Segment Iface Web               Active
+3 Red         10.0.1.0/24 connected Red             Segment Iface App               Active
+controller(config-tenant-lrouter)# ^Red^Green
+Error: Unknown command: ^Red^Green
+controller(config-tenant-lrouter)# ^Red^Greensh tenant Red logical-router route[3P[1@s[6@ystem 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Route Table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Tenant Name Dest Cidr   Type     Next Hop Tenant Next Hop Next Hop IP Status 
+-|-----------|-----------|--------|---------------|--------|-----------|------|
+1 system      10.0.0.0/24 imported Red                                  Active
+2 system      10.0.1.0/24 imported Red                                  Active
+3 system      10.0.2.0/24 imported Green                                Active
+controller(config-tenant-lrouter)# ! page (8), pdf p199
+controller(config-tenant-lrouter)# ten External
+controller(config-tenant)# segment 
+Enter a segment name
+controller(config-tenant)# segment Et01[K[K[Kxt-01 
+<cr>
+controller(config-tenant)# segment Ext-01 
+controller(config-tenant-seg)# interface-group PG-RTR1 
+<cr>
+controller(config-tenant-seg)# interface-group PG-RTR1 
+ <cr> Enter interface-group submode, configure interface-group details
+controller(config-tenant-seg)# interface-group PG-RTR1 
+controller(config-interface-group)# 
+backup-member  backup-mode    description    member         mode           origination    preempt       
+controller(config-interface-group)# m
+mac-classify-pool  member             mode              
+controller(config-interface-group)# member 
+chassis-mac  host         switch      
+controller(config-interface-group)# member switch 
+R1L1  R1L2  R2L1  R2L2  R3L1  R3L2 
+controller(config-interface-group)# member switch R[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksh thi
+
+! interface-group
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+controller(config-interface-group)# ten External 
+controller(config-tenant)# sh thi
+
+! tenant
+tenant External
+  segment Ext-01
+controller(config-tenant)# seg Ext-01 
+controller(config-tenant-seg)# 
+description          logical-router       multicast-group      segment
+endpoint             member               origination          vxlan-encapsulation
+id                   multicast-enable     qos-traffic-class
+controller(config-tenant-seg)# member 
+interface-group  mac              switch           virtual-switch   vlan             vni             
+controller(config-tenant-seg)# member interface-group 
+PG-FW    PG-R1H1  PG-R1H2  PG-R2H1  PG-R2H2  PG-RTR1  PG-RTR2  any     
+controller(config-tenant-seg)# member interface-group P
+PG-FW    PG-R1H1  PG-R1H2  PG-R2H1  PG-R2H2  PG-RTR1  PG-RTR2 
+controller(config-tenant-seg)# member interface-group PG-R
+PG-R1H1  PG-R1H2  PG-R2H1  PG-R2H2  PG-RTR1  PG-RTR2 
+controller(config-tenant-seg)# member interface-group PG-RT
+PG-RTR1  PG-RTR2 
+controller(config-tenant-seg)# member interface-group PG-RTR1 vlan 
+ <VLAN>   untagged 
+controller(config-tenant-seg)# member interface-group PG-RTR1 vlan untagged 
+controller(config-tenant-seg-interfacegrouprule)# seg Ext-01 [K[K2
+controller(config-tenant-seg)# member interface-group P
+PG-FW    PG-R1H1  PG-R1H2  PG-R2H1  PG-R2H2  PG-RTR1  PG-RTR2 
+controller(config-tenant-seg)# member interface-group PG-R
+PG-R1H1  PG-R1H2  PG-R2H1  PG-R2H2  PG-RTR1  PG-RTR2 
+controller(config-tenant-seg)# member interface-group PG-RT
+PG-RTR1  PG-RTR2 
+controller(config-tenant-seg)# member interface-group PG-RTR2 vlan untagged 
+controller(config-tenant-seg-interfacegrouprule)# logical-router 
+<cr>
+controller(config-tenant-seg-interfacegrouprule)# logical-router 
+ <cr> Enter the logical router configuration submode
+controller(config-tenant-seg-interfacegrouprule)# logical-router 
+controller(config-tenant-lrouter)# 
+apply             description       multicast-enable  next-hop-group    prefix-list       segment
+as-path-list      interface         multicast-group   origination       route             vtep
+bgp               logical-router    nat-profile       policy-list       route-map
+controller(config-tenant-lrouter)# in
+interface        interface-group 
+controller(config-tenant-lrouter)# interface 
+PG-FW    PG-R1H1  PG-R1H2  PG-R2H1  PG-R2H2  PG-RTR1  PG-RTR2  segment  tenant  
+controller(config-tenant-lrouter)# interface segment 
+ <cr>   Ext-01  Ext-02 
+controller(config-tenant-lrouter)# interface segment E
+Ext-01  Ext-02 
+controller(config-tenant-lrouter)# interface segment Ext-01 
+<cr>
+controller(config-tenant-lrouter)# interface segment Ext-01 
+controller(config-tenant-lrouter-seg-iface)# 
+apply             interface         ipv6-nd-managed   nat-profile       private           shutdown
+as-path-list      ip                ipv6-suppress-ra  next-hop-group    route             vtep
+bgp               ipv6-dns-server   logical-router    origination       route-map
+description       ipv6-domain-name  multicast-enable  policy-list       segment
+dhcp-relay        ipv6-link-local   multicast-group   prefix-list       segment-group
+controller(config-tenant-lrouter-seg-iface)# ip address 
+Enter the IP subnet for this interface
+controller(config-tenant-lrouter-seg-iface)# ip address 10.0.3.1/30
+controller(config-tenant-lrouter-seg-iface-ip)# ip address 10.0.3.1/30nterface segment Ext-01 [K[K2
+controller(config-tenant-lrouter-seg-iface)# interface segment Ext-02[2Pp address 10.0.3.1/30[1P.1/304.1/30
+controller(config-tenant-lrouter-seg-iface-ip)# int
+interface        interface-group 
+controller(config-tenant-lrouter-seg-iface-ip)# interface 
+PG-FW    PG-R1H1  PG-R1H2  PG-R2H1  PG-R2H2  PG-RTR1  PG-RTR2  segment  tenant  
+controller(config-tenant-lrouter-seg-iface-ip)# interface tenant t[K
+ <cr>     Dev       External  Green     Red       system   
+controller(config-tenant-lrouter-seg-iface-ip)# interface tenant system 
+controller(config-tenant-lrouter-tenant-iface)# end
+controller# 
+controller> 
+Connection to 52.203.4.224 closed.
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[12:00:41][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m exit
+
+Script done on Wed 18 Oct 2017 12:00:42 PM EDT

@@ -1,0 +1,2571 @@
+Script started on Tue 17 Oct 2017 12:59:35 PM EDT
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[12:59:35][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m cur
+curl          curl-config   curve_keygen  
+[40m[33miac[1;33m[12:59:35][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m curl -g --insecure -H "content-type: appli cation/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.1 12/[K:8443/api/v1/auth/login
+{"success":true,"error_message":"","session_cookie":"QhdEm1O9oGzMKznn-AbA2a0UtdVmMPRS"}_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[13:01:52][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m ls
+[0m[00;32mBCF.Training.and.Lab.Guide.pdf[0m  [00mLab1.typescript[0m  [00mnotes.md[0m  [00mrest.typescript[0m
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[13:01:59][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m # page 71 in PDF
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m # page 71 in PDFls[Kcurl -g --insecure -H "content-type: appliccation/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.1112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112[1P:8443/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:[1P8443/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8[1P443/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:84[C[1P3/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:844[1P3/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443[1P/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/[1Papi/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/a[1Ppi/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/ap[1Pi/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[CH "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api[1P/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[CH "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/[1Pv1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v[1P1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1[1P/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[Cs-H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C -H "content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Content-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v[1P1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cntent-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1[1P/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Ctent-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/[1Pauth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cent-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/a[1Puth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cnt-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/au[1Pth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Ct-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/aut[1Ph/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C-type: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth[1P/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Ctype: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/[1PloginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cype: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/l[1PoginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cpe: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/lo[1PginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Ce: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/log[1PinMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C: application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/logi[1PnMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C application/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/login[KMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Capplication/json" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/login [KMM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpplication/json" -d '{"user": "[1P
+[KMM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clication/json" -d '{"user": "a[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Clication/json" -d '{"user": "ad[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cication/json" -d '{"user": "adm[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Ccation/json" -d '{"user": "admi[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cation/json" -d '{"user": "admin[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Ction/json" -d '{"user": "admin"[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cion/json" -d '{"user": "admin",[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Con/json" -d '{"user": "admin", [1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cn/json" -d '{"user": "admin", "[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C/json" -d '{"user": "admin", "p[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cjson" -d '{"user": "admin", "pa[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cson" -d '{"user": "admin", "pas[C[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Con" -d '{"user": "admin", "pass[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cn" -d '{"user": "admin", "passw[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C" -d '{"user": "admin", "passwo[1PM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[Cc" -d '{"user": "admin", "passw[1@oM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[Co" -d '{"user": "admin", "pass[1@wM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[Co" -d '{"user": "admin", "pas[1@sM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ck" -d '{"user": "admin", "pa[C[1@sM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci" -d '{"user": "admin", "p[1@aM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce" -d '{"user": "admin", "[1@pM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C:" -d '{"user": "admin", [1@"M[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs" -d '{"user": "admin",[1@ M[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce" -d '{"user": "admin"[1@,M[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs" -d '{"user": "admin[1@"M[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs" -d '{"user": "admi[1@nM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci" -d '{"user": "adm[1@iM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co" -d '{"user": "ad[1@mM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn" -d '{"user": "a[1@dM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C_" -d '{"user": "[1@aM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/login MM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/loginnMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ck" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C=" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/loginMM[40m[33miac[1;33m[13:02:27][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CQhdEm1O9oGzMKznn-AbA2a0UtdVmMPRS" -d '{"user": "admin", "password": "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C '{"user": "admin", "password": "bsn123"}' -s https://[1P54.236.14.112:8443/api/v1/auth/loginM'{"user": "admin", "password": "bsn123"}' -s https://5[1P4.236.14.112:8443/api/v1/auth/loginM{"user": "admin", "password": "bsn123"}' -s https://54[1P.236.14.112:8443/api/v1/auth/loginM"user": "admin", "password": "bsn123"}' -s https://54.[1P236.14.112:8443/api/v1/auth/loginMuser": "admin", "password": "bsn123"}' -s https://54.2[1P36.14.112:8443/api/v1/auth/loginMser": "admin", "password": "bsn123"}' -s https://54.23[1P6.14.112:8443/api/v1/auth/loginMer": "admin", "password": "bsn123"}' -s https://54.236[1P.14.112:8443/api/v1/auth/loginMr": "admin", "password": "bsn123"}' -s https://54.236.[1P14.112:8443/api/v1/auth/loginM": "admin", "password": "bsn123"}' -s https://54.236.1[1P4.112:8443/api/v1/auth/loginM: "admin", "password": "bsn123"}' -s https://54.236.14[1P.112:8443/api/v1/auth/loginM "admin", "password": "bsn123"}' -s https://54.236.14.[1P112:8443/api/v1/auth/loginM"admin", "password": "bsn123"}' -s https://54.236.14.1[C[1P2:8443/api/v1/auth/loginM[Cadmin", "password": "bsn123"}' -s https://54.236.14.11[1P2:8443/api/v1/auth/loginM[C[Cdmin", "password": "bsn123"}' -s https://54.236.14.112[1P:8443/api/v1/auth/loginM[C[C[Cmin", "password": "bsn123"}' -s https://54.236.14.112:[1P8443/api/v1/auth/loginM[C[C[C[Cin", "password": "bsn123"}' -s https://54.236.14.112:8[1P443/api/v1/auth/loginM[C[C[C[C[Cn", "password": "bsn123"}' -s https://54.236.14.112:84[C[1P3/api/v1/auth/loginM[C[C[C[C[C[C", "password": "bsn123"}' -s https://54.236.14.112:844[1P3/api/v1/auth/loginM[C[C[C[C[C[C[C, "password": "bsn123"}' -s https://54.236.14.112:8443[1P/api/v1/auth/loginM[C[C[C[C[C[C[C[C "password": "bsn123"}' -s https://54.236.14.112:8443/[1Papi/v1/auth/loginM[C[C[C[C[C[C[C[C[C"password": "bsn123"}' -s https://54.236.14.112:8443/a[1Ppi/v1/auth/loginM[C[C[C[C[C[C[C[C[C[Cpassword": "bsn123"}' -s https://54.236.14.112:8443/ap[1Pi/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[Cassword": "bsn123"}' -s https://54.236.14.112:8443/api[1P/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[Cssword": "bsn123"}' -s https://54.236.14.112:8443/api/[1Pv1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[Cword": "bsn123"}' -s https://54.236.14.112:8443/api/v[1P1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[Cword": "bsn123"}' -s https://54.236.14.112:8443/api/v1[1P/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cord": "bsn123"}' -s https://54.236.14.112:8443/api/v1/[1Pauth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crd": "bsn123"}' -s https://54.236.14.112:8443/api/v1/a[1Puth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd": "bsn123"}' -s https://54.236.14.112:8443/api/v1/au[1Pth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C": "bsn123"}' -s https://54.236.14.112:8443/api/v1/aut[1Ph/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C: "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth[1P/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C "bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/[1PloginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"bsn123"}' -s https://54.236.14.112:8443/api/v1/auth/l[1PoginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbsn123"}' -s https://54.236.14.112:8443/api/v1/auth/lo[1PginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csn123"}' -s https://54.236.14.112:8443/api/v1/auth/log[1PinM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn123"}' -s https://54.236.14.112:8443/api/v1/auth/logi[1PnM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C123"}' -s https://54.236.14.112:8443/api/v1/auth/login[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C23"}' -s https://54.236.14.112:8443/api/v1/auth/login [KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1@g[1@-[1P[C[1@ [1@-[1@X[C -s https://54.236.14.112:8443/api/v1/auth/login M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CG -s https://54.236.14.112:8443/api/v1/auth/loginnM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CE -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CT -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C- -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C- -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce -s https://54.236.14.112:8443/api/v1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-s https://54.236.14.112:8443/api/v[1P1/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs https://54.236.14.112:8443/api/v1[1P/auth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C https://54.236.14.112:8443/api/v1/[1Pauth/loginM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[1Puth/login[C[1Pth/login[C[1Ph/login[C[1P/login[C[1Plogin[C[1Pogin[C[1Pgin[C[1Pin[1Pn[Kdata/controller/core/wi[K[Kswitch
+[ {
+  "active" : true,
+  "buffers" : 0,
+  "capabilities" : [ "flow-stats", "table-stats", "port-stats", "queue-stats" ],
+  "connected" : true,
+  "connected-since" : "2017-10-17T13:31:39.091Z",
+  "connection" : [ {
+    "aux-id" : 0,
+    "connected-since" : "2017-10-17T13:31:39.091Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 47348,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 1,
+    "connected-since" : "2017-10-17T13:31:39.597Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 47351,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 2,
+    "connected-since" : "2017-10-17T13:31:40.002Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 47352,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 3,
+    "connected-since" : "2017-10-17T13:31:40.002Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 47353,
+      "ip" : "10.10.12.30"
+    }
+  } ],
+  "controller-connection" : [ {
+    "aux-id" : 0,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 1,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 2,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 3,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  } ],
+  "dpid" : "00:00:00:00:00:01:00:01",
+  "fabric-lag" : [ {
+    "lag-type" : "any-leaf",
+    "member" : [ {
+      "dst-interface" : "R1L2-eth2",
+      "dst-switch" : "R1L2",
+      "src-interface" : "S1-eth2"
+    }, {
+      "dst-interface" : "R2L2-eth2",
+      "dst-switch" : "R2L2",
+      "src-interface" : "S1-eth4"
+    }, {
+      "dst-interface" : "R3L1-eth2",
+      "dst-switch" : "R3L1",
+      "src-interface" : "S1-eth5"
+    }, {
+      "dst-interface" : "R3L2-eth2",
+      "dst-switch" : "R3L2",
+      "src-interface" : "S1-eth6"
+    } ],
+    "name" : "any-leaf"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "R1L2-eth2",
+      "dst-switch" : "R1L2",
+      "src-interface" : "S1-eth2"
+    } ],
+    "name" : "rack-R1"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "R2L2-eth2",
+      "dst-switch" : "R2L2",
+      "src-interface" : "S1-eth4"
+    } ],
+    "name" : "rack-R2"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "R3L1-eth2",
+      "dst-switch" : "R3L1",
+      "src-interface" : "S1-eth5"
+    }, {
+      "dst-interface" : "R3L2-eth2",
+      "dst-switch" : "R3L2",
+      "src-interface" : "S1-eth6"
+    } ],
+    "name" : "rack-R3"
+  } ],
+  "handshake-state" : "master-state",
+  "implementation" : "switch-light-virtual",
+  "implementation-type" : "virtual",
+  "inet-address" : {
+    "inet-port" : 47348,
+    "ip" : "10.10.12.30"
+  },
+  "interface" : [ {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "aa:17:07:45:ed:1d",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "S1-eth1",
+    "number" : 1,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "96:96:a1:26:60:80",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S1-eth2",
+    "number" : 2,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "a2:d8:81:a7:3a:fd",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "S1-eth3",
+    "number" : 3,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "5a:0b:c3:44:bb:65",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S1-eth4",
+    "number" : 4,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "d6:e9:94:d4:f5:06",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S1-eth5",
+    "number" : 5,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "3a:29:68:da:17:f6",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S1-eth6",
+    "number" : 6,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "1e:90:1b:e4:e0:02",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "local",
+    "number" : 4294967294,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  } ],
+  "mac-address" : "00:00:00:01:00:01",
+  "name" : "S1",
+  "tables" : 1
+}, {
+  "active" : true,
+  "buffers" : 0,
+  "capabilities" : [ "flow-stats", "table-stats", "port-stats", "queue-stats" ],
+  "connected" : true,
+  "connected-since" : "2017-10-17T13:31:39.288Z",
+  "connection" : [ {
+    "aux-id" : 0,
+    "connected-since" : "2017-10-17T13:31:39.288Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 55945,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 1,
+    "connected-since" : "2017-10-17T13:31:40.194Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 55958,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 2,
+    "connected-since" : "2017-10-17T13:31:40.184Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 55959,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 3,
+    "connected-since" : "2017-10-17T13:31:40.176Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 55960,
+      "ip" : "10.10.12.30"
+    }
+  } ],
+  "controller-connection" : [ {
+    "aux-id" : 0,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 1,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 2,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 3,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  } ],
+  "dpid" : "00:00:00:00:00:01:00:02",
+  "fabric-lag" : [ {
+    "lag-type" : "any-leaf",
+    "member" : [ {
+      "dst-interface" : "R1L2-eth3",
+      "dst-switch" : "R1L2",
+      "src-interface" : "S2-eth2"
+    }, {
+      "dst-interface" : "R2L1-eth3",
+      "dst-switch" : "R2L1",
+      "src-interface" : "S2-eth3"
+    }, {
+      "dst-interface" : "R2L2-eth3",
+      "dst-switch" : "R2L2",
+      "src-interface" : "S2-eth4"
+    }, {
+      "dst-interface" : "R3L1-eth3",
+      "dst-switch" : "R3L1",
+      "src-interface" : "S2-eth5"
+    }, {
+      "dst-interface" : "R3L2-eth3",
+      "dst-switch" : "R3L2",
+      "src-interface" : "S2-eth6"
+    } ],
+    "name" : "any-leaf"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "R1L2-eth3",
+      "dst-switch" : "R1L2",
+      "src-interface" : "S2-eth2"
+    } ],
+    "name" : "rack-R1"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "R2L1-eth3",
+      "dst-switch" : "R2L1",
+      "src-interface" : "S2-eth3"
+    }, {
+      "dst-interface" : "R2L2-eth3",
+      "dst-switch" : "R2L2",
+      "src-interface" : "S2-eth4"
+    } ],
+    "name" : "rack-R2"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "R3L1-eth3",
+      "dst-switch" : "R3L1",
+      "src-interface" : "S2-eth5"
+    }, {
+      "dst-interface" : "R3L2-eth3",
+      "dst-switch" : "R3L2",
+      "src-interface" : "S2-eth6"
+    } ],
+    "name" : "rack-R3"
+  } ],
+  "handshake-state" : "master-state",
+  "implementation" : "switch-light-virtual",
+  "implementation-type" : "virtual",
+  "inet-address" : {
+    "inet-port" : 55945,
+    "ip" : "10.10.12.30"
+  },
+  "interface" : [ {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "46:8b:1e:f4:79:e4",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "S2-eth1",
+    "number" : 1,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "f6:6f:6c:ee:95:9a",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S2-eth2",
+    "number" : 2,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "62:c7:fb:6f:d4:b3",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S2-eth3",
+    "number" : 3,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "ca:3e:44:4e:16:2a",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S2-eth4",
+    "number" : 4,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "be:07:9c:8b:4d:ff",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S2-eth5",
+    "number" : 5,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "d6:d5:3c:3b:2c:1d",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S2-eth6",
+    "number" : 6,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "b2:9f:b6:38:b5:d5",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "local",
+    "number" : 4294967294,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  } ],
+  "mac-address" : "00:00:00:01:00:02",
+  "name" : "S2",
+  "tables" : 1
+}, {
+  "active" : true,
+  "buffers" : 0,
+  "capabilities" : [ "flow-stats", "table-stats", "port-stats", "queue-stats" ],
+  "connected" : true,
+  "connected-since" : "2017-10-17T13:31:39.364Z",
+  "connection" : [ {
+    "aux-id" : 0,
+    "connected-since" : "2017-10-17T13:31:39.364Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 57045,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 1,
+    "connected-since" : "2017-10-17T13:31:40.230Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 57070,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 2,
+    "connected-since" : "2017-10-17T13:31:40.229Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 57071,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 3,
+    "connected-since" : "2017-10-17T13:31:40.237Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 57072,
+      "ip" : "10.10.12.30"
+    }
+  } ],
+  "controller-connection" : [ {
+    "aux-id" : 0,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 1,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 2,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 3,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  } ],
+  "dpid" : "00:00:00:00:00:01:00:03",
+  "fabric-lag" : [ {
+    "lag-type" : "any-leaf",
+    "member" : [ {
+      "dst-interface" : "R1L2-eth4",
+      "dst-switch" : "R1L2",
+      "src-interface" : "S3-eth2"
+    }, {
+      "dst-interface" : "R2L1-eth4",
+      "dst-switch" : "R2L1",
+      "src-interface" : "S3-eth3"
+    }, {
+      "dst-interface" : "R2L2-eth4",
+      "dst-switch" : "R2L2",
+      "src-interface" : "S3-eth4"
+    }, {
+      "dst-interface" : "R3L1-eth4",
+      "dst-switch" : "R3L1",
+      "src-interface" : "S3-eth5"
+    }, {
+      "dst-interface" : "R3L2-eth4",
+      "dst-switch" : "R3L2",
+      "src-interface" : "S3-eth6"
+    } ],
+    "name" : "any-leaf"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "R1L2-eth4",
+      "dst-switch" : "R1L2",
+      "src-interface" : "S3-eth2"
+    } ],
+    "name" : "rack-R1"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "R2L1-eth4",
+      "dst-switch" : "R2L1",
+      "src-interface" : "S3-eth3"
+    }, {
+      "dst-interface" : "R2L2-eth4",
+      "dst-switch" : "R2L2",
+      "src-interface" : "S3-eth4"
+    } ],
+    "name" : "rack-R2"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "R3L1-eth4",
+      "dst-switch" : "R3L1",
+      "src-interface" : "S3-eth5"
+    }, {
+      "dst-interface" : "R3L2-eth4",
+      "dst-switch" : "R3L2",
+      "src-interface" : "S3-eth6"
+    } ],
+    "name" : "rack-R3"
+  } ],
+  "handshake-state" : "master-state",
+  "implementation" : "switch-light-virtual",
+  "implementation-type" : "virtual",
+  "inet-address" : {
+    "inet-port" : 57045,
+    "ip" : "10.10.12.30"
+  },
+  "interface" : [ {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "ae:a7:e9:7a:75:e1",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "S3-eth1",
+    "number" : 1,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "66:86:52:0b:8e:92",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S3-eth2",
+    "number" : 2,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "6a:c4:8b:90:cb:8b",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S3-eth3",
+    "number" : 3,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "06:96:0d:8f:77:52",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S3-eth4",
+    "number" : 4,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "2e:e8:52:6a:00:c4",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S3-eth5",
+    "number" : 5,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "ea:8a:d6:d9:15:b4",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "S3-eth6",
+    "number" : 6,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "de:b4:1f:ee:f5:b4",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "local",
+    "number" : 4294967294,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  } ],
+  "mac-address" : "00:00:00:01:00:03",
+  "name" : "S3",
+  "tables" : 1
+}, {
+  "active" : true,
+  "buffers" : 0,
+  "capabilities" : [ "flow-stats", "table-stats", "port-stats", "queue-stats" ],
+  "connected" : true,
+  "connected-since" : "2017-10-17T13:31:39.796Z",
+  "connection" : [ {
+    "aux-id" : 0,
+    "connected-since" : "2017-10-17T13:31:39.796Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 38971,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 1,
+    "connected-since" : "2017-10-17T13:31:40.009Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 38978,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 2,
+    "connected-since" : "2017-10-17T13:31:40.023Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 38979,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 3,
+    "connected-since" : "2017-10-17T13:31:40.026Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 38980,
+      "ip" : "10.10.12.30"
+    }
+  } ],
+  "controller-connection" : [ {
+    "aux-id" : 0,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 1,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 2,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 3,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  } ],
+  "dpid" : "00:00:00:00:00:02:00:01",
+  "handshake-state" : "master-state",
+  "implementation" : "switch-light-virtual",
+  "implementation-type" : "virtual",
+  "inet-address" : {
+    "inet-port" : 38971,
+    "ip" : "10.10.12.30"
+  },
+  "interface" : [ {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "down" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "8a:a2:f3:b2:53:a9",
+    "interface-down-reason" : "Switch Admin Shutdown",
+    "lacp-state" : "inactive",
+    "name" : "R1L1-eth1",
+    "number" : 1,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "down" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "92:d2:c8:4e:01:16",
+    "interface-down-reason" : "Switch Admin Shutdown",
+    "lacp-state" : "inactive",
+    "name" : "R1L1-eth2",
+    "number" : 2,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "down" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "d6:74:a5:f9:83:08",
+    "interface-down-reason" : "Switch Admin Shutdown",
+    "lacp-state" : "inactive",
+    "name" : "R1L1-eth3",
+    "number" : 3,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "down" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "42:3b:02:70:32:98",
+    "interface-down-reason" : "Switch Admin Shutdown",
+    "lacp-state" : "inactive",
+    "name" : "R1L1-eth4",
+    "number" : 4,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "down" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "c6:54:97:75:dc:d9",
+    "interface-down-reason" : "Switch Admin Shutdown",
+    "lacp-state" : "inactive",
+    "name" : "R1L1-eth5",
+    "number" : 5,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "down" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "ae:45:4f:31:62:de",
+    "interface-down-reason" : "Switch Admin Shutdown",
+    "lacp-state" : "inactive",
+    "name" : "R1L1-eth6",
+    "number" : 6,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "9e:92:71:3a:4b:36",
+    "interface-down-reason" : "Switch Admin Shutdown",
+    "lacp-state" : "inactive",
+    "name" : "local",
+    "number" : 4294967294,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  } ],
+  "mac-address" : "00:00:00:02:00:01",
+  "name" : "R1L1",
+  "tables" : 1
+}, {
+  "active" : true,
+  "buffers" : 0,
+  "capabilities" : [ "flow-stats", "table-stats", "port-stats", "queue-stats" ],
+  "connected" : true,
+  "connected-since" : "2017-10-17T13:31:40.347Z",
+  "connection" : [ {
+    "aux-id" : 0,
+    "connected-since" : "2017-10-17T13:31:40.347Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 44532,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 1,
+    "connected-since" : "2017-10-17T13:31:40.357Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 44565,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 2,
+    "connected-since" : "2017-10-17T13:31:40.359Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 44566,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 3,
+    "connected-since" : "2017-10-17T13:31:40.360Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 44567,
+      "ip" : "10.10.12.30"
+    }
+  } ],
+  "controller-connection" : [ {
+    "aux-id" : 0,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 1,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 2,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 3,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  } ],
+  "dpid" : "00:00:00:00:00:02:00:02",
+  "fabric-lag" : [ {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R1L2-eth5"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:02-5"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R1L2-eth6"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:02-6"
+  }, {
+    "lag-type" : "inter-tenant",
+    "member" : [ {
+      "dst-interface" : "S1-eth2",
+      "dst-switch" : "S1",
+      "src-interface" : "R1L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth2",
+      "dst-switch" : "S2",
+      "src-interface" : "R1L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth2",
+      "dst-switch" : "S3",
+      "src-interface" : "R1L2-eth4"
+    } ],
+    "name" : "inter-tenant-lag"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "S1-eth2",
+      "dst-switch" : "S1",
+      "src-interface" : "R1L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth2",
+      "dst-switch" : "S2",
+      "src-interface" : "R1L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth2",
+      "dst-switch" : "S3",
+      "src-interface" : "R1L2-eth4"
+    } ],
+    "name" : "rack-R2"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "S1-eth2",
+      "dst-switch" : "S1",
+      "src-interface" : "R1L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth2",
+      "dst-switch" : "S2",
+      "src-interface" : "R1L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth2",
+      "dst-switch" : "S3",
+      "src-interface" : "R1L2-eth4"
+    } ],
+    "name" : "rack-R3"
+  }, {
+    "lag-type" : "spine",
+    "member" : [ {
+      "dst-interface" : "S1-eth2",
+      "dst-switch" : "S1",
+      "src-interface" : "R1L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth2",
+      "dst-switch" : "S2",
+      "src-interface" : "R1L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth2",
+      "dst-switch" : "S3",
+      "src-interface" : "R1L2-eth4"
+    } ],
+    "name" : "spine"
+  }, {
+    "lag-type" : "spine-broadcast",
+    "member" : [ {
+      "dst-interface" : "S1-eth2",
+      "dst-switch" : "S1",
+      "src-interface" : "R1L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth2",
+      "dst-switch" : "S2",
+      "src-interface" : "R1L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth2",
+      "dst-switch" : "S3",
+      "src-interface" : "R1L2-eth4"
+    } ],
+    "name" : "spine-broadcast"
+  } ],
+  "handshake-state" : "master-state",
+  "implementation" : "switch-light-virtual",
+  "implementation-type" : "virtual",
+  "inet-address" : {
+    "inet-port" : 44532,
+    "ip" : "10.10.12.30"
+  },
+  "interface" : [ {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "4a:cb:39:38:e5:1e",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "R1L2-eth1",
+    "number" : 1,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "ca:07:c7:dc:29:20",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R1L2-eth2",
+    "number" : 2,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "3e:4c:a0:42:b6:19",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R1L2-eth3",
+    "number" : 3,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "9a:80:c1:67:75:21",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R1L2-eth4",
+    "number" : 4,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "22:31:a5:94:66:c9",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R1L2-eth5",
+    "number" : 5,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "a2:6b:34:66:0e:b6",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R1L2-eth6",
+    "number" : 6,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "be:bb:9c:ab:6d:7d",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "local",
+    "number" : 4294967294,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  } ],
+  "mac-address" : "00:00:00:02:00:02",
+  "name" : "R1L2",
+  "tables" : 1
+}, {
+  "active" : true,
+  "buffers" : 0,
+  "capabilities" : [ "flow-stats", "table-stats", "port-stats", "queue-stats" ],
+  "connected" : true,
+  "connected-since" : "2017-10-17T13:31:39.091Z",
+  "connection" : [ {
+    "aux-id" : 0,
+    "connected-since" : "2017-10-17T13:31:39.091Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 49417,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 1,
+    "connected-since" : "2017-10-17T13:31:40.242Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 49440,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 2,
+    "connected-since" : "2017-10-17T13:31:40.230Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 49441,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 3,
+    "connected-since" : "2017-10-17T13:31:40.230Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 49442,
+      "ip" : "10.10.12.30"
+    }
+  } ],
+  "controller-connection" : [ {
+    "aux-id" : 0,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 1,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 2,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 3,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  } ],
+  "dpid" : "00:00:00:00:00:02:00:03",
+  "fabric-lag" : [ {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R2L1-eth5"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:03-5"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R2L1-eth6"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:03-6"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R2L1-eth1"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:04-5"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R2L1-eth1"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:04-6"
+  }, {
+    "lag-type" : "inter-tenant",
+    "member" : [ {
+      "dst-interface" : "S2-eth3",
+      "dst-switch" : "S2",
+      "src-interface" : "R2L1-eth3"
+    }, {
+      "dst-interface" : "S3-eth3",
+      "dst-switch" : "S3",
+      "src-interface" : "R2L1-eth4"
+    } ],
+    "name" : "inter-tenant-lag"
+  }, {
+    "lag-type" : "leaf",
+    "member" : [ {
+      "dst-interface" : "R2L2-eth1",
+      "dst-switch" : "R2L2",
+      "src-interface" : "R2L1-eth1"
+    } ],
+    "name" : "peer"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "S2-eth3",
+      "dst-switch" : "S2",
+      "src-interface" : "R2L1-eth3"
+    }, {
+      "dst-interface" : "S3-eth3",
+      "dst-switch" : "S3",
+      "src-interface" : "R2L1-eth4"
+    } ],
+    "name" : "rack-R1"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "S2-eth3",
+      "dst-switch" : "S2",
+      "src-interface" : "R2L1-eth3"
+    }, {
+      "dst-interface" : "S3-eth3",
+      "dst-switch" : "S3",
+      "src-interface" : "R2L1-eth4"
+    } ],
+    "name" : "rack-R3"
+  }, {
+    "lag-type" : "spine",
+    "member" : [ {
+      "dst-interface" : "S2-eth3",
+      "dst-switch" : "S2",
+      "src-interface" : "R2L1-eth3"
+    }, {
+      "dst-interface" : "S3-eth3",
+      "dst-switch" : "S3",
+      "src-interface" : "R2L1-eth4"
+    } ],
+    "name" : "spine"
+  }, {
+    "lag-type" : "spine-broadcast",
+    "member" : [ {
+      "dst-interface" : "S2-eth3",
+      "dst-switch" : "S2",
+      "src-interface" : "R2L1-eth3"
+    }, {
+      "dst-interface" : "S3-eth3",
+      "dst-switch" : "S3",
+      "src-interface" : "R2L1-eth4"
+    } ],
+    "name" : "spine-broadcast"
+  } ],
+  "handshake-state" : "master-state",
+  "implementation" : "switch-light-virtual",
+  "implementation-type" : "virtual",
+  "inet-address" : {
+    "inet-port" : 49417,
+    "ip" : "10.10.12.30"
+  },
+  "interface" : [ {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "b2:48:69:b0:46:ce",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R2L1-eth1",
+    "number" : 1,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "down" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "52:18:4a:b4:b6:6d",
+    "interface-down-reason" : "Interface Admin Shutdown",
+    "lacp-state" : "inactive",
+    "name" : "R2L1-eth2",
+    "number" : 2,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "da:ea:fb:aa:6e:e1",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R2L1-eth3",
+    "number" : 3,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "de:5b:9b:d9:73:2c",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R2L1-eth4",
+    "number" : 4,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "76:13:0a:94:a0:c2",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R2L1-eth5",
+    "number" : 5,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "62:b3:15:8c:aa:8d",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R2L1-eth6",
+    "number" : 6,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "6e:0b:4a:f6:b5:44",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "local",
+    "number" : 4294967294,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  } ],
+  "mac-address" : "00:00:00:02:00:03",
+  "name" : "R2L1",
+  "tables" : 1
+}, {
+  "active" : true,
+  "buffers" : 0,
+  "capabilities" : [ "flow-stats", "table-stats", "port-stats", "queue-stats" ],
+  "connected" : true,
+  "connected-since" : "2017-10-17T13:31:39.091Z",
+  "connection" : [ {
+    "aux-id" : 0,
+    "connected-since" : "2017-10-17T13:31:39.091Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 56382,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 1,
+    "connected-since" : "2017-10-17T13:31:40.248Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 56405,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 2,
+    "connected-since" : "2017-10-17T13:31:40.252Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 56406,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 3,
+    "connected-since" : "2017-10-17T13:31:40.252Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 56407,
+      "ip" : "10.10.12.30"
+    }
+  } ],
+  "controller-connection" : [ {
+    "aux-id" : 0,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 1,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 2,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 3,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  } ],
+  "dpid" : "00:00:00:00:00:02:00:04",
+  "fabric-lag" : [ {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R2L2-eth1"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:03-5"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R2L2-eth1"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:03-6"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R2L2-eth5"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:04-5"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R2L2-eth6"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:04-6"
+  }, {
+    "lag-type" : "inter-tenant",
+    "member" : [ {
+      "dst-interface" : "S1-eth4",
+      "dst-switch" : "S1",
+      "src-interface" : "R2L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth4",
+      "dst-switch" : "S2",
+      "src-interface" : "R2L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth4",
+      "dst-switch" : "S3",
+      "src-interface" : "R2L2-eth4"
+    } ],
+    "name" : "inter-tenant-lag"
+  }, {
+    "lag-type" : "leaf",
+    "member" : [ {
+      "dst-interface" : "R2L1-eth1",
+      "dst-switch" : "R2L1",
+      "src-interface" : "R2L2-eth1"
+    } ],
+    "name" : "peer"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "S1-eth4",
+      "dst-switch" : "S1",
+      "src-interface" : "R2L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth4",
+      "dst-switch" : "S2",
+      "src-interface" : "R2L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth4",
+      "dst-switch" : "S3",
+      "src-interface" : "R2L2-eth4"
+    } ],
+    "name" : "rack-R1"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "S1-eth4",
+      "dst-switch" : "S1",
+      "src-interface" : "R2L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth4",
+      "dst-switch" : "S2",
+      "src-interface" : "R2L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth4",
+      "dst-switch" : "S3",
+      "src-interface" : "R2L2-eth4"
+    } ],
+    "name" : "rack-R3"
+  }, {
+    "lag-type" : "spine",
+    "member" : [ {
+      "dst-interface" : "S1-eth4",
+      "dst-switch" : "S1",
+      "src-interface" : "R2L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth4",
+      "dst-switch" : "S2",
+      "src-interface" : "R2L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth4",
+      "dst-switch" : "S3",
+      "src-interface" : "R2L2-eth4"
+    } ],
+    "name" : "spine"
+  }, {
+    "lag-type" : "spine-broadcast",
+    "member" : [ {
+      "dst-interface" : "S1-eth4",
+      "dst-switch" : "S1",
+      "src-interface" : "R2L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth4",
+      "dst-switch" : "S2",
+      "src-interface" : "R2L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth4",
+      "dst-switch" : "S3",
+      "src-interface" : "R2L2-eth4"
+    } ],
+    "name" : "spine-broadcast"
+  } ],
+  "handshake-state" : "master-state",
+  "implementation" : "switch-light-virtual",
+  "implementation-type" : "virtual",
+  "inet-address" : {
+    "inet-port" : 56382,
+    "ip" : "10.10.12.30"
+  },
+  "interface" : [ {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "2a:03:5d:7f:49:c9",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R2L2-eth1",
+    "number" : 1,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "66:c0:24:f6:51:a0",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R2L2-eth2",
+    "number" : 2,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "6e:7a:dc:24:96:91",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R2L2-eth3",
+    "number" : 3,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "96:a7:dd:ac:de:77",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R2L2-eth4",
+    "number" : 4,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "de:e5:78:2f:3f:9f",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R2L2-eth5",
+    "number" : 5,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "32:5d:a1:95:ae:2c",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R2L2-eth6",
+    "number" : 6,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "0e:a4:e5:95:b8:94",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "local",
+    "number" : 4294967294,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  } ],
+  "mac-address" : "00:00:00:02:00:04",
+  "name" : "R2L2",
+  "tables" : 1
+}, {
+  "active" : true,
+  "buffers" : 0,
+  "capabilities" : [ "flow-stats", "table-stats", "port-stats", "queue-stats" ],
+  "connected" : true,
+  "connected-since" : "2017-10-17T13:31:39.311Z",
+  "connection" : [ {
+    "aux-id" : 0,
+    "connected-since" : "2017-10-17T13:31:39.311Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 52611,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 1,
+    "connected-since" : "2017-10-17T13:31:40.192Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 52626,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 2,
+    "connected-since" : "2017-10-17T13:31:40.189Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 52627,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 3,
+    "connected-since" : "2017-10-17T13:31:40.222Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 52628,
+      "ip" : "10.10.12.30"
+    }
+  } ],
+  "controller-connection" : [ {
+    "aux-id" : 0,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 1,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 2,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 3,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  } ],
+  "dpid" : "00:00:00:00:00:02:00:05",
+  "fabric-lag" : [ {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L1-eth5"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:05-5"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L1-eth6"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:05-6"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L1-eth7"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:05-7"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L1-eth1"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:06-5"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L1-eth1"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:06-6"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L1-eth1"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:06-7"
+  }, {
+    "lag-type" : "inter-tenant",
+    "member" : [ {
+      "dst-interface" : "S1-eth5",
+      "dst-switch" : "S1",
+      "src-interface" : "R3L1-eth2"
+    }, {
+      "dst-interface" : "S2-eth5",
+      "dst-switch" : "S2",
+      "src-interface" : "R3L1-eth3"
+    }, {
+      "dst-interface" : "S3-eth5",
+      "dst-switch" : "S3",
+      "src-interface" : "R3L1-eth4"
+    } ],
+    "name" : "inter-tenant-lag"
+  }, {
+    "lag-type" : "leaf",
+    "member" : [ {
+      "dst-interface" : "R3L2-eth1",
+      "dst-switch" : "R3L2",
+      "src-interface" : "R3L1-eth1"
+    } ],
+    "name" : "peer"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "S1-eth5",
+      "dst-switch" : "S1",
+      "src-interface" : "R3L1-eth2"
+    }, {
+      "dst-interface" : "S2-eth5",
+      "dst-switch" : "S2",
+      "src-interface" : "R3L1-eth3"
+    }, {
+      "dst-interface" : "S3-eth5",
+      "dst-switch" : "S3",
+      "src-interface" : "R3L1-eth4"
+    } ],
+    "name" : "rack-R1"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "S1-eth5",
+      "dst-switch" : "S1",
+      "src-interface" : "R3L1-eth2"
+    }, {
+      "dst-interface" : "S2-eth5",
+      "dst-switch" : "S2",
+      "src-interface" : "R3L1-eth3"
+    }, {
+      "dst-interface" : "S3-eth5",
+      "dst-switch" : "S3",
+      "src-interface" : "R3L1-eth4"
+    } ],
+    "name" : "rack-R2"
+  }, {
+    "lag-type" : "spine",
+    "member" : [ {
+      "dst-interface" : "S1-eth5",
+      "dst-switch" : "S1",
+      "src-interface" : "R3L1-eth2"
+    }, {
+      "dst-interface" : "S2-eth5",
+      "dst-switch" : "S2",
+      "src-interface" : "R3L1-eth3"
+    }, {
+      "dst-interface" : "S3-eth5",
+      "dst-switch" : "S3",
+      "src-interface" : "R3L1-eth4"
+    } ],
+    "name" : "spine"
+  }, {
+    "lag-type" : "spine-broadcast",
+    "member" : [ {
+      "dst-interface" : "S1-eth5",
+      "dst-switch" : "S1",
+      "src-interface" : "R3L1-eth2"
+    }, {
+      "dst-interface" : "S2-eth5",
+      "dst-switch" : "S2",
+      "src-interface" : "R3L1-eth3"
+    }, {
+      "dst-interface" : "S3-eth5",
+      "dst-switch" : "S3",
+      "src-interface" : "R3L1-eth4"
+    } ],
+    "name" : "spine-broadcast"
+  } ],
+  "handshake-state" : "master-state",
+  "implementation" : "switch-light-virtual",
+  "implementation-type" : "virtual",
+  "inet-address" : {
+    "inet-port" : 52611,
+    "ip" : "10.10.12.30"
+  },
+  "interface" : [ {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "e2:94:09:63:a4:43",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L1-eth1",
+    "number" : 1,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "7e:09:a2:55:03:ef",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L1-eth2",
+    "number" : 2,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "3a:d6:30:7d:f1:05",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L1-eth3",
+    "number" : 3,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "c2:d5:a4:cc:50:64",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L1-eth4",
+    "number" : 4,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "3e:2f:5b:d7:fa:6c",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L1-eth5",
+    "number" : 5,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "fa:0e:f0:ce:de:c1",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L1-eth6",
+    "number" : 6,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "7a:ac:e0:32:f8:37",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L1-eth7",
+    "number" : 7,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "3e:bb:cf:8e:8b:17",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "local",
+    "number" : 4294967294,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  } ],
+  "mac-address" : "00:00:00:02:00:05",
+  "name" : "R3L1",
+  "tables" : 1
+}, {
+  "active" : true,
+  "buffers" : 0,
+  "capabilities" : [ "flow-stats", "table-stats", "port-stats", "queue-stats" ],
+  "connected" : true,
+  "connected-since" : "2017-10-17T13:31:39.091Z",
+  "connection" : [ {
+    "aux-id" : 0,
+    "connected-since" : "2017-10-17T13:31:39.091Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 42283,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 1,
+    "connected-since" : "2017-10-17T13:31:40.050Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 42294,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 2,
+    "connected-since" : "2017-10-17T13:31:40.049Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 42295,
+      "ip" : "10.10.12.30"
+    }
+  }, {
+    "aux-id" : 3,
+    "connected-since" : "2017-10-17T13:31:40.058Z",
+    "local-inet-address" : {
+      "inet-port" : 6653,
+      "ip" : "10.10.12.20"
+    },
+    "remote-inet-address" : {
+      "inet-port" : 42296,
+      "ip" : "10.10.12.30"
+    }
+  } ],
+  "controller-connection" : [ {
+    "aux-id" : 0,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 1,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 2,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  }, {
+    "aux-id" : 3,
+    "role" : "master",
+    "state" : "connected",
+    "uri" : "tcp://10.10.12.20:6653"
+  } ],
+  "dpid" : "00:00:00:00:00:02:00:06",
+  "fabric-lag" : [ {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L2-eth1"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:05-5"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L2-eth1"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:05-6"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L2-eth1"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:05-7"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L2-eth5"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:06-5"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L2-eth6"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:06-6"
+  }, {
+    "lag-type" : "edge-interface",
+    "member" : [ {
+      "src-interface" : "R3L2-eth7"
+    } ],
+    "name" : "edge-port-00:00:00:00:00:02:00:06-7"
+  }, {
+    "lag-type" : "inter-tenant",
+    "member" : [ {
+      "dst-interface" : "S1-eth6",
+      "dst-switch" : "S1",
+      "src-interface" : "R3L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth6",
+      "dst-switch" : "S2",
+      "src-interface" : "R3L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth6",
+      "dst-switch" : "S3",
+      "src-interface" : "R3L2-eth4"
+    } ],
+    "name" : "inter-tenant-lag"
+  }, {
+    "lag-type" : "leaf",
+    "member" : [ {
+      "dst-interface" : "R3L1-eth1",
+      "dst-switch" : "R3L1",
+      "src-interface" : "R3L2-eth1"
+    } ],
+    "name" : "peer"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "S1-eth6",
+      "dst-switch" : "S1",
+      "src-interface" : "R3L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth6",
+      "dst-switch" : "S2",
+      "src-interface" : "R3L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth6",
+      "dst-switch" : "S3",
+      "src-interface" : "R3L2-eth4"
+    } ],
+    "name" : "rack-R1"
+  }, {
+    "lag-type" : "rack",
+    "member" : [ {
+      "dst-interface" : "S1-eth6",
+      "dst-switch" : "S1",
+      "src-interface" : "R3L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth6",
+      "dst-switch" : "S2",
+      "src-interface" : "R3L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth6",
+      "dst-switch" : "S3",
+      "src-interface" : "R3L2-eth4"
+    } ],
+    "name" : "rack-R2"
+  }, {
+    "lag-type" : "spine",
+    "member" : [ {
+      "dst-interface" : "S1-eth6",
+      "dst-switch" : "S1",
+      "src-interface" : "R3L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth6",
+      "dst-switch" : "S2",
+      "src-interface" : "R3L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth6",
+      "dst-switch" : "S3",
+      "src-interface" : "R3L2-eth4"
+    } ],
+    "name" : "spine"
+  }, {
+    "lag-type" : "spine-broadcast",
+    "member" : [ {
+      "dst-interface" : "S1-eth6",
+      "dst-switch" : "S1",
+      "src-interface" : "R3L2-eth2"
+    }, {
+      "dst-interface" : "S2-eth6",
+      "dst-switch" : "S2",
+      "src-interface" : "R3L2-eth3"
+    }, {
+      "dst-interface" : "S3-eth6",
+      "dst-switch" : "S3",
+      "src-interface" : "R3L2-eth4"
+    } ],
+    "name" : "spine-broadcast"
+  } ],
+  "handshake-state" : "master-state",
+  "implementation" : "switch-light-virtual",
+  "implementation-type" : "virtual",
+  "inet-address" : {
+    "inet-port" : 42283,
+    "ip" : "10.10.12.30"
+  },
+  "interface" : [ {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "62:bf:ca:61:de:f6",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L2-eth1",
+    "number" : 1,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "leaf"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "62:25:9f:56:39:98",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L2-eth2",
+    "number" : 2,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "06:ea:dd:17:96:e1",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L2-eth3",
+    "number" : 3,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "ba:7e:7b:2c:5e:2c",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L2-eth4",
+    "number" : 4,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "spine"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "56:14:b3:fc:36:aa",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L2-eth5",
+    "number" : 5,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "3a:c7:ce:13:a1:b1",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L2-eth6",
+    "number" : 6,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "2a:f8:06:46:55:a1",
+    "interface-down-reason" : "None",
+    "lacp-state" : "inactive",
+    "name" : "R3L2-eth7",
+    "number" : 7,
+    "op-state" : "up",
+    "quarantine-time" : 0,
+    "state" : "up",
+    "state-flags" : [ "up" ],
+    "type" : "edge"
+  }, {
+    "bpdu-guard-state" : "inactive",
+    "config-flags" : [ "up" ],
+    "current-features" : [ "10gb-fd", "copper" ],
+    "error-disabled" : false,
+    "hardware-address" : "2a:aa:0f:64:bb:81",
+    "interface-down-reason" : "Link Down",
+    "lacp-state" : "inactive",
+    "name" : "local",
+    "number" : 4294967294,
+    "op-state" : "down",
+    "quarantine-time" : 0,
+    "state" : "down",
+    "state-flags" : [ "down" ],
+    "type" : "unknown"
+  } ],
+  "mac-address" : "00:00:00:02:00:06",
+  "name" : "R3L2",
+  "tables" : 1
+} ]_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[13:06:39][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m curl -s -H "cookie:session_cookie=QhdEm1O9ooGzMKznn-AbA2a0UtdVmMPRS" -g -X GET --insecure https://54.236.14.112:8443/api/v1//data/controller/core/switch[K[K[K[K[K[Kversion
+[ {
+  "appliance" : {
+    "build-date" : "2017-01-27T22:20:38.000Z",
+    "build-user" : "bsn",
+    "ci-build-number" : "66",
+    "ci-job-name" : "bcf-4.1.0",
+    "community-edition" : false,
+    "name" : "Big Cloud Fabric",
+    "release-string" : "Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)",
+    "version" : "4.1.0"
+  },
+  "component" : [ {
+    "build-date" : "2017-01-27T22:07:14.000Z",
+    "build-user" : "bsn",
+    "ci-build-id" : "8",
+    "ci-build-number" : "8",
+    "ci-job-name" : "bcf-4.1.0-floodlight",
+    "ci-node-name" : "jenkins-w19-trusty",
+    "file" : "floodlight-appliance-package-46.5.0-bcf-4.1.0-SNAPSHOT.jar",
+    "project-name" : "Appliance Package",
+    "vcs-branch" : "origin/bcf-4.1.0",
+    "vcs-dirty" : false,
+    "vcs-revision" : "d73e9b5",
+    "version" : "46.5.0-bcf-4.1.0-SNAPSHOT"
+  }, {
+    "build-date" : "2017-01-27T22:20:38.000Z",
+    "build-user" : "bsn",
+    "ci-build-id" : "66",
+    "ci-build-number" : "66",
+    "ci-job-name" : "bcf-4.1.0",
+    "ci-node-name" : "jenkins-w1-trusty",
+    "file" : "floodlight-bcf-4.1.0-SNAPSHOT.jar",
+    "project-name" : "Big Cloud Fabric",
+    "vcs-branch" : "origin/bcf-4.1.0",
+    "vcs-dirty" : false,
+    "vcs-revision" : "33927bf",
+    "version" : "4.1.0-SNAPSHOT"
+  }, {
+    "build-date" : "2017-01-27T21:57:53.000Z",
+    "build-user" : "bsn",
+    "ci-build-id" : "8",
+    "ci-build-number" : "8",
+    "ci-job-name" : "bcf-4.1.0-floodlight",
+    "ci-node-name" : "jenkins-w19-trusty",
+    "file" : "floodlight-core-46.5.0-bcf-4.1.0-SNAPSHOT.jar",
+    "project-name" : "Floodlight Controller Core",
+    "vcs-branch" : "origin/bcf-4.1.0",
+    "vcs-dirty" : false,
+    "vcs-revision" : "d73e9b5",
+    "version" : "46.5.0-bcf-4.1.0-SNAPSHOT"
+  }, {
+    "build-date" : "2016-12-06T01:07:01.000Z",
+    "build-user" : "jenkins",
+    "ci-build-id" : "438",
+    "ci-build-number" : "438",
+    "ci-job-name" : "openflowj-loxi",
+    "ci-node-name" : "master",
+    "file" : "openflowj-3.1.0-SNAPSHOT.jar",
+    "project-name" : "OpenFlowJ-Loxi",
+    "vcs-branch" : "origin/master",
+    "vcs-dirty" : false,
+    "vcs-revision" : "ce3330f",
+    "version" : "3.1.0-SNAPSHOT"
+  }, {
+    "build-date" : "2017-01-27T22:11:27.000Z",
+    "build-user" : "bsn",
+    "ci-build-id" : "14",
+    "ci-build-number" : "14",
+    "ci-job-name" : "bcf-4.1.0-vsphere_extension",
+    "ci-node-name" : "jenkins-w11",
+    "file" : "vsphere-extension-bcf-4.1.0-SNAPSHOT.jar",
+    "project-name" : "vSphere extension bcf",
+    "vcs-branch" : "origin/bcf-4.1.0",
+    "vcs-dirty" : false,
+    "vcs-revision" : "98bc523",
+    "version" : "4.1.0-SNAPSHOT"
+  }, {
+    "build-date" : "2017-01-27T22:09:25.000Z",
+    "build-user" : "bsn",
+    "ci-build-id" : "14",
+    "ci-build-number" : "14",
+    "ci-job-name" : "bcf-4.1.0-vsphere_extension",
+    "ci-node-name" : "jenkins-w11",
+    "file" : "vsphere-extension-core-4.1.0-SNAPSHOT.jar",
+    "project-name" : "vSphere extension core",
+    "vcs-branch" : "origin/bcf-4.1.0",
+    "vcs-dirty" : false,
+    "vcs-revision" : "98bc523",
+    "version" : "4.1.0-SNAPSHOT"
+  }, {
+    "build-date" : "2017-01-27T22:10:51.000Z",
+    "build-user" : "bsn",
+    "ci-build-id" : "14",
+    "ci-build-number" : "14",
+    "ci-job-name" : "bcf-4.1.0-vsphere_extension",
+    "ci-node-name" : "jenkins-w11",
+    "file" : "vsphere-extension-model-4.1.0-SNAPSHOT.jar",
+    "project-name" : "vSphere extension model",
+    "vcs-branch" : "origin/bcf-4.1.0",
+    "vcs-dirty" : false,
+    "vcs-revision" : "98bc523",
+    "version" : "4.1.0-SNAPSHOT"
+  } ]
+} ]_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[13:07:03][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m curl -s -H "cookie:session_cookie=QhdEm1O9ooGzMKznn-AbA2a0UtdVmMPRS" -g -X GET --insecure https://54.236.14.112:8443/api/v1//data/controller/core/version/appliance
+[ {
+  "build-date" : "2017-01-27T22:20:38.000Z",
+  "build-user" : "bsn",
+  "ci-build-number" : "66",
+  "ci-job-name" : "bcf-4.1.0",
+  "community-edition" : false,
+  "name" : "Big Cloud Fabric",
+  "release-string" : "Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)",
+  "version" : "4.1.0"
+} ]_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[13:07:08][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m exit
+
+Script done on Tue 17 Oct 2017 01:07:14 PM EDT

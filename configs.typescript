@@ -1,0 +1,1338 @@
+Script started on Thu 19 Oct 2017 09:35:14 AM EDT
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[09:35:14][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m startxudo halt[3Ptartx[Kssh admin@54.157.31.196
+Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+Log in as 'admin' to configure
+
+admin@54.157.31.196's password: 
+Last login: Thu Oct 19 13:34:44 2017 from 113.129.21.198.guest.wifi.dyn.clemson.edu
+Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+Logged in as admin, 2017-10-19 13:35:32.086000 UTC, auth from 198.21.129.113
+controller> en
+controller# sh run
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-19 13:35:40 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+! group
+group admin
+  associate user admin
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+controller# copy sn
+snapshot://                snapshot://BCF-Config5
+snapshot://BCF-Config1     snapshot://BCF-Config6
+snapshot://BCF-Config2     snapshot://BCF-Config7
+snapshot://BCF-Config3     snapshot://initial-config
+snapshot://BCF-Config4
+controller# copy snapshot://initial-config run
+controller# sh run
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-19 13:36:00 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=cj_czms1PGisEQDCe_2kgw,rounds=10000,jNCM-A2ZY4y6q5Ci0Jh1Col76DFooepUvdZEMoIfSWI
+
+! group
+group admin
+  associate user admin
+
+! controller
+controller
+  cluster-name bigswitchlabs
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+controller# sh run[28@copy snapshot://initial-config[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+snapshot://                snapshot://BCF-Config5
+snapshot://BCF-Config1     snapshot://BCF-Config6
+snapshot://BCF-Config2     snapshot://BCF-Config7
+snapshot://BCF-Config3     snapshot://initial-config
+snapshot://BCF-Config4
+controller# copy snapshot://B
+snapshot://BCF-Config1  snapshot://BCF-Config4  snapshot://BCF-Config7
+snapshot://BCF-Config2  snapshot://BCF-Config5
+snapshot://BCF-Config3  snapshot://BCF-Config6
+controller# copy snapshot://BCF-Config1 run
+controller# copy snapshot://BCF-Config1 run[C[C[C[C[C[C[C[C[C[C[C[Csh run[K
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-19 13:36:16 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+! group
+group admin
+  associate user admin
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+controller# sh run[25@copy snapshot://BCF-Config1[C[C[C[C[1P run2 run
+controller# copy snapshot://BCF-Config2 run[C[C[C[C[C[C[C[C[C[C[C[Csh run[K
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-19 13:36:22 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+! group
+group admin
+  associate user admin
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! fabric
+fabric
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+controller# sh run[25@copy snapshot://BCF-Config2[C[C[C[C[1P run3 run
+controller# copy snapshot://BCF-Config3 run[C[C[C[C[C[C[C[C[C[C[C[Csh run[K
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-19 13:36:29 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+! group
+group admin
+  associate user admin
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.30 subnet-mask-length 24
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+controller# sh run[25@copy snapshot://BCF-Config3[C[C[C[C[1P run4 run
+controller# copy snapshot://BCF-Config4 run[C[C[C[C[C[C[C[C[C[C[C[Csh run[K
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-19 13:36:38 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+user ben
+  full-name 'Benjamin Grimm'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=oqpljahN0jo22a_9gZp29A,rounds=10000,mRXU0xCGZlzpR8nFZffV729ChgLM9ZrvN0FX8QYheeQ
+
+user john
+  full-name 'Jonathan Storm'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=kjfsBkREHH39Mv6v5OrXWg,rounds=10000,o1KEYT7EdUhaDxzqwPUrUhsOAgeQYrZJF_Ur5SIVV04
+
+! group
+group admin
+  associate user admin
+  associate user ben
+  associate user john
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.30 subnet-mask-length 24
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+
+! tenant
+tenant External
+  !
+  logical-router
+    route 10.0.0.0/24 next-hop tenant system
+    route 10.0.1.0/24 next-hop tenant system
+    route 10.0.2.0/24 next-hop tenant system
+    route 0.0.0.0/0 next-hop EG1
+    interface segment Ext-01
+      ip address 10.0.3.1/30
+    interface segment Ext-02
+      ip address 10.0.4.1/30
+    interface tenant system
+    !
+    next-hop-group EG1
+      ip 10.0.3.2
+      ip 10.0.4.2
+  segment Ext-01
+    member interface-group PG-RTR1 vlan untagged
+  segment Ext-02
+    member interface-group PG-RTR2 vlan untagged
+
+tenant Green
+  !
+  logical-router
+    route 0.0.0.0/0 next-hop tenant system
+    interface segment QA
+      ip address 10.0.2.1/24
+    interface tenant system
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  !
+  logical-router
+    route 0.0.0.0/0 next-hop tenant system
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Services
+      ip address 10.0.5.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+    interface tenant system
+    !
+    next-hop-group FW
+      ip 10.0.5.2
+  segment App
+    member interface-group PG-R2H1 vlan untagged
+  segment Services
+    member interface-group PG-FW vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+
+tenant system
+  !
+  logical-router
+    route 0.0.0.0/0 next-hop tenant External
+    interface tenant External
+    interface tenant Green
+    interface tenant Red
+controller# sh run[25@copy snapshot://BCF-Config4[C[C[C[C[1P run5 run
+controller# copy snapshot://BCF-Config5 run[C[C[C[C[C[C[C[C[C[C[C[Csh run[K
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-19 13:36:44 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+user ben
+  full-name 'Benjamin Grimm'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=oqpljahN0jo22a_9gZp29A,rounds=10000,mRXU0xCGZlzpR8nFZffV729ChgLM9ZrvN0FX8QYheeQ
+
+user john
+  full-name 'Jonathan Storm'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=kjfsBkREHH39Mv6v5OrXWg,rounds=10000,o1KEYT7EdUhaDxzqwPUrUhsOAgeQYrZJF_Ur5SIVV04
+
+! group
+group admin
+  associate user admin
+  associate user ben
+  associate user john
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.30 subnet-mask-length 24
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+
+! tenant
+tenant Green
+  logical-router
+    interface segment QA
+      ip address 10.0.2.1/24
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  logical-router
+    interface segment Services
+      ip address 10.0.5.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+    policy-list p1
+      10 permit segment-interface Web any to tenant Green segment QA
+      20 permit segment-interface App any to tenant Red segment Web
+      30 permit any to tenant External
+  segment App
+    member interface-group PG-R2H1 vlan untagged
+  segment Web
+    member interface-group RG-R1H1 vlan untagged
+    member interface-group RG-R1H2 vlan untagged
+
+tenant system
+  logical-router
+    interface tenant Green
+    interface tenant Red
+controller# sh run[25@copy snapshot://BCF-Config5[C[C[C[C[1P run6 run
+controller# copy snapshot://BCF-Config6 run[C[C[C[C[C[C[C[C[C[C[C[Csh run[K
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-19 13:36:50 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+user ben
+  full-name 'Benjamin Grimm'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=oqpljahN0jo22a_9gZp29A,rounds=10000,mRXU0xCGZlzpR8nFZffV729ChgLM9ZrvN0FX8QYheeQ
+
+user john
+  full-name 'Jonathan Storm'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=kjfsBkREHH39Mv6v5OrXWg,rounds=10000,o1KEYT7EdUhaDxzqwPUrUhsOAgeQYrZJF_Ur5SIVV04
+
+! group
+group admin
+  associate user admin
+  associate user ben
+  associate user john
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.30 subnet-mask-length 24
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+
+! tenant
+tenant Green
+  logical-router
+    interface segment QA
+      ip address 10.0.2.1/24
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  logical-router
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Services
+      ip address 10.0.5.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+    !
+    next-hop-group FW
+      ip 10.0.5.2
+  segment App
+    member interface-group PG-R2H1 vlan untagged
+  segment Services
+    member interface-group PG-FW vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+
+tenant system
+  logical-router
+    interface tenant Green
+    interface tenant Red
+controller# sh run[25@copy snapshot://BCF-Config6[C[C[C[C[1P run7 run
+controller# copy snapshot://BCF-Config7 run[C[C[C[C[C[C[C[C[C[C[C[Csh run[K
+!
+! Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+! Current Time: 2017-10-19 13:36:57 UTC
+!
+version 1.0
+
+! ntp
+ntp server 0.bigswitch.pool.ntp.org
+ntp server 1.bigswitch.pool.ntp.org
+ntp server 2.bigswitch.pool.ntp.org
+ntp server 3.bigswitch.pool.ntp.org
+
+! aaa
+aaa accounting exec default start-stop local
+
+! local
+local node
+  hostname controller
+  interface eth0
+    !
+    ipv4
+      dns server 10.10.0.2
+      ip 10.10.12.20/24 gateway 10.10.12.1
+      method manual
+    !
+    ipv6
+      method manual
+
+! user
+user admin
+  full-name 'Default admin'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=qX_K3F6YE6CVtL9U0R_D-Q,rounds=10000,DycQmBE8BuFulBKzGGTIo8MuzP9JdApVaJSSDgiFigA
+
+user ben
+  full-name 'Benjamin Grimm'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=oqpljahN0jo22a_9gZp29A,rounds=10000,mRXU0xCGZlzpR8nFZffV729ChgLM9ZrvN0FX8QYheeQ
+
+user john
+  full-name 'Jonathan Storm'
+  hashed-password method=PBKDF2WithHmacSHA1,salt=kjfsBkREHH39Mv6v5OrXWg,rounds=10000,o1KEYT7EdUhaDxzqwPUrUhsOAgeQYrZJF_Ur5SIVV04
+
+! group
+group admin
+  associate user admin
+  associate user ben
+  associate user john
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.30 subnet-mask-length 24
+  !
+  qos
+    apply queuing-profile queuing-profile-default
+    !
+    queuing-profile queuing-profile-default
+      traffic-class traffic-class-3 weight 35
+
+! interface-group
+interface-group PG-FW
+  member switch R3L1 interface R3L1-eth5
+  member switch R3L2 interface R3L2-eth5
+
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+
+interface-group PG-R1H2
+  member switch R1L1 interface R1L1-eth6
+  member switch R1L2 interface R1L2-eth6
+
+interface-group PG-R2H1
+  member switch R2L1 interface R2L1-eth5
+  member switch R2L2 interface R2L2-eth5
+
+interface-group PG-R2H2
+  member switch R2L1 interface R2L1-eth6
+  member switch R2L2 interface R2L2-eth6
+
+interface-group PG-RTR1
+  member switch R3L1 interface R3L1-eth6
+  member switch R3L2 interface R3L2-eth6
+
+interface-group PG-RTR2
+  member switch R3L1 interface R3L1-eth7
+  member switch R3L2 interface R3L2-eth7
+
+! tenant
+tenant External
+  !
+  logical-router
+    route 10.0.0.0/24 next-hop tenant system
+    route 10.0.1.0/24 next-hop tenant system
+    route 0.0.0.0/0 next-hop EG1
+    interface segment Ext-01
+      ip address 10.0.3.1/30
+    interface segment Ext-02
+      ip address 10.0.4.1/30
+    interface tenant system
+    !
+    next-hop-group EG1
+      ip 10.0.3.2
+      ip 10.0.4.2
+  segment Ext-01
+    member interface-group PG-RTR1 vlan untagged
+  segment Ext-02
+    member interface-group PG-RTR2 vlan untagged
+
+tenant Green
+  !
+  logical-router
+    route 0.0.0.0/0 next-hop system
+    apply policy-list p1
+    interface segment QA
+      ip address 10.0.2.1/24
+    interface tenant system
+    policy-list p1
+      10 deny any to tenant Red
+  segment QA
+    member interface-group PG-R2H2 vlan untagged
+
+tenant Red
+  !
+  logical-router
+    route 0.0.0.0/0 next-hop tenant system
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Services
+      ip address 10.0.5.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+    interface tenant system
+    !
+    next-hop-group FW
+      ip 10.0.5.2
+  segment App
+    member interface-group PG-R2H1 vlan untagged
+  segment Services
+    member interface-group PG-FW vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+
+tenant system
+  logical-router
+    interface tenant External
+    interface tenant Green
+    interface tenant Red
+controller# sh run[25@copy snapshot://BCF-Config7[C[C[C[C[1P run8 run
+Error: Invalid Use: snapshot://BCF-Config8 does not exist 
+controller# copy snapshot://BCF-Config8 run[1P run
+snapshot://BCF-Config1  snapshot://BCF-Config4  snapshot://BCF-Config7
+snapshot://BCF-Config2  snapshot://BCF-Config5
+snapshot://BCF-Config3  snapshot://BCF-Config6
+controller# copy snapshot://BCF-Config run
+Error: Invalid Use: snapshot://BCF-Config does not exist 
+controller# 
+controller> 
+Connection to 54.157.31.196 closed.
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[09:37:15][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m exit
+
+Script done on Thu 19 Oct 2017 09:37:16 AM EDT

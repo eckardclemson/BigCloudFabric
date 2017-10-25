@@ -1,0 +1,3918 @@
+Script started on Tue 17 Oct 2017 01:50:42 PM EDT
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[13:50:42][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m ssh admin@54.236.14.112
+Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+Log in as 'admin' to configure
+
+admin@54.236.14.112's password: 
+Last login: Tue Oct 17 15:57:29 2017 from 13.213.21.198.tigernet.wifi.dyn.clemson.edu
+Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+Logged in as admin, 2017-10-17 17:51:02.898000 UTC, auth from 198.21.213.13
+bcf-jas> copy snap[K[K[K[K
+Error: Unknown command: copy
+bcf-jas> en
+bcf-jas# copy sn
+snapshot://                snapshot://BCF-Config5
+snapshot://BCF-Config1     snapshot://BCF-Config6
+snapshot://BCF-Config2     snapshot://BCF-Config7
+snapshot://BCF-Config3     snapshot://initial-config
+snapshot://BCF-Config4
+bcf-jas# copy snapshot://B
+snapshot://BCF-Config1  snapshot://BCF-Config4  snapshot://BCF-Config7
+snapshot://BCF-Config2  snapshot://BCF-Config5
+snapshot://BCF-Config3  snapshot://BCF-Config6
+bcf-jas# copy snapshot://BCF-Config2 run
+bcf-jas# sh cont
+Cluster Name          : bigswitchcluster
+Redundancy Status     : standalone
+Last Role Change Time : 2017-10-17 13:30:06.300000 UTC
+Failover Reason       : Initialization timeout
+Cluster Uptime        : 4 hours, 21 minutes
+# IP          @ State  Uptime              
+-|-----------|-|------|-------------------|
+1 10.10.12.20 * active 4 hours, 21 minutes
+bcf-jas# conf
+bcf-jas(config)# confsh cont
+Cluster Name          : bigswitchcluster
+Redundancy Status     : standalone
+Last Role Change Time : 2017-10-17 13:30:06.300000 UTC
+Failover Reason       : Initialization timeout
+Cluster Uptime        : 4 hours, 22 minutes
+# IP          @ State  Uptime              
+-|-----------|-|------|-------------------|
+1 10.10.12.20 * active 4 hours, 22 minutes
+bcf-jas(config)# sh sw
+# Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+-|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1 undefined   00:00:00:01:00:01  10.10.12.30 suspended (No fabric role configured)
+2 undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+3 undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+4 undefined   00:00:00:02:00:01  10.10.12.30 suspended (No fabric role configured)
+5 undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+6 undefined   00:00:00:02:00:03  10.10.12.30 suspended (No fabric role configured)
+7 undefined   00:00:00:02:00:04  10.10.12.30 suspended (No fabric role configured)
+8 undefined   00:00:00:02:00:05  10.10.12.30 suspended (No fabric role configured)
+9 undefined   00:00:00:02:00:06  10.10.12.30 suspended (No fabric role configured)
+bcf-jas(config)# sh sw[K
+Error: Ambiguous command: Ambiguous command word "s"; matches ["secure", "sflow", "span-local", "support", "span-fabric", "switch", "session", "snapshot", "storm-control", "segment"]
+bcf-jas(config)# sh f
+fabric      file        forwarding 
+bcf-jas(config)# sh fa
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : NOT OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 9
+# of warnings                                                          : 0
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 0
+# of spines connected                                                  : 0
+# of leaves configured                                                 : 0
+# of leaves connected                                                  : 0
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 0
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 0
+# of bidirectional links between switches in same leaf group           : 0
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 0
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config)# sh fa 
+ <cr>              inventory          setting            warning
+connected-devices  ipam               summary
+error              qos                switch
+bcf-jas(config)# sh fa er
+~ Switches that are not connected to standby controller ~
+None.
+
+~ Missing controller inband connection ~
+None.
+
+~ Switches that do not have management address configured ~
+None.
+
+~ Switches with mismatched CPLD ~
+None.
+
+~ Switches with mismatched loader ~
+None.
+
+~ CPSEC errors ~
+None.
+
+~ Switches with failed sync ~
+None.
+
+~ Switches that are disconnected but have not been removed from the fabric ~
+None.
+
+~~~~~~~~~~~~~ Suspended switches ~~~~~~~~~~~~~
+# Switch            Suspended reason          
+-|-----------------|-------------------------|
+1 00:00:00:01:00:01 No fabric role configured
+2 00:00:00:01:00:02 No fabric role configured
+3 00:00:00:01:00:03 No fabric role configured
+4 00:00:00:02:00:01 No fabric role configured
+5 00:00:00:02:00:02 No fabric role configured
+6 00:00:00:02:00:03 No fabric role configured
+7 00:00:00:02:00:04 No fabric role configured
+8 00:00:00:02:00:05 No fabric role configured
+9 00:00:00:02:00:06 No fabric role configured
+
+~ Switch interfaces shutdown by controller ~
+None.
+
+~ Runtime lags with member count greater than maximum supported count(128) ~
+None.
+
+~ Invalid links ~
+None.
+
+~ Missing links ~
+None.
+
+~ Interfaces whose breakout property was enabled by user but are breakout incapable ~
+None.
+
+~ Interfaces configured with bpdu-guard-disable but shut down because of no links to peer switch ~
+None.
+
+~ Interface which failed to be used for vxlan-termination ~
+None.
+bcf-jas(config)# cont
+bcf-jas(config-controller)# 
+access-control  cluster-name    description     virtual-ip     
+bcf-jas(config-controller)# cl[K 
+ <cr>
+ <name>
+<file://>
+<file>
+<snapshot://>
+bgp
+debug
+endpoint
+error-disabled
+http://
+https://
+interface-group
+multicast-group
+running-config
+scp://
+segment
+session
+sflow
+snapshot://
+snapshot://
+snapshot://BCF-Config1
+snapshot://BCF-Config2
+snapshot://BCF-Config3
+snapshot://BCF-Config4
+snapshot://BCF-Config5
+snapshot://BCF-Config6
+snapshot://BCF-Config7
+snapshot://initial-config
+span-fabric
+span-local
+support://floodlight-support--bcf-jas--2017-10-17--15-59-32--UTC--KidhxY.tar.gz
+support://floodlight-support--bcf-jas--2017-10-17--16-45-12--UTC--sVqqjv.tar.gz
+switch
+tenant
+terminal
+test
+vcenter-network-config
+bcf-jas(config-controller)# c [K
+clear         compare       connect       copy
+cluster-name  configure     controller
+bcf-jas(config-controller)# clu[Ke
+Error: Unexpected end of command
+bcf-jas(config-controller)# clear 
+Error: Unexpected end of command
+bcf-jas(config-controller)# clear 
+bgp                     multicast-group         span-local
+debug                   segment                 switch
+endpoint                session                 tenant
+error-disabled          sflow                   test
+interface-group         span-fabric             vcenter-network-config
+bcf-jas(config-controller)# clear [K[K[K[Kuster-name 
+Name of the cluster
+bcf-jas(config-controller)# cluster-name "bcf[K[K[K[Kbcf-lab-cluster
+bcf-jas(config-controller)# description "A controller cluster for Jas"
+bcf-jas(config-controller)# 
+access-control  cluster-name    description     virtual-ip     
+bcf-jas(config-controller)# vip
+Error: Unknown command: vip
+bcf-jas(config-controller)# vip[K 
+Virtual IPv4 address for the cluster
+bcf-jas(config-controller)# vi 10.10.12.25
+bcf-jas(config-controller)# sh th
+
+! controller
+controller
+  cluster-name bcf-lab-cluster
+  description 'A controller cluster for Jas'
+  virtual-ip 10.10.12.25
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+bcf-jas(config-controller)# sh cont
+Cluster Name          : bcf-lab-cluster
+Cluster Description   : A controller cluster for Jas
+Cluster Virtual IP    : 10.10.12.25
+Redundancy Status     : standalone
+Last Role Change Time : 2017-10-17 13:30:06.300000 UTC
+Failover Reason       : Initialization timeout
+Cluster Uptime        : 4 hours, 27 minutes
+# IP          @ State  Uptime              
+-|-----------|-|------|-------------------|
+1 10.10.12.20 * active 4 hours, 27 minutes
+bcf-jas(config-controller)# switch 
+Select a switch name
+bcf-jas(config-controller)# switch S1
+bcf-jas(config-switch)# 
+description    interface      mac            storm-control
+fabric-role    leaf-group     shutdown
+bcf-jas(config-switch)# m 00:00:00:01:00:01
+Error: m is ambiguous: choices "mac-classify-pool", "mac"
+bcf-jas(config-switch)# m 00:00:00:01:00:01a 00:00:00:01:00:01
+Error: ma is ambiguous: choices "mac-classify-pool", "mac"
+bcf-jas(config-switch)# ma 00:00:00:01:00:01c 00:00:00:01:00:01
+bcf-jas(config-switch)# 
+description    interface      mac            storm-control
+fabric-role    leaf-group     shutdown
+bcf-jas(config-switch)# f
+fabric       fabric-role 
+bcf-jas(config-switch)# fabric- sp[K[K
+leaf   spine 
+bcf-jas(config-switch)# fabric- s
+bcf-jas(config-switch)# sh t
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sh th
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho t
+Error: Ambiguous command: Ambiguous command word "t"; matches ["this", "tacacs", "tenant"]
+bcf-jas(config-switch)# sho th
+
+! switch
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+bcf-jas(config-switch)# sh sw
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sh swo sw
+# Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+-|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1 undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+2 undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+3 undefined   00:00:00:02:00:01  10.10.12.30 suspended (No fabric role configured)
+4 undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+5 undefined   00:00:00:02:00:03  10.10.12.30 suspended (No fabric role configured)
+6 undefined   00:00:00:02:00:04  10.10.12.30 suspended (No fabric role configured)
+7 undefined   00:00:00:02:00:05  10.10.12.30 suspended (No fabric role configured)
+8 undefined   00:00:00:02:00:06  10.10.12.30 suspended (No fabric role configured)
+9 S1          00:00:00:01:00:01  10.10.12.30 connected                             spine
+bcf-jas(config-switch)# ! P(3)
+bcf-jas(config-switch)# sw R1L1
+bcf-jas(config-switch)# mac
+mac                mac-classify-pool 
+bcf-jas(config-switch)# mac sw R1L1[1P! P(3)sho sw[1P swo th[K th[Kfabric- smac 00:00:00:01:00:01[1P:00:012:00:01
+bcf-jas(config-switch)# mac 00:00:00:02:00:01[14Psw R1L1[1P! P(3)sho sw[1P swo th[K th[Kfabric- s[K
+leaf   spine 
+bcf-jas(config-switch)# fabric- l
+bcf-jas(config-switch)# l
+leaf-group  local       logout     
+bcf-jas(config-switch)# le 
+ <string> 
+bcf-jas(config-switch)# le R1
+bcf-jas(config-switch)# sh th
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho th
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+bcf-jas(config-switch)# sh run sw
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sh run sw[1@o
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+bcf-jas(config-switch)# sh st[K[K[Ko sta[K[K[K
+banner                lag                   span-fabric
+bgp                   link                  span-local
+boot                  local                 storm-control
+bpdu-guard            logging               support
+clock                 logical-router        switch
+controller            mac-membership        system
+debug                 member-rule           tacacs
+dump                  multicast             tenant
+endpoint              nat-endpoint          test
+endpoint-manager      nat-pool              this
+environment           ntp                   upgrade
+fabric                pswitch               user
+file                  radius                vcenter
+forwarding            running-config        version
+group                 secure                vswitch
+image                 segment               vxlan
+inband-port           session               where
+interface-group       sflow
+ipv6-external-router  snapshot
+bcf-jas(config-switch)# sho [K[K[Kt
+storm-control          storm-control-profile 
+bcf-jas(config-switch)# storm-control[K[K[K[K[K[K[K[K[K[K[K[K[Ksh switch 
+ <Switch Name>           00:00:00:00:00:02:00:02  00:00:00:00:00:02:00:06
+ <cr>                    00:00:00:00:00:02:00:03  R1L1
+00:00:00:00:00:01:00:02  00:00:00:00:00:02:00:04  S1
+00:00:00:00:00:01:00:03  00:00:00:00:00:02:00:05  all
+bcf-jas(config-switch)# sh switch all
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sh switch all[C[1@o
+# Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+-|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1 undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+2 undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+3 undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+4 undefined   00:00:00:02:00:03  10.10.12.30 suspended (No fabric role configured)
+5 undefined   00:00:00:02:00:04  10.10.12.30 suspended (No fabric role configured)
+6 undefined   00:00:00:02:00:05  10.10.12.30 suspended (No fabric role configured)
+7 undefined   00:00:00:02:00:06  10.10.12.30 suspended (No fabric role configured)
+8 R1L1        00:00:00:02:00:01  10.10.12.30 connected                             leaf        R1
+9 S1          00:00:00:01:00:01  10.10.12.30 connected                             spine
+bcf-jas(config-switch)# sho switch all[K[K[K
+# Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+-|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1 undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+2 undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+3 undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+4 undefined   00:00:00:02:00:03  10.10.12.30 suspended (No fabric role configured)
+5 undefined   00:00:00:02:00:04  10.10.12.30 suspended (No fabric role configured)
+6 undefined   00:00:00:02:00:05  10.10.12.30 suspended (No fabric role configured)
+7 undefined   00:00:00:02:00:06  10.10.12.30 suspended (No fabric role configured)
+8 R1L1        00:00:00:02:00:01  10.10.12.30 connected                             leaf        R1
+9 S1          00:00:00:01:00:01  10.10.12.30 connected                             spine
+bcf-jas(config-switch)# sho switch all[1P[C[C[C[C[C[C[C[C[C[C[C[3Po run sw[1P[C[C[C[C[C[C[C[3Po th[1P thle R1fabric- lmac 00:00:00:02:00:01[14Psw R1L1[1P! P(3)sho sw[1P swo th[K th[Kfabric- smac 00:00:00:01:00:01[K2
+bcf-jas(config-switch)# mac 00:00:00:01:00:02[10Psho switch all[1P[C[C[C[C[C[C[C[C[C[C[C[3Po run sw[1P[C[C[C[C[C[C[C[3Po th[1P thle R1fabric- l[Ks
+Error: Validation failed: [Validate Switch R1L1]:Only leaf switches can be configured with a leaf group
+bcf-jas(config-switch)# fabric- smac 00:00:00:01:00:02[10Psho switch all[1P[C[C[C[C[C[C[C[C[C[C[C[3Po run sw[1P[C[C[C[C[C[C[C[3Po th[1P thle R1fabric- l[4Ple R1fabric- lmac 00:00:00:02:00:01[14Psw R1L1[1P! P(3)sho sw[1P swo th[K th[Kfabric- smac 00:00:00:01:00:01[1P 00:00:00:01:00:01[1P 00:00:00:01:00:01[10Pswitch S1[K2
+bcf-jas(config-switch)# switch S2fabric- smac 00:00:00:01:00:02[10Psho switch all[1P[C[C[C[C[C[C[C[C[C[C[C[3Po run sw[1P[C[C[C[C[C[C[C[3Po th[1P thle R1fabric- lmac 00:00:00:02:00:01[14Psw R1L1[1P! P(3)sho sw[1P swo th[K th[Kfabric- smac 00:00:00:01:00:01[1P 00:00:00:01:00:01[1P 00:00:00:01:00:01[10Pswitch S1[2Ph cont[2Pthvi 10.10.12.25p[K 10.10.12.25p[Kdescription "A controller cluster for Jas"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pcluster-name bcf-lab-clusterear [K[Kar uster-name bcf-lab-cluster[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdescription "A controller cluster for Jas"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cvip[K 10.10.12.25[9Psh thcont[K[K
+description    interface      mac            storm-control
+fabric-role    leaf-group     shutdown
+bcf-jas(config-switch)# [2P(reverse-i-search)`':[Cf': description "A controller cluster for Jas"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca': sh fa er[K[C[8@failed reverse-i-search)`fab[C[C[C[C[C[C
+Interrupt.
+bcf-jas(config-switch)# [9@(failed reverse-i-search)`fabf':[C[1@s[C[C[C[1@b[C[C[C[1P[C[C[C
+Interrupt/exit config
+bcf-jas# (config-switch)# sho th[1P tho th[1P thle R1fabric- lmac 00:00:00:02:00:01[12Pfabric- l[Ks
+Error: Unknown command: fabric-
+bcf-jas# fabric- s[K[K[K[K[K[K[K[K[Kconf[K[K[K[Ksh sw
+#  Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+--|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1  undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+2  undefined   00:00:00:02:00:01  10.10.12.30 suspended (No fabric role configured)
+3  undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+4  undefined   00:00:00:02:00:03  10.10.12.30 suspended (No fabric role configured)
+5  undefined   00:00:00:02:00:04  10.10.12.30 suspended (No fabric role configured)
+6  undefined   00:00:00:02:00:05  10.10.12.30 suspended (No fabric role configured)
+7  undefined   00:00:00:02:00:06  10.10.12.30 suspended (No fabric role configured)
+8  R1L1        00:00:00:01:00:02  10.10.12.30 connected                             leaf        R1
+9  S1          00:00:00:01:00:01  10.10.12.30 connected                             spine
+10 S2          undefined                      not connected
+bcf-jas# sh swfabric- sswitch S2fabric- smac 00:00:00:01:00:02
+Error: Unknown command: mac
+bcf-jas# conf
+bcf-jas(config)# confmac 00:00:00:01:00:02
+Error: Unexpected additional arguments at "00:00:00:01:00:02"
+bcf-jas(config)# swmac 00:00:00:01:00:02[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csw[Kmac 00:00:00:01:00:02[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cconf[Kmac 00:00:00:01:00:02[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csh sw[Kfabric- sswitch S2[K3
+bcf-jas(config-switch)# switch S3mac 00:00:00:01:00:02[K3
+bcf-jas(config-switch)# fab
+fabric       fabric-role 
+bcf-jas(config-switch)# fabric-role spine 
+bcf-jas(config-switch)# hist
+1: sh ver
+2: s v
+3: sh v
+4: sh ve
+5: sh cont
+6: sh ses
+7: sh run
+8: sh run |less
+9: sh con 
+10: en
+11: copy running-config snapshot://Lab-1-Config-1
+12: sh snapshot 
+13: sh s
+14: sh sn
+15: config
+16: sh running user
+17: user john
+18: full-name "John Smith"
+19: sh run u
+20: sh run u john 
+21: sh run u j
+22: sh run u jo
+23: sh run u joh
+24: sh run u john 
+25: sh this 
+26: sh run u
+27: group admin 
+28: associate user john 
+29: sh run gr
+30: local node 
+31: ho bcf-jas
+32: i e 
+33: interface eth0 
+34: ipv4
+35: dns server 
+36: dns server 8.8.8.8
+37: dns server 8.8.4.4
+38: dns search bigswitch.com
+39: ntp
+40: help
+41: help |grep ntp
+42: sh run |grep ntp
+43: ntp server 0.us.pool.ntp.org
+44: sh run |grep ntp -B5
+45: sh run |grep ntp -B50
+46: ntp server 0.us.pool.ntp.org
+47: config
+48: ntp server 0.us.pool.ntp.org
+49: copy running-config snapshot://Lab-1-Config-2
+50: sh run snap
+51: sh snapshot 
+52: cp
+53: copy run file://Lab-1-Config-3.txt
+54: sh file
+55: compare file://Lab-1-Config-3.txt snapshot://Lab-1-Config-2 
+56: compare file://Lab-1-Config-3.txt snapshot://Lab-1-Config-21
+57: compare file://Lab-1-Config-3.txt snapshot://Lab-1-Config-1
+58: snmp-server com public
+59: snmp-server com ro public
+60: snmp-server con "Jas Eckard"
+61: snmp-server l "BSN Labs"
+62: snm h 10.10.10.99
+63: sh run sn
+64: sh run ntp
+65: sh ntp
+66: compare run snapshot://Lab-1-Config-2
+67: compare snapshot://Lab-1-Config-1 snapshot://Lab-1-Config-2
+68: compare file://Lab-1-Config-3.txt  snapshot://Lab-1-Config-2
+69: sh run |grep server
+70: supp
+71: copy 
+72: en
+73: copy snapshot://BCF-Config2 run
+74: sh cont
+75: conf
+76: sh cont
+77: sh sw
+78: sh s
+79: sh fa
+80: sh fa er
+81: cont
+82: cle
+83: clear 
+84: cluster-name bcf-lab-cluster
+85: description "A controller cluster for Jas"
+86: vip
+87: vi 10.10.12.25
+88: sh th
+89: 
+90: switch S1
+91: m 00:00:00:01:00:01
+92: ma 00:00:00:01:00:01
+93: mac 00:00:00:01:00:01
+94: fabric- s
+95: sh t
+96: sh th
+97: sho t
+98: sho th
+99: sh sw
+100: sho sw
+101: ! P(3)
+102: sw R1L1
+103: mac 00:00:00:02:00:01
+104: fabric- l
+105: le R1
+106: sh th
+107: sho th
+108: sh run sw
+109: sho run sw
+110: sh switch all
+111: sho switch all
+112: sho switch 
+113: mac 00:00:00:01:00:02
+114: fabric- s
+115: switch S2
+116: fabric- s
+117: sh sw
+118: mac 00:00:00:01:00:02
+119: conf
+120: mac 00:00:00:01:00:02
+121: switch S3
+122: mac 00:00:00:01:00:03
+123: fabric-role spine 
+124: hist
+bcf-jas(config-switch)# !102
+bcf-jas(config-switch)# !102hist!102[Ksw R1L2
+bcf-jas(config-switch)# [2P(reverse-i-search)`':[Cm': mac 00:00:00:01:00:03[1@a[C[C[C[1@c[C[C[C[1Pbcf-jas(config-switch)#[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P:00:032:00:03[C[C[C[C[C[C[K2
+bcf-jas(config-switch)# fabric- l
+bcf-jas(config-switch)# le R1
+bcf-jas(config-switch)# sh this
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho thi
+
+! switch
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+bcf-jas(config-switch)# 
+ bcf-jas(config-switch)# LAB OBJECTIVES 
+ Error: Unknown command: LAB
+bcf-jas(config-switch)# Ø
+Error: Unknown command: Ø
+bcf-jas(config-switch)# Configure controller parameters 
+Error: Command Not Found: Unexpected argument "controller"; expected "terminal"
+bcf-jas(config-switch)# Ø
+Error: Unknown command: Ø
+bcf-jas(config-switch)# Configure switches and switch roles 
+Error: Command Not Found: Unexpected argument "switches"; expected "terminal"
+bcf-jas(config-switch)# Ø
+Error: Unknown command: Ø
+bcf-jas(config-switch)# Discover fabric topology 
+Error: Unknown command: Discover
+bcf-jas(config-switch)# Ø
+PRIETAError: Unknown command: Ø
+bcf-jas(config-switch)# Configure interface-groups 
+Error: Command Not Found: Unexpected argument "interface-groups"; expected "terminal"
+bcf-jas(config-switch)# Ø
+Error: Unknown command: Ø
+bcf-jas(config-switch)# Determine status of fabric, controller, and switches 
+Error: Unknown command: Determine
+bcf-jas(config-switch)# Ø
+Error: Unknown command: Ø
+bcf-jas(config-switch)# Perform shutdown and bring-up operations 
+Error: Unknown command: Perform
+bcf-jas(config-switch)# © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CO NFIDENTIAL 
+Error: Unknown command: ©
+bcf-jas(config-switch)# 140 
+Error: Unknown command: 140
+bcf-jas(config-switch)# LAB – WORKING WITH CONTROLLERS & SWITCHES – P(1) 
+Error: Unknown command: LAB
+bcf-jas(config-switch)# 1.
+Error: Unknown command: 1.
+bcf-jas(config-switch)# Load configuration for this lab
+Error: Unknown command: Load
+bcf-jas(config-switch)# 1.
+Error: Unknown command: 1.
+bcf-jas(config-switch)# copy snapshot://BCF-Config2 running-
+bcf-jas(config-switch)# config
+nd leafbcf-jas(config)# 2.
+Error: Unknown command: 2.
+bcf-jas(config)# Check controller status & configuration 
+Error: Unknown command: Check
+bcf-jas(config)# 1.
+Error: Unknown command: 1.
+bcf-jas(config)# show controller 
+Cluster Name          : bigswitchcluster
+Redundancy Status     : standalone
+Last Role Change Time : 2017-10-17 13:30:06.300000 UTC
+Failover Reason       : Initialization timeout
+Cluster Uptime        : 4 hours, 41 minutes
+# IP          @ State  Uptime              
+-|-----------|-|------|-------------------|
+1 10.10.12.20 * active 4 hours, 41 minutes
+bcf-jas(config)# 2.
+Error: Unknown command: 2.
+ 
+2bcf-jas(config)# Print only the controller configuration from 
+Error: Unknown command: Print
+.
+Check fabric errors? 
+3.
+There should be a nbcf-jas(config)# config
+ew errobcf-jas(config)#  and non-
+Error: Unknown command: and
+r about pebcf-jas(config)# config
+er linkbcf-jas(config)#  mode 
+Error: Unknown command: mode
+ 
+3.
+Mobcf-jas(config)# 3.
+Error: Unknown command: 3.
+ve bcf-jas(config)# Check switch status & configuration 
+Error: Unknown command: Check
+switch R3L1 to a new leaf-group R5 
+1bcf-jas(config)# 1.
+Error: Unknown command: 1.
+.
+Ubcf-jas(config)# show switch 
+se “
+show l# Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+-|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1 undefined   00:00:00:01:00:01  10.10.12.30 suspended (No fabric role configured)
+2 undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+3 undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+4 undefined   00:00:00:02:00:01  10.10.12.30 suspended (No fabric role configured)
+5 undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+6 undefined   00:00:00:02:00:03  10.10.12.30 suspended (No fabric role configured)
+7 undefined   00:00:00:02:00:04  10.10.12.30 suspended (No fabric role configured)
+8 undefined   00:00:00:02:00:05  10.10.12.30 suspended (No fabric role configured)
+9 undefined   00:00:00:02:00:06  10.10.12.30 suspended (No fabric role configured)
+bcf-jas(config)# 2.
+Error: Unknown command: 2.
+inkbcf-jas(config)# Switches are in suspended state since there is no configuration  in controller 
+Error: Unknown command: Switches
+ | 
+grep
+ R3L1
+” to note all fabric links on R3L1 before making the change 
+2bcf-jas(config)# 4.
+Error: Unknown command: 4.
+.
+Cbcf-jas(config)# Check fabric status 
+Error: Unknown command: Check
+hange the leaf-group bcf-jas(config)# 1.
+Error: Unknown command: 1.
+nambcf-jas(config)# show fabric 
+e under switc~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : NOT OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 9
+# of warnings                                                          : 0
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 0
+# of spines connected                                                  : 0
+# of leaves configured                                                 : 0
+# of leaves connected                                                  : 0
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 0
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 0
+# of bidirectional links between switches in same leaf group           : 0
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 0
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config)# 2.
+Error: Unknown command: 2.
+h Rbcf-jas(config)# Get details of fabric errors:  
+Error: Unknown command: Get
+3L1 to create the new leaf-groupbcf-jas(config)# show fabric ...
+ 
+3.
+The fabric Error: Command Not Found: Unexpected argument "..."; expected one of "connected-devices", "error", "inventory", "ipam", "qos", "setting", "summary", "switch", ... and 1 more
+bcf-jas(config)# 5.
+Error: Unknown command: 5.
+nowbcf-jas(config)# Use controller GUI to get controller, switches, and fabric stat us 
+ has 5 leaf-groups 
+4.
+What fabric links have changed and what is tError: Unexpected additional arguments at "GUI"
+bcf-jas(config)# 1.
+Error: Unknown command: 1.
+he bcf-jas(config)# Fabric -> Switches,
+new error? 
+© 2017,Error: Unexpected additional arguments at "-"
+bcf-jas(config)# Visibility -> Fabric Summary 
+Error: Unknown command: Visibility
+ BIG SWITCH NETWORKS, INC.    bcf-jas(config)# © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CONFIDENT IAL 
+Error: Unknown command: ©
+ PROPRIETARY AND CONFIDENTIAL 
+146 
+bcf-jas(config)# 141 
+Error: Unknown command: 141
+bcf-jas(config)# LAB – WORKING WITH CONTROLLERS & SWITCHES – P(2) 
+Error: Unknown command: LAB
+bcf-jas(config)# 1.
+Error: Unknown command: 1.
+bcf-jas(config)# Update controller cluster configuration 
+Error: Unknown command: Update
+bcf-jas(config)# 1.
+Error: Unknown command: 1.
+bcf-jas(config)# config
+bcf-jas(config)#  ; controller ; ... 
+Error: Unknown command: ...
+bcf-jas(config-controller)# 2.
+Error: Unknown command: 2.
+bcf-jas(config-controller)# Change the cluster name to “
+Error: Unknown command: Change
+bcf-jas(config-controller)# bcf
+Error: Unknown command: bcf
+bcf-jas(config-controller)# -lab-cluster”  
+Error: Unknown command: -lab-cluster”
+bcf-jas(config-controller)# 3.
+Error: Unknown command: 3.
+bcf-jas(config-controller)# Add description for the controller cluster 
+Error: Unknown command: Add
+bcf-jas(config-controller)# 4.
+Error: Unknown command: 4.
+bcf-jas(config-controller)# Add VIP address for the cluster: 10.10.12.25 
+Error: Unknown command: Add
+bcf-jas(config-controller)# 5.
+Error: Unknown command: 5.
+bcf-jas(config-controller)# Check configuration:  
+Error: Unknown command: Check
+bcf-jas(config-controller)# show this
+
+! controller
+controller
+  cluster-name bigswitchcluster
+  access-control
+    !
+    access-list api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list gui
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ns-api
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+    !
+    access-list ssh
+      1 permit from ::/0
+      2 permit from 0.0.0.0/0
+bcf-jas(config-controller)# 6.
+Error: Unknown command: 6.
+bcf-jas(config-controller)# Verify updates:  
+Error: Unknown command: Verify
+bcf-jas(config-controller)# show controller
+Cluster Name          : bigswitchcluster
+Redundancy Status     : standalone
+Last Role Change Time : 2017-10-17 13:30:06.300000 UTC
+Failover Reason       : Initialization timeout
+Cluster Uptime        : 4 hours, 41 minutes
+# IP          @ State  Uptime              
+-|-----------|-|------|-------------------|
+1 10.10.12.20 * active 4 hours, 41 minutes
+bcf-jas(config-controller)# 2.
+Error: Unknown command: 2.
+bcf-jas(config-controller)# Add spine “S1” to fabric 
+Error: Unknown command: Add
+bcf-jas(config-controller)# 1.
+Error: Unknown command: 1.
+bcf-jas(config-controller)# config
+bcf-jas(config)#  ; switch S1 ; ... 
+Error: Unknown command: ...
+bcf-jas(config-switch)# 2.
+Error: Unknown command: 2.
+bcf-jas(config-switch)# Add MAC address 00:00:00:01:00:01 
+Error: Unknown command: Add
+bcf-jas(config-switch)# 3.
+Error: Unknown command: 3.
+bcf-jas(config-switch)# Assign fabric-role spine 
+Error: Unknown command: Assign
+bcf-jas(config-switch)# 4.
+Error: Unknown command: 4.
+bcf-jas(config-switch)# Check configuration:  
+Error: Unknown command: Check
+bcf-jas(config-switch)# show this
+
+! switch
+switch S1
+bcf-jas(config-switch)# 5.
+Error: Unknown command: 5.
+bcf-jas(config-switch)# Check switch status:  
+Error: Unknown command: Check
+bcf-jas(config-switch)# show switch
+#  Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+--|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1  undefined   00:00:00:01:00:01  10.10.12.30 suspended (No fabric role configured)
+2  undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+3  undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+4  undefined   00:00:00:02:00:01  10.10.12.30 suspended (No fabric role configured)
+5  undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+6  undefined   00:00:00:02:00:03  10.10.12.30 suspended (No fabric role configured)
+7  undefined   00:00:00:02:00:04  10.10.12.30 suspended (No fabric role configured)
+8  undefined   00:00:00:02:00:05  10.10.12.30 suspended (No fabric role configured)
+9  undefined   00:00:00:02:00:06  10.10.12.30 suspended (No fabric role configured)
+10 S1          undefined                      not connected
+bcf-jas(config-switch)# © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CO NFIDENTIAL 
+Error: Unknown command: ©
+bcf-jas(config-switch)# 142 
+Error: Unknown command: 142
+bcf-jas(config-switch)# LAB – WORKING WITH CONTROLLERS & SWITCHES – P(3) 
+Error: Unknown command: LAB
+bcf-jas(config-switch)# 1.
+Error: Unknown command: 1.
+bcf-jas(config-switch)# Add leaf “R1L1” to fabric 
+Error: Unknown command: Add
+bcf-jas(config-switch)# 1.
+Error: Unknown command: 1.
+bcf-jas(config-switch)# config
+bcf-jas(config)#  ; switch R1L1 ; ... 
+Error: Unknown command: ...
+bcf-jas(config-switch)# 2.
+Error: Unknown command: 2.
+bcf-jas(config-switch)# Add MAC address 00:00:00:02:00:01 
+Error: Unknown command: Add
+bcf-jas(config-switch)# 3.
+Error: Unknown command: 3.
+bcf-jas(config-switch)# Assign fabric-role leaf 
+Error: Unknown command: Assign
+bcf-jas(config-switch)# 4.
+Error: Unknown command: 4.
+bcf-jas(config-switch)# Add to leaf group R1 
+Error: Unknown command: Add
+bcf-jas(config-switch)# 5.
+Error: Unknown command: 5.
+bcf-jas(config-switch)# Check configuration using “
+Error: Unknown command: Check
+bcf-jas(config-switch)# show this
+
+! switch
+switch R1L1
+bcf-jas(config-switch)# ” and “
+Error: Unknown command: ”
+bcf-jas(config-switch)# show running switch
+
+! switch
+switch R1L1
+
+switch S1
+bcf-jas(config-switch)# ” 
+Error: Unknown command: ”
+bcf-jas(config-switch)# 6.
+Error: Unknown command: 6.
+bcf-jas(config-switch)# Check switch status 
+Error: Unknown command: Check
+bcf-jas(config-switch)# 2.
+Error: Unknown command: 2.
+bcf-jas(config-switch)# Add remaining switches to fabric 
+Error: Unknown command: Add
+bcf-jas(config-switch)# 1.
+Error: Unknown command: 1.
+bcf-jas(config-switch)# Name:  S2
+Error: Unknown command: Name:
+bcf-jas(config-switch)# MAC:  00:00:00:01:00:02
+Error: Unknown command: MAC:
+bcf-jas(config-switch)# Role:  Spine 
+Error: Unknown command: Role:
+bcf-jas(config-switch)# 2.
+Error: Unknown command: 2.
+bcf-jas(config-switch)# Name:  S3
+Error: Unknown command: Name:
+bcf-jas(config-switch)# MAC:  00:00:00:01:00:03
+Error: Unknown command: MAC:
+bcf-jas(config-switch)# Role:  Spine 
+Error: Unknown command: Role:
+bcf-jas(config-switch)# 3.
+Error: Unknown command: 3.
+bcf-jas(config-switch)# Name:  R1L2
+Error: Unknown command: Name:
+bcf-jas(config-switch)# MAC:  00:00:00:02:00:02
+Error: Unknown command: MAC:
+bcf-jas(config-switch)# Role:  Leaf
+Error: Unknown command: Role:
+bcf-jas(config-switch)# Leaf Group:  R1 
+Error: Unexpected additional arguments at "R1"
+bcf-jas(config-switch)# 4.
+Error: Unknown command: 4.
+bcf-jas(config-switch)# Name:  R2L1
+Error: Unknown command: Name:
+bcf-jas(config-switch)# MAC:  00:00:00:02:00:03
+Error: Unknown command: MAC:
+bcf-jas(config-switch)# Role:  Leaf
+Error: Unknown command: Role:
+bcf-jas(config-switch)# Leaf Group:  R2 
+Error: Unexpected additional arguments at "R2"
+bcf-jas(config-switch)# 5.
+Error: Unknown command: 5.
+bcf-jas(config-switch)# Name:  R2L2
+Error: Unknown command: Name:
+bcf-jas(config-switch)# MAC:  00:00:00:02:00:04
+Error: Unknown command: MAC:
+bcf-jas(config-switch)# Role:  Leaf
+Error: Unknown command: Role:
+bcf-jas(config-switch)# Leaf Group:  R2 
+Error: Unexpected additional arguments at "R2"
+bcf-jas(config-switch)# 6.
+Error: Unknown command: 6.
+bcf-jas(config-switch)# Name:  R3L1
+Error: Unknown command: Name:
+bcf-jas(config-switch)# MAC:  00:00:00:02:00:05
+Error: Unknown command: MAC:
+bcf-jas(config-switch)# Role:  Leaf
+Error: Unknown command: Role:
+bcf-jas(config-switch)# Leaf Group:  R3 
+Error: Unexpected additional arguments at "R3"
+bcf-jas(config-switch)# 7.
+Error: Unknown command: 7.
+bcf-jas(config-switch)# Name:  R3L2
+Error: Unknown command: Name:
+bcf-jas(config-switch)# MAC:  00:00:00:02:00:06
+Error: Unknown command: MAC:
+bcf-jas(config-switch)# Role:  Leaf
+Error: Unknown command: Role:
+bcf-jas(config-switch)# Leaf Group:  R3 
+Error: Unexpected additional arguments at "R3"
+bcf-jas(config-switch)# © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CO NFIDENTIAL 
+Error: Unknown command: ©
+bcf-jas(config-switch)# 143 
+Error: Unknown command: 143
+bcf-jas(config-switch)# LAB – WORKING WITH CONTROLLERS & SWITCHES – P(4) 
+Error: Unknown command: LAB
+bcf-jas(config-switch)# 1.
+Error: Unknown command: 1.
+bcf-jas(config-switch)# Check fabric status 
+Error: Unknown command: Check
+bcf-jas(config-switch)# 1.
+Error: Unknown command: 1.
+bcf-jas(config-switch)# show fabric 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : NOT OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 9
+# of warnings                                                          : 0
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 0
+# of spines connected                                                  : 0
+# of leaves configured                                                 : 0
+# of leaves connected                                                  : 0
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 0
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 0
+# of bidirectional links between switches in same leaf group           : 0
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 0
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config-switch)# 2.
+Error: Unknown command: 2.
+bcf-jas(config-switch)# Get details of any fabric errors and warnings (Hint: 
+Error: Unknown command: Get
+bcf-jas(config-switch)# show fabric ...
+Error: Command Not Found: Unexpected argument "..."; expected one of "connected-devices", "error", "inventory", "ipam", "qos", "setting", "summary", "switch", ... and 1 more
+bcf-jas(config-switch)# ) 
+Error: Unknown command: )
+bcf-jas(config-switch)# 2.
+Error: Unknown command: 2.
+bcf-jas(config-switch)# Assign IPv4 addresses to each switch 
+Error: Unknown command: Assign
+bcf-jas(config-switch)# 1.
+Error: Unknown command: 1.
+bcf-jas(config-switch)# Check fabric errors before configuring IPv4 addresses fo r switches 
+Error: Unknown command: Check
+bcf-jas(config-switch)# 2.
+Error: Unknown command: 2.
+bcf-jas(config-switch)# Check IPv4 addresses on switches:  
+Error: Unknown command: Check
+bcf-jas(config-switch)# show fabric ipam switch
+None.
+bcf-jas(config-switch)# 3.
+Error: Unknown command: 3.
+bcf-jas(config-switch)# config
+bcf-jas(config)#  ; fabric ; 
+bcf-jas(config-fabric)# ipam
+Error: Unexpected end of command
+bcf-jas(config-fabric)#  switch ; ... 
+Error: Unexpected end of command
+Error: Unknown command: ...
+bcf-jas(config-fabric)# 4.
+Error: Unknown command: 4.
+bcf-jas(config-fabric)# Configure IP address range 10.10.99.10 to 10.10.99.15 wi thin /24 subnet 
+Error: Command Not Found: Unexpected argument "IP"; expected "terminal"
+bcf-jas(config-fabric)# 5.
+Error: Unknown command: 5.
+bcf-jas(config-fabric)# Configure gateway 10.10.99.1 
+Error: Command Not Found: Unexpected argument "gateway"; expected "terminal"
+bcf-jas(config-fabric)# 6.
+Error: Unknown command: 6.
+bcf-jas(config-fabric)# Enable IPAM:   
+Error: Unexpected additional arguments at "IPAM:"
+bcf-jas(config-fabric)# allocate
+Error: Unknown command: allocate
+bcf-jas(config-fabric)# 7.
+Error: Unknown command: 7.
+bcf-jas(config-fabric)# Check IPv4 addresses:  
+Error: Unknown command: Check
+bcf-jas(config-fabric)# show fabric ipam switch
+None.
+bcf-jas(config-fabric)# 8.
+Error: Unknown command: 8.
+bcf-jas(config-fabric)# Check fabric errors again.  There should be fewer errors . 
+Error: Unknown command: Check
+bcf-jas(config-fabric)# 9.
+Error: Unknown command: 9.
+bcf-jas(config-fabric)# Add more IP addresses from the same subnet:  10.10.99.50  to 10.10.99.55 
+Error: Unknown command: Add
+bcf-jas(config-fabric)# 10.
+Error: Unknown command: 10.
+bcf-jas(config-fabric)# Check IPv4 addresses again 
+Error: Unknown command: Check
+bcf-jas(config-fabric)# 11.
+Error: Unknown command: 11.
+bcf-jas(config-fabric)# Check fabric errors.  There should be no errors. 
+Error: Unknown command: Check
+bcf-jas(config-fabric)# © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CO NFIDENTIAL 
+Error: Unknown command: ©
+bcf-jas(config-fabric)# 144 
+Error: Unknown command: 144
+bcf-jas(config-fabric)# LAB – WORKING WITH CONTROLLERS & SWITCHES – P(5) 
+Error: Unknown command: LAB
+bcf-jas(config-fabric)# 1.
+Error: Unknown command: 1.
+bcf-jas(config-fabric)# Save a snapshot of running 
+Error: Unknown command: Save
+bcf-jas(config-fabric)# config
+bcf-jas(config)#   (Lab-2-Config-1) 
+Error: Unknown command: (Lab-2-Config-1)
+bcf-jas(config)# 2.
+Error: Unknown command: 2.
+bcf-jas(config)# Discover fabric topology 
+Error: Unknown command: Discover
+bcf-jas(config)# 1.
+Error: Unknown command: 1.
+bcf-jas(config)# show switch 
+#  Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+--|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1  undefined   00:00:00:01:00:01  10.10.12.30 suspended (No fabric role configured)
+2  undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+3  undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+4  undefined   00:00:00:02:00:01  10.10.12.30 suspended (No fabric role configured)
+5  undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+6  undefined   00:00:00:02:00:03  10.10.12.30 suspended (No fabric role configured)
+7  undefined   00:00:00:02:00:04  10.10.12.30 suspended (No fabric role configured)
+8  undefined   00:00:00:02:00:05  10.10.12.30 suspended (No fabric role configured)
+9  undefined   00:00:00:02:00:06  10.10.12.30 suspended (No fabric role configured)
+10 R1L1        undefined                      not connected
+11 S1          undefined                      not connected
+bcf-jas(config)# 2.
+Error: Unknown command: 2.
+bcf-jas(config)# show link 
+None.
+bcf-jas(config)# 3.
+Error: Unknown command: 3.
+bcf-jas(config)# Identify all the fabric links that have been discovered 
+Error: Unknown command: Identify
+bcf-jas(config)# 4.
+Error: Unknown command: 4.
+bcf-jas(config)# First identify all switches (spines, leaf switches, leaf-groups ) 
+Error: Unknown command: First
+bcf-jas(config)# 5.
+Error: Unknown command: 5.
+bcf-jas(config)# Then map out links from each spine (to leaf switches) 
+Error: Unknown command: Then
+bcf-jas(config)# 6.
+Error: Unknown command: 6.
+bcf-jas(config)# show link | 
+None.
+bcf-jas(config)# grep
+Error: Unknown command: grep
+bcf-jas(config)#  ... 
+Error: Unknown command: ...
+bcf-jas(config)# 7.
+Error: Unknown command: 7.
+bcf-jas(config)# Then map out links from each leaf switch (to spines and peer) 
+Error: Unknown command: Then
+bcf-jas(config)# 3.
+Error: Unknown command: 3.
+bcf-jas(config)# Pre-provision a new spine switch S4 (
+Error: Unknown command: Pre-provision
+bcf-jas(config)# switch does not exist in the topology
+Error: Unexpected additional arguments at "not"
+bcf-jas(config)# ) 
+Error: Unknown command: )
+bcf-jas(config)# 1.
+Error: Unknown command: 1.
+bcf-jas(config)# Use “
+Error: Invalid argument: Invalid Alphabetic character, followed by alphanumerics: "\0xe2\0x80\0x9c"; Invalid characters in identifier
+bcf-jas(config)# show switch
+#  Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+--|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1  undefined   00:00:00:01:00:01  10.10.12.30 suspended (No fabric role configured)
+2  undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+3  undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+4  undefined   00:00:00:02:00:01  10.10.12.30 suspended (No fabric role configured)
+5  undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+6  undefined   00:00:00:02:00:03  10.10.12.30 suspended (No fabric role configured)
+7  undefined   00:00:00:02:00:04  10.10.12.30 suspended (No fabric role configured)
+8  undefined   00:00:00:02:00:05  10.10.12.30 suspended (No fabric role configured)
+9  undefined   00:00:00:02:00:06  10.10.12.30 suspended (No fabric role configured)
+10 R1L1        undefined                      not connected
+11 S1          undefined                      not connected
+bcf-jas(config)# ” to see status change as you add each line of configuration 
+Error: Unknown command: ”
+bcf-jas(config)# 2.
+Error: Unknown command: 2.
+bcf-jas(config)# MAC address 00:00:00:01:00:04 
+Error: Unexpected additional arguments at "address"
+bcf-jas(config)# 3.
+Error: Unknown command: 3.
+bcf-jas(config)# Fabric-role spine 
+Error: Unknown command: Fabric-role
+bcf-jas(config)# 4.
+Error: Unknown command: 4.
+bcf-jas(config)# Check fabric status and errors 
+Error: Unknown command: Check
+bcf-jas(config)# 5.
+Error: Unknown command: 5.
+bcf-jas(config)# Remove fabric role and check errors again 
+Error: Unknown command: Remove
+bcf-jas(config)# © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CONFIDENT IAL 
+Error: Unknown command: ©
+bcf-jas(config)# 145 
+Error: Unknown command: 145
+bcf-jas(config)# LAB – WORKING WITH CONTROLLERS & SWITCHES – P(6) 
+Error: Unknown command: LAB
+bcf-jas(config)# 1.
+Error: Unknown command: 1.
+bcf-jas(config)# Pre-provision a new leaf switch R4L1 
+Error: Unknown command: Pre-provision
+bcf-jas(config)# 1.
+Error: Unknown command: 1.
+bcf-jas(config)# Use “
+Error: Invalid argument: Invalid Alphabetic character, followed by alphanumerics: "\0xe2\0x80\0x9c"; Invalid characters in identifier
+bcf-jas(config)# show switch
+#  Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+--|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1  undefined   00:00:00:01:00:01  10.10.12.30 suspended (No fabric role configured)
+2  undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+3  undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+4  undefined   00:00:00:02:00:01  10.10.12.30 suspended (No fabric role configured)
+5  undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+6  undefined   00:00:00:02:00:03  10.10.12.30 suspended (No fabric role configured)
+7  undefined   00:00:00:02:00:04  10.10.12.30 suspended (No fabric role configured)
+8  undefined   00:00:00:02:00:05  10.10.12.30 suspended (No fabric role configured)
+9  undefined   00:00:00:02:00:06  10.10.12.30 suspended (No fabric role configured)
+10 R1L1        undefined                      not connected
+11 S1          undefined                      not connected
+bcf-jas(config)# ” to see status change as you add each line of configuration 
+Error: Unknown command: ”
+bcf-jas(config)# 2.
+Error: Unknown command: 2.
+bcf-jas(config)# MAC address 00:00:00:02:00:07 
+Error: Unexpected additional arguments at "address"
+bcf-jas(config)# 3.
+Error: Unknown command: 3.
+bcf-jas(config)# Fabric-role leaf 
+Error: Unknown command: Fabric-role
+bcf-jas(config)# 4.
+Error: Unknown command: 4.
+bcf-jas(config)# Leaf group R4 
+Error: Unknown command: Leaf
+bcf-jas(config)# 5.
+Error: Unknown command: 5.
+bcf-jas(config)# Check fabric status and errors 
+Error: Unknown command: Check
+bcf-jas(config)# 2.
+Error: Unknown command: 2.
+bcf-jas(config)# Pre-provision a second leaf switch R4L2 for leaf group R4 
+Error: Unknown command: Pre-provision
+bcf-jas(config)# 1.
+Error: Unknown command: 1.
+bcf-jas(config)# MAC address 00:00:00:02:00:08 
+Error: Unexpected additional arguments at "address"
+bcf-jas(config)# 2.
+Error: Unknown command: 2.
+bcf-jas(config)# Check fabric errors 
+Error: Unknown command: Check
+bcf-jas(config)# 3.
+Error: Unknown command: 3.
+bcf-jas(config)# There should be a new error about peer link 
+Error: Unknown command: There
+bcf-jas(config)# 3.
+Error: Unknown command: 3.
+bcf-jas(config)# Move switch R3L1 to a new leaf-group R5 
+Error: Unknown command: Move
+bcf-jas(config)# 1.
+Error: Unknown command: 1.
+bcf-jas(config)# Use “
+Error: Invalid argument: Invalid Alphabetic character, followed by alphanumerics: "\0xe2\0x80\0x9c"; Invalid characters in identifier
+bcf-jas(config)# show link | 
+None.
+bcf-jas(config)# grep
+Error: Unknown command: grep
+bcf-jas(config)#  R3L1
+Error: Unknown command: R3L1
+bcf-jas(config)# ” to note all fabric links on R3L1 before making the change 
+Error: Unknown command: ”
+bcf-jas(config)# 2.
+Error: Unknown command: 2.
+bcf-jas(config)# Change the leaf-group name under switch R3L1 to create the new  leaf-group 
+Error: Unknown command: Change
+bcf-jas(config)# 3.
+Error: Unknown command: 3.
+bcf-jas(config)# The fabric now has 5 leaf-groups 
+Error: Unknown command: The
+bcf-jas(config)# 4.
+Error: Unknown command: 4.
+bcf-jas(config)# What fabric links have changed and what is the new error 
+Error: Unknown command: What
+bcf-jas(config)# © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CONFIDENT IAL 
+Error: Unknown command: ©
+bcf-jas(config)# 146 
+Error: Unknown command: 146
+bcf-jas(config)# 
+bcf-jas(config)# switch R2L1
+bcf-jas(config-switch)#   fabric-role leaf
+bcf-jas(config-switch)#     leaf-group R2
+bcf-jas(config-switch)#       mac 00:00:00:02:00:03
+bcf-jas(config-switch)# 
+bcf-jas(config-switch)# switch R2L2
+bcf-jas(config-switch)#   fabric-role leaf
+bcf-jas(config-switch)#     leaf-group R2
+bcf-jas(config-switch)#       mac 00:00:00:02:00:04
+bcf-jas(config-switch)# 
+bcf-jas(config-switch)# switch R3L1
+bcf-jas(config-switch)#   fabric-role leaf
+bcf-jas(config-switch)#     leaf-group R3
+bcf-jas(config-switch)#       mac 00:00:00:02:00:05
+bcf-jas(config-switch)# 
+bcf-jas(config-switch)# switch R3L2
+bcf-jas(config-switch)#   fabric-role leaf
+bcf-jas(config-switch)#     leaf-group R3
+bcf-jas(config-switch)#       mac 00:00:00:02:00:06
+bcf-jas(config-switch)# sh th
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho th
+
+! switch
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+bcf-jas(config-switch)# sh [Ko sw
+#  Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+--|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1  undefined   00:00:00:01:00:01  10.10.12.30 suspended (No fabric role configured)
+2  undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+3  undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+4  undefined   00:00:00:02:00:01  10.10.12.30 suspended (No fabric role configured)
+5  undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+6  R1L1        undefined                      not connected
+7  R2L1        00:00:00:02:00:03  10.10.12.30 connected                             leaf        R2
+8  R2L2        00:00:00:02:00:04  10.10.12.30 connected                             leaf        R2
+9  R3L1        00:00:00:02:00:05  10.10.12.30 connected                             leaf        R3
+10 R3L2        00:00:00:02:00:06  10.10.12.30 connected                             leaf        R3
+11 S1          undefined                      not connected
+bcf-jas(config-switch)# hist
+1: sh ver
+2: s v
+3: sh v
+4: sh ve
+5: sh cont
+6: sh ses
+7: sh run
+8: sh run |less
+9: sh con 
+10: en
+11: copy running-config snapshot://Lab-1-Config-1
+12: sh snapshot 
+13: sh s
+14: sh sn
+15: config
+16: sh running user
+17: user john
+18: full-name "John Smith"
+19: sh run u
+20: sh run u john 
+21: sh run u j
+22: sh run u jo
+23: sh run u joh
+24: sh run u john 
+25: sh this 
+26: sh run u
+27: group admin 
+28: associate user john 
+29: sh run gr
+30: local node 
+31: ho bcf-jas
+32: i e 
+33: interface eth0 
+34: ipv4
+35: dns server 
+36: dns server 8.8.8.8
+37: dns server 8.8.4.4
+38: dns search bigswitch.com
+39: ntp
+40: help
+41: help |grep ntp
+42: sh run |grep ntp
+43: ntp server 0.us.pool.ntp.org
+44: sh run |grep ntp -B5
+45: sh run |grep ntp -B50
+46: ntp server 0.us.pool.ntp.org
+47: config
+48: ntp server 0.us.pool.ntp.org
+49: copy running-config snapshot://Lab-1-Config-2
+50: sh run snap
+51: sh snapshot 
+52: cp
+53: copy run file://Lab-1-Config-3.txt
+54: sh file
+55: compare file://Lab-1-Config-3.txt snapshot://Lab-1-Config-2 
+56: compare file://Lab-1-Config-3.txt snapshot://Lab-1-Config-21
+57: compare file://Lab-1-Config-3.txt snapshot://Lab-1-Config-1
+58: snmp-server com public
+59: snmp-server com ro public
+60: snmp-server con "Jas Eckard"
+61: snmp-server l "BSN Labs"
+62: snm h 10.10.10.99
+63: sh run sn
+64: sh run ntp
+65: sh ntp
+66: compare run snapshot://Lab-1-Config-2
+67: compare snapshot://Lab-1-Config-1 snapshot://Lab-1-Config-2
+68: compare file://Lab-1-Config-3.txt  snapshot://Lab-1-Config-2
+69: sh run |grep server
+70: supp
+71: copy 
+72: en
+73: copy snapshot://BCF-Config2 run
+74: sh cont
+75: conf
+76: sh cont
+77: sh sw
+78: sh s
+79: sh fa
+80: sh fa er
+81: cont
+82: cle
+83: clear 
+84: cluster-name bcf-lab-cluster
+85: description "A controller cluster for Jas"
+86: vip
+87: vi 10.10.12.25
+88: sh th
+89: 
+90: switch S1
+91: m 00:00:00:01:00:01
+92: ma 00:00:00:01:00:01
+93: mac 00:00:00:01:00:01
+94: fabric- s
+95: sh t
+96: sh th
+97: sho t
+98: sho th
+99: sh sw
+100: sho sw
+101: ! P(3)
+102: sw R1L1
+103: mac 00:00:00:02:00:01
+104: fabric- l
+105: le R1
+106: sh th
+107: sho th
+108: sh run sw
+109: sho run sw
+110: sh switch all
+111: sho switch all
+112: sho switch 
+113: mac 00:00:00:01:00:02
+114: fabric- s
+115: switch S2
+116: fabric- s
+117: sh sw
+118: mac 00:00:00:01:00:02
+119: conf
+120: mac 00:00:00:01:00:02
+121: switch S3
+122: mac 00:00:00:01:00:03
+123: fabric-role spine 
+124: hist
+125: !102
+126: sw R1L2
+127: mac 00:00:00:02:00:02
+128: fabric- l
+129: le R1
+130: sh this
+131: sho thi
+132: LAB OBJECTIVES 
+133: Ø
+134: Configure controller parameters 
+135: Ø
+136: Configure switches and switch roles 
+137: Ø
+138: Discover fabric topology 
+139: Ø
+140: Configure interface-groups 
+141: Ø
+142: Determine status of fabric, controller, and switches 
+143: Ø
+144: Perform shutdown and bring-up operations 
+145: © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CONFIDENTIAL 
+146: 140 
+147: LAB – WORKING WITH CONTROLLERS & SWITCHES – P(1) 
+148: 1.
+149: Load configuration for this lab
+150: 1.
+151: copy snapshot://BCF-Config2 running-
+152: config
+153: 2.
+154: Check controller status & configuration 
+155: 1.
+156: show controller 
+157: 2.
+158: Print only the controller configuration from 
+159: config
+160:  and non-
+161: config
+162:  mode 
+163: 3.
+164: Check switch status & configuration 
+165: 1.
+166: show switch 
+167: 2.
+168: Switches are in suspended state since there is no configuration in controller 
+169: 4.
+170: Check fabric status 
+171: 1.
+172: show fabric 
+173: 2.
+174: Get details of fabric errors:  
+175: show fabric ...
+176: 5.
+177: Use controller GUI to get controller, switches, and fabric status 
+178: 1.
+179: Fabric -> Switches,
+180: Visibility -> Fabric Summary 
+181: © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CONFIDENTIAL 
+182: 141 
+183: LAB – WORKING WITH CONTROLLERS & SWITCHES – P(2) 
+184: 1.
+185: Update controller cluster configuration 
+186: 1.
+187: config
+188:  ; controller ; ... 
+189: 2.
+190: Change the cluster name to “
+191: bcf
+192: -lab-cluster”  
+193: 3.
+194: Add description for the controller cluster 
+195: 4.
+196: Add VIP address for the cluster: 10.10.12.25 
+197: 5.
+198: Check configuration:  
+199: show this
+200: 6.
+201: Verify updates:  
+202: show controller
+203: 2.
+204: Add spine “S1” to fabric 
+205: 1.
+206: config
+207:  ; switch S1 ; ... 
+208: 2.
+209: Add MAC address 00:00:00:01:00:01 
+210: 3.
+211: Assign fabric-role spine 
+212: 4.
+213: Check configuration:  
+214: show this
+215: 5.
+216: Check switch status:  
+217: show switch
+218: © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CONFIDENTIAL 
+219: 142 
+220: LAB – WORKING WITH CONTROLLERS & SWITCHES – P(3) 
+221: 1.
+222: Add leaf “R1L1” to fabric 
+223: 1.
+224: config
+225:  ; switch R1L1 ; ... 
+226: 2.
+227: Add MAC address 00:00:00:02:00:01 
+228: 3.
+229: Assign fabric-role leaf 
+230: 4.
+231: Add to leaf group R1 
+232: 5.
+233: Check configuration using “
+234: show this
+235: ” and “
+236: show running switch
+237: ” 
+238: 6.
+239: Check switch status 
+240: 2.
+241: Add remaining switches to fabric 
+242: 1.
+243: Name:  S2
+244: MAC:  00:00:00:01:00:02
+245: Role:  Spine 
+246: 2.
+247: Name:  S3
+248: MAC:  00:00:00:01:00:03
+249: Role:  Spine 
+250: 3.
+251: Name:  R1L2
+252: MAC:  00:00:00:02:00:02
+253: Role:  Leaf
+254: Leaf Group:  R1 
+255: 4.
+256: Name:  R2L1
+257: MAC:  00:00:00:02:00:03
+258: Role:  Leaf
+259: Leaf Group:  R2 
+260: 5.
+261: Name:  R2L2
+262: MAC:  00:00:00:02:00:04
+263: Role:  Leaf
+264: Leaf Group:  R2 
+265: 6.
+266: Name:  R3L1
+267: MAC:  00:00:00:02:00:05
+268: Role:  Leaf
+269: Leaf Group:  R3 
+270: 7.
+271: Name:  R3L2
+272: MAC:  00:00:00:02:00:06
+273: Role:  Leaf
+274: Leaf Group:  R3 
+275: © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CONFIDENTIAL 
+276: 143 
+277: LAB – WORKING WITH CONTROLLERS & SWITCHES – P(4) 
+278: 1.
+279: Check fabric status 
+280: 1.
+281: show fabric 
+282: 2.
+283: Get details of any fabric errors and warnings (Hint: 
+284: show fabric ...
+285: ) 
+286: 2.
+287: Assign IPv4 addresses to each switch 
+288: 1.
+289: Check fabric errors before configuring IPv4 addresses for switches 
+290: 2.
+291: Check IPv4 addresses on switches:  
+292: show fabric ipam switch
+293: 3.
+294: config
+295:  ; fabric ; 
+296: ipam
+297:  switch ; ... 
+298: 4.
+299: Configure IP address range 10.10.99.10 to 10.10.99.15 within /24 subnet 
+300: 5.
+301: Configure gateway 10.10.99.1 
+302: 6.
+303: Enable IPAM:   
+304: allocate
+305: 7.
+306: Check IPv4 addresses:  
+307: show fabric ipam switch
+308: 8.
+309: Check fabric errors again.  There should be fewer errors. 
+310: 9.
+311: Add more IP addresses from the same subnet:  10.10.99.50 to 10.10.99.55 
+312: 10.
+313: Check IPv4 addresses again 
+314: 11.
+315: Check fabric errors.  There should be no errors. 
+316: © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CONFIDENTIAL 
+317: 144 
+318: LAB – WORKING WITH CONTROLLERS & SWITCHES – P(5) 
+319: 1.
+320: Save a snapshot of running 
+321: config
+322:   (Lab-2-Config-1) 
+323: 2.
+324: Discover fabric topology 
+325: 1.
+326: show switch 
+327: 2.
+328: show link 
+329: 3.
+330: Identify all the fabric links that have been discovered 
+331: 4.
+332: First identify all switches (spines, leaf switches, leaf-groups) 
+333: 5.
+334: Then map out links from each spine (to leaf switches) 
+335: 6.
+336: show link | 
+337: grep
+338:  ... 
+339: 7.
+340: Then map out links from each leaf switch (to spines and peer) 
+341: 3.
+342: Pre-provision a new spine switch S4 (
+343: switch does not exist in the topology
+344: ) 
+345: 1.
+346: Use “
+347: show switch
+348: ” to see status change as you add each line of configuration 
+349: 2.
+350: MAC address 00:00:00:01:00:04 
+351: 3.
+352: Fabric-role spine 
+353: 4.
+354: Check fabric status and errors 
+355: 5.
+356: Remove fabric role and check errors again 
+357: © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CONFIDENTIAL 
+358: 145 
+359: LAB – WORKING WITH CONTROLLERS & SWITCHES – P(6) 
+360: 1.
+361: Pre-provision a new leaf switch R4L1 
+362: 1.
+363: Use “
+364: show switch
+365: ” to see status change as you add each line of configuration 
+366: 2.
+367: MAC address 00:00:00:02:00:07 
+368: 3.
+369: Fabric-role leaf 
+370: 4.
+371: Leaf group R4 
+372: 5.
+373: Check fabric status and errors 
+374: 2.
+375: Pre-provision a second leaf switch R4L2 for leaf group R4 
+376: 1.
+377: MAC address 00:00:00:02:00:08 
+378: 2.
+379: Check fabric errors 
+380: 3.
+381: There should be a new error about peer link 
+382: 3.
+383: Move switch R3L1 to a new leaf-group R5 
+384: 1.
+385: Use “
+386: show link | 
+387: grep
+388:  R3L1
+389: ” to note all fabric links on R3L1 before making the change 
+390: 2.
+391: Change the leaf-group name under switch R3L1 to create the new leaf-group 
+392: 3.
+393: The fabric now has 5 leaf-groups 
+394: 4.
+395: What fabric links have changed and what is the new error 
+396: © 2017, BIG SWITCH NETWORKS, INC.     PROPRIETARY AND CONFIDENTIAL 
+397: 146 
+398: switch R2L1
+399:   fabric-role leaf
+400:     leaf-group R2
+401:       mac 00:00:00:02:00:03
+402: switch R2L2
+403:   fabric-role leaf
+404:     leaf-group R2
+405:       mac 00:00:00:02:00:04
+406: switch R3L1
+407:   fabric-role leaf
+408:     leaf-group R3
+409:       mac 00:00:00:02:00:05
+410: switch R3L2
+411:   fabric-role leaf
+412:     leaf-group R3
+413:       mac 00:00:00:02:00:06
+414: sh th
+415: sho th
+416: sho sw
+417: hist
+bcf-jas(config-switch)# !90
+bcf-jas(config-switch)# !93
+bcf-jas(config-switch)# !94
+bcf-jas(config-switch)# !9430histsho sw
+#  Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+--|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1  undefined   00:00:00:01:00:01  10.10.12.30 suspended (No fabric role configured)
+2  undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+3  undefined   00:00:00:01:00:03  10.10.12.30 suspended (No fabric role configured)
+4  undefined   00:00:00:02:00:01  10.10.12.30 suspended (No fabric role configured)
+5  undefined   00:00:00:02:00:02  10.10.12.30 suspended (No fabric role configured)
+6  R1L1        undefined                      not connected
+7  R2L1        00:00:00:02:00:03  10.10.12.30 connected                             leaf        R2
+8  R2L2        00:00:00:02:00:04  10.10.12.30 connected                             leaf        R2
+9  R3L1        00:00:00:02:00:05  10.10.12.30 connected                             leaf        R3
+10 R3L2        00:00:00:02:00:06  10.10.12.30 connected                             leaf        R3
+11 S1          undefined                      not connected
+bcf-jas(config-switch)# sho swrswuswnsw sw
+
+! switch
+switch R1L1
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+bcf-jas(config-switch)# switch R1L2
+bcf-jas(config-switch)#   fabric-role leaf
+bcf-jas(config-switch)#   leaf-group R1
+bcf-jas(config-switch)#   mac 00:00:00:02:00:02
+bcf-jas(config-switch)# switch R1L1
+bcf-jas(config-switch)#   fabric-role leaf
+bcf-jas(config-switch)#   leaf-group R1
+bcf-jas(config-switch)#   mac 00:00:00:02:00:01
+bcf-jas(config-switch)# 
+bcf-jas(config-switch)# switch R2L1
+bcf-jas(config-switch)#   fabric-role leaf
+bcf-jas(config-switch)#   leaf-group R2
+bcf-jas(config-switch)#   mac 00:00:00:02:00:03
+bcf-jas(config-switch)# 
+bcf-jas(config-switch)# switch R2L2
+bcf-jas(config-switch)#   fabric-role leaf
+bcf-jas(config-switch)#   leaf-group R2
+bcf-jas(config-switch)#   mac 00:00:00:02:00:04
+bcf-jas(config-switch)# 
+bcf-jas(config-switch)# switch R3L1
+bcf-jas(config-switch)#   fabric-role leaf
+bcf-jas(config-switch)#   leaf-group R3
+bcf-jas(config-switch)#   mac 00:00:00:02:00:05
+bcf-jas(config-switch)# 
+bcf-jas(config-switch)# switch R3L2
+bcf-jas(config-switch)#   fabric-role leaf
+bcf-jas(config-switch)#   leaf-group R3
+bcf-jas(config-switch)#   mac 00:00:00:02:00:06
+bcf-jas(config-switch)# 
+bcf-jas(config-switch)# switch S1
+bcf-jas(config-switch)#   fabric-role spine
+bcf-jas(config-switch)#   mac 00:00:00:01:00:01
+bcf-jas(config-switch)# switch S2
+bcf-jas(config-switch)#   fabric-role spine
+bcf-jas(config-switch)#   mac 00:00:00:01:00:02
+bcf-jas(config-switch)# switch S3
+bcf-jas(config-switch)#   fabric-role spine
+bcf-jas(config-switch)#   mac 00:00:00:01:00:03
+bcf-jas(config-switch)#   mac 00:00:00:01:00:03[4Pfabric-role spine[10Pswitch S3  mac 00:00:00:01:00:02[4Pfabric-role spine[10Pswitch S2  mac 00:00:00:01:00:01[4Pfabric-role spine[10Pswitch S1  mac 00:00:00:02:00:06[8Pleaf-group R3fabric-role leaf[7Pswitch R3L2  mac 00:00:00:02:00:05[8Pleaf-group R3fabric-role leaf[7Pswitch R3L1  mac 00:00:00:02:00:04[8Pleaf-group R2fabric-role leaf[7Pswitch R2L2  mac 00:00:00:02:00:03[8Pleaf-group R2fabric-role leaf[7Pswitch R2L1  mac 00:00:00:02:00:01[8Pleaf-group R1fabric-role leaf[7Pswitch R1L1  mac 00:00:00:02:00:02[8Pleaf-group R1fabric-role leaf[7Pswitch R1L2[1Pho run sw
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+bcf-jas(config-switch)# sh sw
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho sw
+# Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+-|-----------|------------------|-----------|----------------|-----------|----------|
+1 R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2 R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3 R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4 R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5 R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6 R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7 S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+8 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+9 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+bcf-jas(config-switch)# sh fab
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho fab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : NOT OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 9
+# of warnings                                                          : 14
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 3
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 6
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 3
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 18
+# of bidirectional links between switches in same leaf group           : 3
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 14
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config-switch)# sho fab err
+~ Switches that are not connected to standby controller ~
+None.
+
+~ Missing controller inband connection ~
+None.
+
+~ Switches that do not have management address configured ~
+# Switch Name Switch MAC Address 
+-|-----------|------------------|
+1 S1          00:00:00:01:00:01
+2 S2          00:00:00:01:00:02
+3 S3          00:00:00:01:00:03
+4 R1L1        00:00:00:02:00:01
+5 R1L2        00:00:00:02:00:02
+6 R2L1        00:00:00:02:00:03
+7 R2L2        00:00:00:02:00:04
+8 R3L1        00:00:00:02:00:05
+9 R3L2        00:00:00:02:00:06
+
+~ Switches with mismatched CPLD ~
+None.
+
+~ Switches with mismatched loader ~
+None.
+
+~ CPSEC errors ~
+None.
+
+~ Switches with failed sync ~
+None.
+
+~ Switches that are disconnected but have not been removed from the fabric ~
+None.
+
+~ Suspended switches ~
+None.
+
+~ Switch interfaces shutdown by controller ~
+None.
+
+~ Runtime lags with member count greater than maximum supported count(128) ~
+None.
+
+~ Invalid links ~
+None.
+
+~ Missing links ~
+None.
+
+~ Interfaces whose breakout property was enabled by user but are breakout incapable ~
+None.
+
+~ Interfaces configured with bpdu-guard-disable but shut down because of no links to peer switch ~
+None.
+
+~ Interface which failed to be used for vxlan-termination ~
+None.
+bcf-jas(config-switch)# sho fab err[K[K[K
+ <cr>              inventory          setting            warning
+connected-devices  ipam               summary
+error              qos                switch
+bcf-jas(config-switch)# sho fab warn
+~ Switch interfaces that are not configured in a interface-group ~
+#  Leaf Group Switch Name Interface Name 
+--|----------|-----------|--------------|
+1  R1         R1L1        R1L1-eth5
+2  R1         R1L1        R1L1-eth6
+3  R1         R1L2        R1L2-eth5
+4  R1         R1L2        R1L2-eth6
+5  R2         R2L1        R2L1-eth5
+6  R2         R2L1        R2L1-eth6
+7  R2         R2L2        R2L2-eth5
+8  R2         R2L2        R2L2-eth6
+9  R3         R3L1        R3L1-eth5
+10 R3         R3L1        R3L1-eth6
+11 R3         R3L1        R3L1-eth7
+12 R3         R3L2        R3L2-eth5
+13 R3         R3L2        R3L2-eth6
+14 R3         R3L2        R3L2-eth7
+
+~ Spine switch interfaces with no links discovered on them ~
+None.
+
+~ Interface-group member interfaces that are not in a forwarding state ~
+None.
+
+~ Controllers with non-redundant inband connection ~
+None.
+
+~ Switches with mismatched ONIE ~
+None.
+
+~ CPSEC warnings ~
+None.
+
+~ Incomplete or inactive member rules ~
+None.
+
+~ Incomplete or inactive endpoints ~
+None.
+
+~ Inband segment ports without endpoints ~
+None.
+
+~ Incomplete or inactive NAT profiles ~
+None.
+
+~ Incomplete or inactive PAT profiles ~
+None.
+
+~ Incomplete or inactive floating IPs ~
+None.
+
+~ Interface-groups with only subset of member interfaces with bpdu-guard-disable ~
+None.
+
+~ Incomplete segment interface state table ~
+None.
+
+~ Incomplete tenant interface state table ~
+None.
+
+~ Incomplete route table ~
+None.
+
+~ Incomplete next hop group table ~
+None.
+
+~ Incomplete dynamic route next hop group table ~
+None.
+
+~ Incomplete policy list applied to logical router ~
+None.
+
+~ Incomplete applied policy rule table ~
+None.
+
+~ Multicast inactive tenants ~
+None.
+
+~ Incomplete or inactive multicast groups ~
+None.
+bcf-jas(config-switch)# sho fab warn[1Perr
+~ Switches that are not connected to standby controller ~
+None.
+
+~ Missing controller inband connection ~
+None.
+
+~ Switches that do not have management address configured ~
+# Switch Name Switch MAC Address 
+-|-----------|------------------|
+1 S1          00:00:00:01:00:01
+2 S2          00:00:00:01:00:02
+3 S3          00:00:00:01:00:03
+4 R1L1        00:00:00:02:00:01
+5 R1L2        00:00:00:02:00:02
+6 R2L1        00:00:00:02:00:03
+7 R2L2        00:00:00:02:00:04
+8 R3L1        00:00:00:02:00:05
+9 R3L2        00:00:00:02:00:06
+
+~ Switches with mismatched CPLD ~
+None.
+
+~ Switches with mismatched loader ~
+None.
+
+~ CPSEC errors ~
+None.
+
+~ Switches with failed sync ~
+None.
+
+~ Switches that are disconnected but have not been removed from the fabric ~
+None.
+
+~ Suspended switches ~
+None.
+
+~ Switch interfaces shutdown by controller ~
+None.
+
+~ Runtime lags with member count greater than maximum supported count(128) ~
+None.
+
+~ Invalid links ~
+None.
+
+~ Missing links ~
+None.
+
+~ Interfaces whose breakout property was enabled by user but are breakout incapable ~
+None.
+
+~ Interfaces configured with bpdu-guard-disable but shut down because of no links to peer switch ~
+None.
+
+~ Interface which failed to be used for vxlan-termination ~
+None.
+bcf-jas(config-switch)# sho fab errwarn
+~ Switch interfaces that are not configured in a interface-group ~
+#  Leaf Group Switch Name Interface Name 
+--|----------|-----------|--------------|
+1  R1         R1L1        R1L1-eth5
+2  R1         R1L1        R1L1-eth6
+3  R1         R1L2        R1L2-eth5
+4  R1         R1L2        R1L2-eth6
+5  R2         R2L1        R2L1-eth5
+6  R2         R2L1        R2L1-eth6
+7  R2         R2L2        R2L2-eth5
+8  R2         R2L2        R2L2-eth6
+9  R3         R3L1        R3L1-eth5
+10 R3         R3L1        R3L1-eth6
+11 R3         R3L1        R3L1-eth7
+12 R3         R3L2        R3L2-eth5
+13 R3         R3L2        R3L2-eth6
+14 R3         R3L2        R3L2-eth7
+
+~ Spine switch interfaces with no links discovered on them ~
+None.
+
+~ Interface-group member interfaces that are not in a forwarding state ~
+None.
+
+~ Controllers with non-redundant inband connection ~
+None.
+
+~ Switches with mismatched ONIE ~
+None.
+
+~ CPSEC warnings ~
+None.
+
+~ Incomplete or inactive member rules ~
+None.
+
+~ Incomplete or inactive endpoints ~
+None.
+
+~ Inband segment ports without endpoints ~
+None.
+
+~ Incomplete or inactive NAT profiles ~
+None.
+
+~ Incomplete or inactive PAT profiles ~
+None.
+
+~ Incomplete or inactive floating IPs ~
+None.
+
+~ Interface-groups with only subset of member interfaces with bpdu-guard-disable ~
+None.
+
+~ Incomplete segment interface state table ~
+None.
+
+~ Incomplete tenant interface state table ~
+None.
+
+~ Incomplete route table ~
+None.
+
+~ Incomplete next hop group table ~
+None.
+
+~ Incomplete dynamic route next hop group table ~
+None.
+
+~ Incomplete policy list applied to logical router ~
+None.
+
+~ Incomplete applied policy rule table ~
+None.
+
+~ Multicast inactive tenants ~
+None.
+
+~ Incomplete or inactive multicast groups ~
+None.
+bcf-jas(config-switch)# sho fab warn[K[K[K[Kipam sw
+None.
+bcf-jas(config-switch)# fab
+Error: fab is ambiguous: choices "fabric-role", "fabric"
+bcf-jas(config-switch)# fab
+fabric       fabric-role 
+bcf-jas(config-switch)# fabric
+bcf-jas(config-fabric)# ipam sw
+bcf-jas(config-fabric-ipam-switch)# 
+allocate                  gateway                   pod-role
+dns-server                gtp-hash                  qos
+endpoint-flap-protection  ip-range                  vlan-mapping
+forwarding-mode           ipam
+bcf-jas(config-fabric-ipam-switch)# ip 
+ <starting IP of allocation>  switch                       
+bcf-jas(config-fabric-ipam-switch)# ip 10.10.99.10 
+Configure ending ip address
+bcf-jas(config-fabric-ipam-switch)# ip 10.10.99.10 10.10.99.15 subnet-mask-lengthh 
+Configure subnet mask length
+bcf-jas(config-fabric-ipam-switch)# ip 10.10.99.10 10.10.99.15 subnet-mask-length /24
+Error: ip is ambiguous: choices "ip-range", "ipam"
+bcf-jas(config-fabric-ipam-switch)# ip 10.10.99.10 10.10.99.15 subnet-mask-lengthh /24M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C- 10.10.99.10 10.10.99.15 subnet-mask-length /24M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr 10.10.99.10 10.10.99.15 subnet-mask-leng[1@tM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cange  10.10.99.10 10.10.99.15 subnet-mask[5@-lengM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+Error: Invalid argument: Invalid subnet mask length: /24; value is not an integer
+bcf-jas(config-fabric-ipam-switch)# ip-range  10.10.99.10 10.10.99.15 subnet-maskk-length /24[C[1P24
+bcf-jas(config-fabric-ipam-switch)# sh [Ko this
+
+! fabric
+fabric
+  !
+  ipam switch
+    ip-range 10.10.99.10 10.10.99.15 subnet-mask-length 24
+bcf-jas(config-fabric-ipam-switch)# g
+gateway   group     gtp-hash 
+bcf-jas(config-fabric-ipam-switch)# gateway 10.10.99.1
+bcf-jas(config-fabric-ipam-switch)# a
+aaa       allocate 
+bcf-jas(config-fabric-ipam-switch)# allocate 
+<cr>
+bcf-jas(config-fabric-ipam-switch)# allocate 
+bcf-jas(config-fabric-ipam-switch)# sh fab i
+inventory  ipam      
+bcf-jas(config-fabric-ipam-switch)# sh fab ipam switch 
+Start : 10.10.99.10
+End   : 10.10.99.15
+Count : 6
+Used  : 6
+~ Allocated IP Addresses ~
+# Ip          Switch 
+-|-----------|------|
+1 10.10.99.10 R1L1
+2 10.10.99.11 R1L2
+3 10.10.99.12 R2L1
+4 10.10.99.13 R2L2
+5 10.10.99.14 R3L1
+6 10.10.99.15 R3L2
+bcf-jas(config-fabric-ipam-switch)# sho fab err
+~ Switches that are not connected to standby controller ~
+None.
+
+~ Missing controller inband connection ~
+None.
+
+~ Switches that do not have management address configured ~
+# Switch Name Switch MAC Address 
+-|-----------|------------------|
+1 S1          00:00:00:01:00:01
+2 S2          00:00:00:01:00:02
+3 S3          00:00:00:01:00:03
+
+~ Switches with mismatched CPLD ~
+None.
+
+~ Switches with mismatched loader ~
+None.
+
+~ CPSEC errors ~
+None.
+
+~ Switches with failed sync ~
+None.
+
+~ Switches that are disconnected but have not been removed from the fabric ~
+None.
+
+~ Suspended switches ~
+None.
+
+~ Switch interfaces shutdown by controller ~
+None.
+
+~ Runtime lags with member count greater than maximum supported count(128) ~
+None.
+
+~ Invalid links ~
+None.
+
+~ Missing links ~
+None.
+
+~ Interfaces whose breakout property was enabled by user but are breakout incapable ~
+None.
+
+~ Interfaces configured with bpdu-guard-disable but shut down because of no links to peer switch ~
+None.
+
+~ Interface which failed to be used for vxlan-termination ~
+None.
+bcf-jas(config-fabric-ipam-switch)# sho fab err[K[K[Kw
+~ Switch interfaces that are not configured in a interface-group ~
+#  Leaf Group Switch Name Interface Name 
+--|----------|-----------|--------------|
+1  R1         R1L1        R1L1-eth5
+2  R1         R1L1        R1L1-eth6
+3  R1         R1L2        R1L2-eth5
+4  R1         R1L2        R1L2-eth6
+5  R2         R2L1        R2L1-eth5
+6  R2         R2L1        R2L1-eth6
+7  R2         R2L2        R2L2-eth5
+8  R2         R2L2        R2L2-eth6
+9  R3         R3L1        R3L1-eth5
+10 R3         R3L1        R3L1-eth6
+11 R3         R3L1        R3L1-eth7
+12 R3         R3L2        R3L2-eth5
+13 R3         R3L2        R3L2-eth6
+14 R3         R3L2        R3L2-eth7
+
+~ Spine switch interfaces with no links discovered on them ~
+None.
+
+~ Interface-group member interfaces that are not in a forwarding state ~
+None.
+
+~ Controllers with non-redundant inband connection ~
+None.
+
+~ Switches with mismatched ONIE ~
+None.
+
+~ CPSEC warnings ~
+None.
+
+~ Incomplete or inactive member rules ~
+None.
+
+~ Incomplete or inactive endpoints ~
+None.
+
+~ Inband segment ports without endpoints ~
+None.
+
+~ Incomplete or inactive NAT profiles ~
+None.
+
+~ Incomplete or inactive PAT profiles ~
+None.
+
+~ Incomplete or inactive floating IPs ~
+None.
+
+~ Interface-groups with only subset of member interfaces with bpdu-guard-disable ~
+None.
+
+~ Incomplete segment interface state table ~
+None.
+
+~ Incomplete tenant interface state table ~
+None.
+
+~ Incomplete route table ~
+None.
+
+~ Incomplete next hop group table ~
+None.
+
+~ Incomplete dynamic route next hop group table ~
+None.
+
+~ Incomplete policy list applied to logical router ~
+None.
+
+~ Incomplete applied policy rule table ~
+None.
+
+~ Multicast inactive tenants ~
+None.
+
+~ Incomplete or inactive multicast groups ~
+None.
+bcf-jas(config-fabric-ipam-switch)# sho fab werr fab ipam switch [10Pallocate[Cgateway 10.10.99.1[10Psho thisip-range  10.10.99.10 10.10.99.15 subnet-maskk-length 24M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C subnet-mask-[1PM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C subnet-mask-l[1PM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C5 subnet-mask-[1@lM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C5 subnet-mask[1@-M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C0 10.10.99.55 subnet-mask-[1PM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C50 10.10.99.55 subnet-mask[1@-M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+bcf-jas(config-fabric-ipam-switch)# ip-range  10.10.99.50 10.10.99.55 subnet-maskk-length 24M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csho fab w[K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cerr fab ipam switch [10Pallocate[Cgateway 10.10.99.1[10Psho thisip-range  10.10.99.10 10.10.99.15 subnet-maskk-length 24M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csho this[K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+! fabric
+fabric
+  !
+  ipam switch
+    allocate
+    gateway 10.10.99.1
+    ip-range 10.10.99.10 10.10.99.15 subnet-mask-length 24
+    ip-range 10.10.99.50 10.10.99.55 subnet-mask-length 24
+bcf-jas(config-fabric-ipam-switch)# [14P(reverse-i-search)`':[Ce': ip-range  10.10.99.50 10.10.99.55 subnet-mask-length 24[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr': sho fab err[K[12@bcf-jas(config-fabric-ipam-switch)#[C[C[C[C[C[C[C[C[C
+None.
+bcf-jas(config-fabric-ipam-switch)# copy run sn
+snapshot://                snapshot://BCF-Config5
+snapshot://BCF-Config1     snapshot://BCF-Config6
+snapshot://BCF-Config2     snapshot://BCF-Config7
+snapshot://BCF-Config3     snapshot://initial-config
+snapshot://BCF-Config4
+bcf-jas(config-fabric-ipam-switch)# copy run snapshot://
+snapshot://                snapshot://BCF-Config5
+snapshot://BCF-Config1     snapshot://BCF-Config6
+snapshot://BCF-Config2     snapshot://BCF-Config7
+snapshot://BCF-Config3     snapshot://initial-config
+snapshot://BCF-Config4
+bcf-jas(config-fabric-ipam-switch)# copy run snapshot://Lab-2-Config-1
+bcf-jas(config-fabric-ipam-switch)# sh sw
+# Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+-|-----------|------------------|-----------|----------------|-----------|----------|
+1 R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2 R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3 R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4 R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5 R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6 R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7 S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+8 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+9 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+bcf-jas(config-fabric-ipam-switch)# sh link
+#  Switch Name IF Name   Switch Name IF Name   Link Type  
+--|-----------|---------|-----------|---------|----------|
+1  R1L1        R1L1-eth1 R1L2        R1L2-eth1 peer
+2  R2L1        R2L1-eth1 R2L2        R2L2-eth1 peer
+3  R3L1        R3L1-eth1 R3L2        R3L2-eth1 peer
+4  S1          S1-eth1   R1L1        R1L1-eth2 leaf-spine
+5  S1          S1-eth2   R1L2        R1L2-eth2 leaf-spine
+6  S1          S1-eth3   R2L1        R2L1-eth2 leaf-spine
+7  S1          S1-eth4   R2L2        R2L2-eth2 leaf-spine
+8  S1          S1-eth5   R3L1        R3L1-eth2 leaf-spine
+9  S1          S1-eth6   R3L2        R3L2-eth2 leaf-spine
+10 S2          S2-eth1   R1L1        R1L1-eth3 leaf-spine
+11 S2          S2-eth2   R1L2        R1L2-eth3 leaf-spine
+12 S2          S2-eth3   R2L1        R2L1-eth3 leaf-spine
+13 S2          S2-eth4   R2L2        R2L2-eth3 leaf-spine
+14 S2          S2-eth5   R3L1        R3L1-eth3 leaf-spine
+15 S2          S2-eth6   R3L2        R3L2-eth3 leaf-spine
+16 S3          S3-eth1   R1L1        R1L1-eth4 leaf-spine
+17 S3          S3-eth2   R1L2        R1L2-eth4 leaf-spine
+18 S3          S3-eth3   R2L1        R2L1-eth4 leaf-spine
+19 S3          S3-eth4   R2L2        R2L2-eth4 leaf-spine
+20 S3          S3-eth5   R3L1        R3L1-eth4 leaf-spine
+21 S3          S3-eth6   R3L2        R3L2-eth4 leaf-spine
+bcf-jas(config-fabric-ipam-switch)# sho run sw
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+bcf-jas(config-fabric-ipam-switch)# sw S4
+bcf-jas(config-switch)# mac 00:00:00:01:00:04
+bcf-jas(config-switch)# sh sw
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+--|-----------|------------------|-----------|----------------|-----------|----------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+8  S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+9  S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+10 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# fab
+fabric       fabric-role 
+bcf-jas(config-switch)# fabric-role spine 
+bcf-jas(config-switch)# fabric-role spine [12Psho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+--|-----------|------------------|-----------|----------------|-----------|----------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+8  S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+9  S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+10 S4          00:00:00:01:00:04              not connected    spine
+bcf-jas(config-switch)# sho fab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : NOT OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 6
+# of warnings                                                          : 14
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 4
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 6
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 3
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 18
+# of bidirectional links between switches in same leaf group           : 3
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 14
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config-switch)# sho fab err
+~ Switches that are not connected to standby controller ~
+None.
+
+~ Missing controller inband connection ~
+None.
+
+~ Switches that do not have management address configured ~
+None.
+
+~ Switches with mismatched CPLD ~
+None.
+
+~ Switches with mismatched loader ~
+None.
+
+~ CPSEC errors ~
+None.
+
+~ Switches with failed sync ~
+None.
+
+~ Switches that are disconnected but have not been removed from the fabric ~
+None.
+
+~ Suspended switches ~
+None.
+
+~ Switch interfaces shutdown by controller ~
+None.
+
+~ Runtime lags with member count greater than maximum supported count(128) ~
+None.
+
+~ Invalid links ~
+None.
+
+~~~~~~~~~~~~~~~~~~~ Missing links ~~~~~~~~~~~~~~~~~~~
+# Switch Name Switch Name Description                
+-|-----------|-----------|--------------------------|
+1 S4          R1L1        Spine to leaf link missing
+2 S4          R1L2        Spine to leaf link missing
+3 S4          R2L1        Spine to leaf link missing
+4 S4          R2L2        Spine to leaf link missing
+5 S4          R3L1        Spine to leaf link missing
+6 S4          R3L2        Spine to leaf link missing
+
+~ Interfaces whose breakout property was enabled by user but are breakout incapable ~
+None.
+
+~ Interfaces configured with bpdu-guard-disable but shut down because of no links to peer switch ~
+None.
+
+~ Interface which failed to be used for vxlan-termination ~
+None.
+bcf-jas(config-switch)# sho fab err[K[1Pswfabric-role spine [1@n[1@o[1@ 
+bcf-jas(config-switch)# no fabric-role spine [10Psho fab err
+None.
+bcf-jas(config-switch)# sho fab errno fabric-role spine [10Psho fab err[K
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : OK (Warnings)
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 0
+# of warnings                                                          : 14
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 3
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 6
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 3
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 18
+# of bidirectional links between switches in same leaf group           : 3
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 14
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config-switch)# sho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+--|-----------|------------------|-----------|----------------|-----------|----------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+8  S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+9  S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+10 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# sw R4L1
+bcf-jas(config-switch)# sw R4L1[1Pho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+--|-----------|------------------|-----------|----------------|-----------|----------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  R4L1        undefined                      not connected
+8  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+9  S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+10 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+11 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# ! P(6)
+bcf-jas(config-switch)# mac ! P(6)[2Pmac ! P(6)sho sww R4L1[1Pho swfab errno fabric-role spine [10Psho fab err[K[1Pswfabric-role spine [12Psho sw[1P swmac 00:00:00:01:00:04[K7[1P:00:072:00:07
+bcf-jas(config-switch)# fab
+fabric       fabric-role 
+bcf-jas(config-switch)# fabric-role leaf 
+bcf-jas(config-switch)# fabric-role leaf mac 00:00:00:02:00:07! P(6)[Ksho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group              
+--|-----------|------------------|-----------|----------------|-----------|-----------------------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  R4L1        00:00:00:02:00:07              not connected    leaf        00:00:00:00:00:02:00:07
+8  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+9  S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+10 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+11 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# leaf-group R4
+bcf-jas(config-switch)# leaf-group R4[7Psho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+--|-----------|------------------|-----------|----------------|-----------|----------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  R4L1        00:00:00:02:00:07              not connected    leaf        R4
+8  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+9  S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+10 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+11 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# sho sw[K[Kfab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : NOT OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 3
+# of warnings                                                          : 14
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 3
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 7
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 4
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 18
+# of bidirectional links between switches in same leaf group           : 3
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 14
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config-switch)# sho fab err
+~ Switches that are not connected to standby controller ~
+None.
+
+~ Missing controller inband connection ~
+None.
+
+~ Switches that do not have management address configured ~
+None.
+
+~ Switches with mismatched CPLD ~
+None.
+
+~ Switches with mismatched loader ~
+None.
+
+~ CPSEC errors ~
+None.
+
+~ Switches with failed sync ~
+None.
+
+~ Switches that are disconnected but have not been removed from the fabric ~
+None.
+
+~ Suspended switches ~
+None.
+
+~ Switch interfaces shutdown by controller ~
+None.
+
+~ Runtime lags with member count greater than maximum supported count(128) ~
+None.
+
+~ Invalid links ~
+None.
+
+~~~~~~~~~~~~~~~~~~~ Missing links ~~~~~~~~~~~~~~~~~~~
+# Switch Name Switch Name Description                
+-|-----------|-----------|--------------------------|
+1 S1          R4L1        Spine to leaf link missing
+2 S2          R4L1        Spine to leaf link missing
+3 S3          R4L1        Spine to leaf link missing
+
+~ Interfaces whose breakout property was enabled by user but are breakout incapable ~
+None.
+
+~ Interfaces configured with bpdu-guard-disable but shut down because of no links to peer switch ~
+None.
+
+~ Interface which failed to be used for vxlan-termination ~
+None.
+bcf-jas(config-switch)# sw R4L2
+bcf-jas(config-switch)# mac 00:00:00:02:00:08
+bcf-jas(config-switch)# sh sw
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+--|-----------|------------------|-----------|----------------|-----------|----------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  R4L1        00:00:00:02:00:07              not connected    leaf        R4
+8  R4L2        00:00:00:02:00:08              not connected
+9  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+10 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+11 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+12 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# leaf-group R4
+Error: Validation failed: [Validate Switch R4L2]:Only leaf switches can be configured with a leaf group
+bcf-jas(config-switch)# leaf-group R4[7Psho swleaf-group R4[Kba[K[Kfab
+fabric       fabric-role 
+bcf-jas(config-switch)# fabric-role l
+bcf-jas(config-switch)# fabric-role lleaf-group R4
+bcf-jas(config-switch)# leaf-group R4fabric-role lleaf-group R4[7Psho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+--|-----------|------------------|-----------|----------------|-----------|----------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  R4L1        00:00:00:02:00:07              not connected    leaf        R4
+8  R4L2        00:00:00:02:00:08              not connected    leaf        R4
+9  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+10 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+11 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+12 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# sh fab err
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho fab err
+~ Switches that are not connected to standby controller ~
+None.
+
+~ Missing controller inband connection ~
+None.
+
+~ Switches that do not have management address configured ~
+None.
+
+~ Switches with mismatched CPLD ~
+None.
+
+~ Switches with mismatched loader ~
+None.
+
+~ CPSEC errors ~
+None.
+
+~ Switches with failed sync ~
+None.
+
+~ Switches that are disconnected but have not been removed from the fabric ~
+None.
+
+~ Suspended switches ~
+None.
+
+~ Switch interfaces shutdown by controller ~
+None.
+
+~ Runtime lags with member count greater than maximum supported count(128) ~
+None.
+
+~ Invalid links ~
+None.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~ Missing links ~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Switch Name Switch Name Description                              
+-|-----------|-----------|----------------------------------------|
+1 R4L1        R4L2        Link between leaf switches missing in R4
+2 S1          R4L1        Spine to leaf link missing
+3 S1          R4L2        Spine to leaf link missing
+4 S2          R4L1        Spine to leaf link missing
+5 S2          R4L2        Spine to leaf link missing
+6 S3          R4L1        Spine to leaf link missing
+7 S3          R4L2        Spine to leaf link missing
+
+~ Interfaces whose breakout property was enabled by user but are breakout incapable ~
+None.
+
+~ Interfaces configured with bpdu-guard-disable but shut down because of no links to peer switch ~
+None.
+
+~ Interface which failed to be used for vxlan-termination ~
+None.
+bcf-jas(config-switch)# sho link |grep R3L1
+3  R3L1        R3L1-eth1 R3L2        R3L2-eth1 peer
+8  S1          S1-eth5   R3L1        R3L1-eth2 leaf-spine
+14 S2          S2-eth5   R3L1        R3L1-eth3 leaf-spine
+20 S3          S3-eth5   R3L1        R3L1-eth4 leaf-spine
+bcf-jas(config-switch)# sw R3
+R3L1  R3L2 
+bcf-jas(config-switch)# sw R3L1
+bcf-jas(config-switch)# leaf-group R5
+bcf-jas(config-switch)# leaf-group R5[6Psw R3L1[12@ho link |grep[C[C[C[C[C
+7  S1          S1-eth5   R3L1        R3L1-eth2 leaf-spine
+13 S2          S2-eth5   R3L1        R3L1-eth3 leaf-spine
+19 S3          S3-eth5   R3L1        R3L1-eth4 leaf-spine
+bcf-jas(config-switch)# sh fab
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho fab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : NOT OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 11
+# of warnings                                                          : 8
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 3
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 8
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 5
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 18
+# of bidirectional links between switches in same leaf group           : 2
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 14
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config-switch)# sho link
+#  Switch Name IF Name   Switch Name IF Name   Link Type  
+--|-----------|---------|-----------|---------|----------|
+1  R1L1        R1L1-eth1 R1L2        R1L2-eth1 peer
+2  R2L1        R2L1-eth1 R2L2        R2L2-eth1 peer
+3  S1          S1-eth1   R1L1        R1L1-eth2 leaf-spine
+4  S1          S1-eth2   R1L2        R1L2-eth2 leaf-spine
+5  S1          S1-eth3   R2L1        R2L1-eth2 leaf-spine
+6  S1          S1-eth4   R2L2        R2L2-eth2 leaf-spine
+7  S1          S1-eth5   R3L1        R3L1-eth2 leaf-spine
+8  S1          S1-eth6   R3L2        R3L2-eth2 leaf-spine
+9  S2          S2-eth1   R1L1        R1L1-eth3 leaf-spine
+10 S2          S2-eth2   R1L2        R1L2-eth3 leaf-spine
+11 S2          S2-eth3   R2L1        R2L1-eth3 leaf-spine
+12 S2          S2-eth4   R2L2        R2L2-eth3 leaf-spine
+13 S2          S2-eth5   R3L1        R3L1-eth3 leaf-spine
+14 S2          S2-eth6   R3L2        R3L2-eth3 leaf-spine
+15 S3          S3-eth1   R1L1        R1L1-eth4 leaf-spine
+16 S3          S3-eth2   R1L2        R1L2-eth4 leaf-spine
+17 S3          S3-eth3   R2L1        R2L1-eth4 leaf-spine
+18 S3          S3-eth4   R2L2        R2L2-eth4 leaf-spine
+19 S3          S3-eth5   R3L1        R3L1-eth4 leaf-spine
+20 S3          S3-eth6   R3L2        R3L2-eth4 leaf-spine
+bcf-jas(config-switch)# sho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+--|-----------|------------------|-----------|----------------|-----------|----------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R5
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  R4L1        00:00:00:02:00:07              not connected    leaf        R4
+8  R4L2        00:00:00:02:00:08              not connected    leaf        R4
+9  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+10 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+11 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+12 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# ! P(7)
+bcf-jas(config-switch)# 
+bcf-jas(config-switch)# sw r[KR
+R1L1  R1L2  R2L1  R2L2  R3L1  R3L2  R4L1  R4L2 
+bcf-jas(config-switch)# sw R1
+R1L1  R1L2 
+bcf-jas(config-switch)# sw R1L2
+bcf-jas(config-switch)# no leaf-group 
+bcf-jas(config-switch)# sw r2[K[KR2L2
+bcf-jas(config-switch)# sw R2L2no leaf-group 
+bcf-jas(config-switch)# leaf-group R1
+bcf-jas(config-switch)# sh sw
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group              
+--|-----------|------------------|-----------|----------------|-----------|-----------------------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        00:00:00:00:00:02:00:02
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R1
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R5
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  R4L1        00:00:00:02:00:07              not connected    leaf        R4
+8  R4L2        00:00:00:02:00:08              not connected    leaf        R4
+9  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+10 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+11 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+12 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# sw R1L2
+bcf-jas(config-switch)# l
+leaf-group  local       logout     
+bcf-jas(config-switch)# leaf-group R1
+Error: Validation failed: Validate Leaf Switch [R1L2]: 2 leaf switches [R1L1, R2L2] are already configured with the same leaf-group = [R1]
+bcf-jas(config-switch)# leaf-group R1[6Psw R1L2[1Pho sww R1L2[1PL22L2
+bcf-jas(config-switch)# sw R2L2leaf-group R1
+bcf-jas(config-switch)# leaf-group R1[6Psw R2L2leaf-group R1[6Psw R1L2[1Pho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group              
+--|-----------|------------------|-----------|----------------|-----------|-----------------------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        00:00:00:00:00:02:00:02
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R1
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R5
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  R4L1        00:00:00:02:00:07              not connected    leaf        R4
+8  R4L2        00:00:00:02:00:08              not connected    leaf        R4
+9  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+10 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+11 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+12 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# sho swleaf-group R1[6Psw R2L2[1PL21L2
+bcf-jas(config-switch)# l
+leaf-group  local       logout     
+bcf-jas(config-switch)# leaf-group R2
+bcf-jas(config-switch)# leaf-group R2[6Psw R1L2[1Pho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+--|-----------|------------------|-----------|----------------|-----------|----------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R2
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R1
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R5
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  R4L1        00:00:00:02:00:07              not connected    leaf        R4
+8  R4L2        00:00:00:02:00:08              not connected    leaf        R4
+9  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+10 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+11 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+12 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# sh fab err
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho fab err
+~ Switches that are not connected to standby controller ~
+None.
+
+~ Missing controller inband connection ~
+None.
+
+~ Switches that do not have management address configured ~
+None.
+
+~ Switches with mismatched CPLD ~
+None.
+
+~ Switches with mismatched loader ~
+None.
+
+~ CPSEC errors ~
+None.
+
+~ Switches with failed sync ~
+None.
+
+~ Switches that are disconnected but have not been removed from the fabric ~
+None.
+
+~ Suspended switches ~
+None.
+
+~ Switch interfaces shutdown by controller ~
+None.
+
+~ Runtime lags with member count greater than maximum supported count(128) ~
+None.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Invalid links  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Dir Reason                             Source Switch Source Interface Dest Switch Dest Interface Last Seen                      
+-|---|----------------------------------|-------------|----------------|-----------|--------------|------------------------------|
+1 B   Link between Leaf Groups [R1, R2 ] R1L1          R1L1-eth1        R1L2        R1L2-eth1      2017-10-17 18:38:18.560000 UTC
+2 B   Reverse Link Not Detected          R1L1          R1L1-eth1        R1L2        R1L2-eth1      2017-10-17 18:38:18.560000 UTC
+3 U   Reverse Link Not Detected          R1L2          R1L2-eth2        S1          S1-eth2        2017-10-17 18:38:18.550000 UTC
+4 U   Reverse Link Not Detected          R1L2          R1L2-eth3        S2          S2-eth2        2017-10-17 18:38:18.549000 UTC
+5 U   Reverse Link Not Detected          R1L2          R1L2-eth4        S3          S3-eth2        2017-10-17 18:38:18.545000 UTC
+6 B   Link between Leaf Groups [R2, R1 ] R2L1          R2L1-eth1        R2L2        R2L2-eth1      2017-10-17 18:35:47.827000 UTC
+7 B   Reverse Link Not Detected          R2L1          R2L1-eth1        R2L2        R2L2-eth1      2017-10-17 18:35:47.824000 UTC
+8 B   Link between Leaf Groups [R5, R3 ] R3L1          R3L1-eth1        R3L2        R3L2-eth1      2017-10-17 18:33:29.220000 UTC
+9 B   Reverse Link Not Detected          R3L1          R3L1-eth1        R3L2        R3L2-eth1      2017-10-17 18:33:23.760000 UTC
+Notes:
+ Column "Dir": "U": Unidirectional, "B": Bidirectional
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~ Missing links  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#  Switch Name Switch Name Description                              
+--|-----------|-----------|----------------------------------------|
+1  R2L1        R1L2        Link between leaf switches missing in R2
+2  R2L2        R1L1        Link between leaf switches missing in R1
+3  R4L1        R4L2        Link between leaf switches missing in R4
+4  S1          R1L2        Spine to leaf link missing
+5  S1          R4L1        Spine to leaf link missing
+6  S1          R4L2        Spine to leaf link missing
+7  S2          R1L2        Spine to leaf link missing
+8  S2          R4L1        Spine to leaf link missing
+9  S2          R4L2        Spine to leaf link missing
+10 S3          R1L2        Spine to leaf link missing
+11 S3          R4L1        Spine to leaf link missing
+12 S3          R4L2        Spine to leaf link missing
+
+~ Interfaces whose breakout property was enabled by user but are breakout incapable ~
+None.
+
+~ Interfaces configured with bpdu-guard-disable but shut down because of no links to peer switch ~
+None.
+
+~ Interface which failed to be used for vxlan-termination ~
+None.
+bcf-jas(config-switch)# sh link
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho link
+#  Switch Name IF Name Switch Name IF Name   Link Type  
+--|-----------|-------|-----------|---------|----------|
+1  S1          S1-eth1 R1L1        R1L1-eth2 leaf-spine
+2  S1          S1-eth2 R1L2        R1L2-eth2 leaf-spine
+3  S1          S1-eth3 R2L1        R2L1-eth2 leaf-spine
+4  S1          S1-eth4 R2L2        R2L2-eth2 leaf-spine
+5  S1          S1-eth5 R3L1        R3L1-eth2 leaf-spine
+6  S1          S1-eth6 R3L2        R3L2-eth2 leaf-spine
+7  S2          S2-eth1 R1L1        R1L1-eth3 leaf-spine
+8  S2          S2-eth2 R1L2        R1L2-eth3 leaf-spine
+9  S2          S2-eth3 R2L1        R2L1-eth3 leaf-spine
+10 S2          S2-eth4 R2L2        R2L2-eth3 leaf-spine
+11 S2          S2-eth5 R3L1        R3L1-eth3 leaf-spine
+12 S2          S2-eth6 R3L2        R3L2-eth3 leaf-spine
+13 S3          S3-eth1 R1L1        R1L1-eth4 leaf-spine
+14 S3          S3-eth2 R1L2        R1L2-eth4 leaf-spine
+15 S3          S3-eth3 R2L1        R2L1-eth4 leaf-spine
+16 S3          S3-eth4 R2L2        R2L2-eth4 leaf-spine
+17 S3          S3-eth5 R3L1        R3L1-eth4 leaf-spine
+18 S3          S3-eth6 R3L2        R3L2-eth4 leaf-spine
+bcf-jas(config-switch)# sw r1L1
+bcf-jas(config-switch)# no l
+bcf-jas(config-switch)# sh thi
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho thi
+
+! switch
+switch r1L1
+bcf-jas(config-switch)# sho thi[1P thi[2Pno lsw r1L1[1P1L1R1L1
+bcf-jas(config-switch)# sw R1L1ho thi[1P thi[2Pno l
+bcf-jas(config-switch)# no lsw R1L1ho thi[1P thi[2Pno lsw r1L1ho link
+#  Switch Name IF Name Switch Name IF Name   Link Type  
+--|-----------|-------|-----------|---------|----------|
+1  S1          S1-eth1 R1L1        R1L1-eth2 leaf-spine
+2  S1          S1-eth2 R1L2        R1L2-eth2 leaf-spine
+3  S1          S1-eth3 R2L1        R2L1-eth2 leaf-spine
+4  S1          S1-eth4 R2L2        R2L2-eth2 leaf-spine
+5  S1          S1-eth5 R3L1        R3L1-eth2 leaf-spine
+6  S1          S1-eth6 R3L2        R3L2-eth2 leaf-spine
+7  S2          S2-eth1 R1L1        R1L1-eth3 leaf-spine
+8  S2          S2-eth2 R1L2        R1L2-eth3 leaf-spine
+9  S2          S2-eth3 R2L1        R2L1-eth3 leaf-spine
+10 S2          S2-eth4 R2L2        R2L2-eth3 leaf-spine
+11 S2          S2-eth5 R3L1        R3L1-eth3 leaf-spine
+12 S2          S2-eth6 R3L2        R3L2-eth3 leaf-spine
+13 S3          S3-eth1 R1L1        R1L1-eth4 leaf-spine
+14 S3          S3-eth2 R1L2        R1L2-eth4 leaf-spine
+15 S3          S3-eth3 R2L1        R2L1-eth4 leaf-spine
+16 S3          S3-eth4 R2L2        R2L2-eth4 leaf-spine
+17 S3          S3-eth5 R3L1        R3L1-eth4 leaf-spine
+18 S3          S3-eth6 R3L2        R3L2-eth4 leaf-spine
+bcf-jas(config-switch)# sho link[4Pno lsw R1L1[3Pno lsho link[Ksho sw
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group              
+--|-----------|------------------|-----------|----------------|-----------|-----------------------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        00:00:00:00:00:02:00:01
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R2
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R1
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R5
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  R4L1        00:00:00:02:00:07              not connected    leaf        R4
+8  R4L2        00:00:00:02:00:08              not connected    leaf        R4
+9  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+10 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+11 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+12 S4          00:00:00:01:00:04              not connected
+13 r1L1        undefined                      not connected
+bcf-jas(config-switch)# sh sw[K[K[Ko sw stat
+None.
+bcf-jas(config-switch)# sho sw stat[K[K[K[K
+ <cr>  R1L2   R2L2   R3L2   R4L2   S2     S4     r1L1
+R1L1   R2L1   R3L1   R4L1   S1     S3     all
+bcf-jas(config-switch)# sho sw 
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group              
+--|-----------|------------------|-----------|----------------|-----------|-----------------------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        00:00:00:00:00:02:00:01
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R2
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R1
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R5
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  R4L1        00:00:00:02:00:07              not connected    leaf        R4
+8  R4L2        00:00:00:02:00:08              not connected    leaf        R4
+9  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+10 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+11 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+12 S4          00:00:00:01:00:04              not connected
+13 r1L1        undefined                      not connected
+bcf-jas(config-switch)# del sw[K
+snapshot  support  
+bcf-jas(config-switch)# del s[K[K[K[K[Kno sw R4L1
+bcf-jas(config-switch)# no sw R4L1[K2
+bcf-jas(config-switch)# no sw R4L21[3Psho sw 
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group              
+--|-----------|------------------|-----------|----------------|-----------|-----------------------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        00:00:00:00:00:02:00:01
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R2
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R1
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R5
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+8  S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+9  S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+10 S4          00:00:00:01:00:04              not connected
+11 r1L1        undefined                      not connected
+bcf-jas(config-switch)# sho sw no sw R4L2[K[K[K[Kr1L1
+bcf-jas(config-switch)# no sw r1L1[3Psho sw 
+#  Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group              
+--|-----------|------------------|-----------|----------------|-----------|-----------------------|
+1  R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        00:00:00:00:00:02:00:01
+2  R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R2
+3  R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4  R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R1
+5  R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R5
+6  R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7  S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+8  S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+9  S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+10 S4          00:00:00:01:00:04              not connected
+bcf-jas(config-switch)# copy sn
+snapshot://                snapshot://BCF-Config5
+snapshot://BCF-Config1     snapshot://BCF-Config6
+snapshot://BCF-Config2     snapshot://BCF-Config7
+snapshot://BCF-Config3     snapshot://Lab-2-Config-1
+snapshot://BCF-Config4     snapshot://initial-config
+bcf-jas(config-switch)# copy snapshot://Lab-2-Config-1 run
+bcf-jas(config-switch)# sh sp
+span-fabric  span-local  
+bcf-jas(config-switch)# sh span-[K[K[K[K[Ksw
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# sho sw
+# Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+-|-----------|------------------|-----------|----------------|-----------|----------|
+1 R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2 R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3 R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4 R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5 R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6 R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7 S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+8 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+9 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+bcf-jas(config-switch)# sw s1[K[KS1
+bcf-jas(config-switch)# sh
+show      shutdown 
+bcf-jas(config-switch)# shutdown 
+bcf-jas(config-switch)# shutdown [4Pw S1ho sw
+# Switch Name Switch MAC Address IP Address  Connection State           Fabric Role Leaf Group 
+-|-----------|------------------|-----------|--------------------------|-----------|----------|
+1 R1L1        00:00:00:02:00:01  10.10.12.30 connected                  leaf        R1
+2 R1L2        00:00:00:02:00:02  10.10.12.30 connected                  leaf        R1
+3 R2L1        00:00:00:02:00:03  10.10.12.30 connected                  leaf        R2
+4 R2L2        00:00:00:02:00:04  10.10.12.30 connected                  leaf        R2
+5 R3L1        00:00:00:02:00:05  10.10.12.30 connected                  leaf        R3
+6 R3L2        00:00:00:02:00:06  10.10.12.30 connected                  leaf        R3
+7 S1          00:00:00:01:00:01  10.10.12.30 suspended (Admin shutdown) spine
+8 S2          00:00:00:01:00:02  10.10.12.30 connected                  spine
+9 S3          00:00:00:01:00:03  10.10.12.30 connected                  spine
+bcf-jas(config-switch)# sho sw
+# Switch Name Switch MAC Address IP Address  Connection State           Fabric Role Leaf Group 
+-|-----------|------------------|-----------|--------------------------|-----------|----------|
+1 R1L1        00:00:00:02:00:01  10.10.12.30 connected                  leaf        R1
+2 R1L2        00:00:00:02:00:02  10.10.12.30 connected                  leaf        R1
+3 R2L1        00:00:00:02:00:03  10.10.12.30 connected                  leaf        R2
+4 R2L2        00:00:00:02:00:04  10.10.12.30 connected                  leaf        R2
+5 R3L1        00:00:00:02:00:05  10.10.12.30 connected                  leaf        R3
+6 R3L2        00:00:00:02:00:06  10.10.12.30 connected                  leaf        R3
+7 S1          00:00:00:01:00:01  10.10.12.30 suspended (Admin shutdown) spine
+8 S2          00:00:00:01:00:02  10.10.12.30 connected                  spine
+9 S3          00:00:00:01:00:03  10.10.12.30 connected                  spine
+bcf-jas(config-switch)# sho fab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : NOT OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 6
+# of warnings                                                          : 14
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 3
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 6
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 3
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 12
+# of bidirectional links between switches in same leaf group           : 3
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 14
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config-switch)# sho link
+#  Switch Name IF Name   Switch Name IF Name   Link Type  
+--|-----------|---------|-----------|---------|----------|
+1  R1L1        R1L1-eth1 R1L2        R1L2-eth1 peer
+2  R2L1        R2L1-eth1 R2L2        R2L2-eth1 peer
+3  R3L1        R3L1-eth1 R3L2        R3L2-eth1 peer
+4  S2          S2-eth1   R1L1        R1L1-eth3 leaf-spine
+5  S2          S2-eth2   R1L2        R1L2-eth3 leaf-spine
+6  S2          S2-eth3   R2L1        R2L1-eth3 leaf-spine
+7  S2          S2-eth4   R2L2        R2L2-eth3 leaf-spine
+8  S2          S2-eth5   R3L1        R3L1-eth3 leaf-spine
+9  S2          S2-eth6   R3L2        R3L2-eth3 leaf-spine
+10 S3          S3-eth1   R1L1        R1L1-eth4 leaf-spine
+11 S3          S3-eth2   R1L2        R1L2-eth4 leaf-spine
+12 S3          S3-eth3   R2L1        R2L1-eth4 leaf-spine
+13 S3          S3-eth4   R2L2        R2L2-eth4 leaf-spine
+14 S3          S3-eth5   R3L1        R3L1-eth4 leaf-spine
+15 S3          S3-eth6   R3L2        R3L2-eth4 leaf-spine
+bcf-jas(config-switch)# ! P(8)
+bcf-jas(config-switch)# sw R
+R1L1  R1L2  R2L1  R2L2  R3L1  R3L2 
+bcf-jas(config-switch)# sw R1
+R1L1  R1L2 
+bcf-jas(config-switch)# sw R1L1
+bcf-jas(config-switch)# shu
+bcf-jas(config-switch)# sho lin
+#  Switch Name IF Name   Switch Name IF Name   Link Type  
+--|-----------|---------|-----------|---------|----------|
+1  R2L1        R2L1-eth1 R2L2        R2L2-eth1 peer
+2  R3L1        R3L1-eth1 R3L2        R3L2-eth1 peer
+3  S2          S2-eth2   R1L2        R1L2-eth3 leaf-spine
+4  S2          S2-eth3   R2L1        R2L1-eth3 leaf-spine
+5  S2          S2-eth4   R2L2        R2L2-eth3 leaf-spine
+6  S2          S2-eth5   R3L1        R3L1-eth3 leaf-spine
+7  S2          S2-eth6   R3L2        R3L2-eth3 leaf-spine
+8  S3          S3-eth2   R1L2        R1L2-eth4 leaf-spine
+9  S3          S3-eth3   R2L1        R2L1-eth4 leaf-spine
+10 S3          S3-eth4   R2L2        R2L2-eth4 leaf-spine
+11 S3          S3-eth5   R3L1        R3L1-eth4 leaf-spine
+12 S3          S3-eth6   R3L2        R3L2-eth4 leaf-spine
+bcf-jas(config-switch)# sho fab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : NOT OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 9
+# of warnings                                                          : 12
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 3
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 6
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 3
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 10
+# of bidirectional links between switches in same leaf group           : 2
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 12
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config-switch)# sho th
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+  shutdown
+bcf-jas(config-switch)# sho sw
+# Switch Name Switch MAC Address IP Address  Connection State           Fabric Role Leaf Group 
+-|-----------|------------------|-----------|--------------------------|-----------|----------|
+1 R1L1        00:00:00:02:00:01  10.10.12.30 suspended (Admin shutdown) leaf        R1
+2 R1L2        00:00:00:02:00:02  10.10.12.30 connected                  leaf        R1
+3 R2L1        00:00:00:02:00:03  10.10.12.30 connected                  leaf        R2
+4 R2L2        00:00:00:02:00:04  10.10.12.30 connected                  leaf        R2
+5 R3L1        00:00:00:02:00:05  10.10.12.30 connected                  leaf        R3
+6 R3L2        00:00:00:02:00:06  10.10.12.30 connected                  leaf        R3
+7 S1          00:00:00:01:00:01  10.10.12.30 suspended (Admin shutdown) spine
+8 S2          00:00:00:01:00:02  10.10.12.30 connected                  spine
+9 S3          00:00:00:01:00:03  10.10.12.30 connected                  spine
+bcf-jas(config-switch)# no sw S2
+bcf-jas(config-switch)# no sw S2[2Psho sw
+# Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+-|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1 undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+2 R1L1        00:00:00:02:00:01  10.10.12.30 suspended (Admin shutdown)            leaf        R1
+3 R1L2        00:00:00:02:00:02  10.10.12.30 connected                             leaf        R1
+4 R2L1        00:00:00:02:00:03  10.10.12.30 connected                             leaf        R2
+5 R2L2        00:00:00:02:00:04  10.10.12.30 connected                             leaf        R2
+6 R3L1        00:00:00:02:00:05  10.10.12.30 connected                             leaf        R3
+7 R3L2        00:00:00:02:00:06  10.10.12.30 connected                             leaf        R3
+8 S1          00:00:00:01:00:01  10.10.12.30 suspended (Admin shutdown)            spine
+9 S3          00:00:00:01:00:03  10.10.12.30 connected                             spine
+bcf-jas(config-switch)# sho swno sw S2[2Psho swth
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+  shutdown
+bcf-jas(config-switch)# sho thswno sw S2[2Psho swthfab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : NOT OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 9
+# of warnings                                                          : 12
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 2
+# of spines connected                                                  : 2
+# of leaves configured                                                 : 6
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 3
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 5
+# of bidirectional links between switches in same leaf group           : 2
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 12
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config-switch)# sh sw
+Error: sh is ambiguous: choices "show", "shutdown"
+bcf-jas(config-switch)# show sw
+# Switch Name Switch MAC Address IP Address  Connection State                      Fabric Role Leaf Group 
+-|-----------|------------------|-----------|-------------------------------------|-----------|----------|
+1 undefined   00:00:00:01:00:02  10.10.12.30 suspended (No fabric role configured)
+2 R1L1        00:00:00:02:00:01  10.10.12.30 suspended (Admin shutdown)            leaf        R1
+3 R1L2        00:00:00:02:00:02  10.10.12.30 connected                             leaf        R1
+4 R2L1        00:00:00:02:00:03  10.10.12.30 connected                             leaf        R2
+5 R2L2        00:00:00:02:00:04  10.10.12.30 connected                             leaf        R2
+6 R3L1        00:00:00:02:00:05  10.10.12.30 connected                             leaf        R3
+7 R3L2        00:00:00:02:00:06  10.10.12.30 connected                             leaf        R3
+8 S1          00:00:00:01:00:01  10.10.12.30 suspended (Admin shutdown)            spine
+9 S3          00:00:00:01:00:03  10.10.12.30 connected                             spine
+bcf-jas(config-switch)# sho lin
+# Switch Name IF Name   Switch Name IF Name   Link Type  
+-|-----------|---------|-----------|---------|----------|
+1 R2L1        R2L1-eth1 R2L2        R2L2-eth1 peer
+2 R3L1        R3L1-eth1 R3L2        R3L2-eth1 peer
+3 S3          S3-eth2   R1L2        R1L2-eth4 leaf-spine
+4 S3          S3-eth3   R2L1        R2L1-eth4 leaf-spine
+5 S3          S3-eth4   R2L2        R2L2-eth4 leaf-spine
+6 S3          S3-eth5   R3L1        R3L1-eth4 leaf-spine
+7 S3          S3-eth6   R3L2        R3L2-eth4 leaf-spine
+bcf-jas(config-switch)# sho run sw
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+  shutdown
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+  shutdown
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+bcf-jas(config-switch)# cp sn[K[K[K[K[Kcopy sn
+snapshot://                snapshot://BCF-Config5
+snapshot://BCF-Config1     snapshot://BCF-Config6
+snapshot://BCF-Config2     snapshot://BCF-Config7
+snapshot://BCF-Config3     snapshot://Lab-2-Config-1
+snapshot://BCF-Config4     snapshot://initial-config
+bcf-jas(config-switch)# copy snapshot://Lab-2-Config-1 run
+bcf-jas(config-switch)# copy snapshot://Lab-2-Config-1 run[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csho run sw[K
+
+! switch
+switch R1L1
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:01
+
+switch R1L2
+  fabric-role leaf
+  leaf-group R1
+  mac 00:00:00:02:00:02
+
+switch R2L1
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:03
+
+switch R2L2
+  fabric-role leaf
+  leaf-group R2
+  mac 00:00:00:02:00:04
+
+switch R3L1
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:05
+
+switch R3L2
+  fabric-role leaf
+  leaf-group R3
+  mac 00:00:00:02:00:06
+
+switch S1
+  fabric-role spine
+  mac 00:00:00:01:00:01
+
+switch S2
+  fabric-role spine
+  mac 00:00:00:01:00:02
+
+switch S3
+  fabric-role spine
+  mac 00:00:00:01:00:03
+bcf-jas(config-switch)# sho run swcopy snapshot://Lab-2-Config-1 run[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csho run sw[K[3Plinw sw
+# Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+-|-----------|------------------|-----------|----------------|-----------|----------|
+1 R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2 R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3 R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4 R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5 R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6 R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7 S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+8 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+9 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+bcf-jas(config-switch)# sw R1L1
+bcf-jas(config-switch)# int
+interface        interface-group 
+bcf-jas(config-switch)# interface 
+R1L1-eth1  R1L1-eth2  R1L1-eth3  R1L1-eth4  R1L1-eth5  R1L1-eth6  local     
+bcf-jas(config-switch)# interface R
+R1L1-eth1  R1L1-eth2  R1L1-eth3  R1L1-eth4  R1L1-eth5  R1L1-eth6 
+bcf-jas(config-switch)# interface R1L1-eth2 
+<cr>
+bcf-jas(config-switch)# interface R1L1-eth2 
+bcf-jas(config-switch-if)# shu
+bcf-jas(config-switch-if)# shuinterface R1L1-eth2 [13Psw R1L1how sw
+# Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+-|-----------|------------------|-----------|----------------|-----------|----------|
+1 R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2 R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3 R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4 R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5 R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6 R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7 S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+8 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+9 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+bcf-jas(config-switch-if)# sho link
+#  Switch Name IF Name   Switch Name IF Name   Link Type  
+--|-----------|---------|-----------|---------|----------|
+1  R1L1        R1L1-eth1 R1L2        R1L2-eth1 peer
+2  R2L1        R2L1-eth1 R2L2        R2L2-eth1 peer
+3  R3L1        R3L1-eth1 R3L2        R3L2-eth1 peer
+4  S1          S1-eth2   R1L2        R1L2-eth2 leaf-spine
+5  S1          S1-eth3   R2L1        R2L1-eth2 leaf-spine
+6  S1          S1-eth4   R2L2        R2L2-eth2 leaf-spine
+7  S1          S1-eth5   R3L1        R3L1-eth2 leaf-spine
+8  S1          S1-eth6   R3L2        R3L2-eth2 leaf-spine
+9  S2          S2-eth1   R1L1        R1L1-eth3 leaf-spine
+10 S2          S2-eth2   R1L2        R1L2-eth3 leaf-spine
+11 S2          S2-eth3   R2L1        R2L1-eth3 leaf-spine
+12 S2          S2-eth4   R2L2        R2L2-eth3 leaf-spine
+13 S2          S2-eth5   R3L1        R3L1-eth3 leaf-spine
+14 S2          S2-eth6   R3L2        R3L2-eth3 leaf-spine
+15 S3          S3-eth1   R1L1        R1L1-eth4 leaf-spine
+16 S3          S3-eth2   R1L2        R1L2-eth4 leaf-spine
+17 S3          S3-eth3   R2L1        R2L1-eth4 leaf-spine
+18 S3          S3-eth4   R2L2        R2L2-eth4 leaf-spine
+19 S3          S3-eth5   R3L1        R3L1-eth4 leaf-spine
+20 S3          S3-eth6   R3L2        R3L2-eth4 leaf-spine
+bcf-jas(config-switch-if)# sho switch 
+ <Switch Name>  R1L2            R3L1            S2
+ <cr>           R2L1            R3L2            S3
+R1L1            R2L2            S1              all
+bcf-jas(config-switch-if)# sho switch <> interface
+Error: Invalid argument: Invalid switch-name: <; Invalid characters in identifier
+Invalid argument: Invalid switch name: <; switch-light-os switch not found
+Invalid argument: Invalid Alphanumeric character, followed by alphanumerics, or .-: <; Invalid characters in switch name
+Invalid argument: Invalid Alphabetic character, followed by alphanumerics: <; Invalid characters in identifier
+Invalid argument: Invalid switch name: <; switch-light-virtual switch not found
+Invalid argument: Invalid switch id (8-hex bytes): <; switch "<" doesn't exist
+bcf-jas(config-switch-if)# sho switch <> interface[1@w
+Error: Invalid argument: Invalid switch-name: <; Invalid characters in identifier
+Invalid argument: Invalid switch name: <; switch-light-os switch not found
+Invalid argument: Invalid Alphanumeric character, followed by alphanumerics, or .-: <; Invalid characters in switch name
+Invalid argument: Invalid Alphabetic character, followed by alphanumerics: <; Invalid characters in identifier
+Invalid argument: Invalid switch name: <; switch-light-virtual switch not found
+Invalid argument: Invalid switch id (8-hex bytes): <; switch "<" doesn't exist
+bcf-jas(config-switch-if)# show switch <> interface
+Error: Invalid argument: Invalid switch-name: <; Invalid characters in identifier
+Invalid argument: Invalid switch name: <; switch-light-os switch not found
+Invalid argument: Invalid Alphanumeric character, followed by alphanumerics, or .-: <; Invalid characters in switch name
+Invalid argument: Invalid Alphabetic character, followed by alphanumerics: <; Invalid characters in identifier
+Invalid argument: Invalid switch name: <; switch-light-virtual switch not found
+Invalid argument: Invalid switch id (8-hex bytes): <; switch "<" doesn't exist
+bcf-jas(config-switch-if)# show switch <> interface[1P interface[1P interfaceR interface
+R1L1  R1L2  R2L1  R2L2  R3L1  R3L2 
+bcf-jas(config-switch-if)# show switch R interface1 interface
+R1L1  R1L2 
+bcf-jas(config-switch-if)# show switch R1 interfaceL interface1 interface
+# Switch IF Name   IF Type Phy. State Op. State  IF Down Reason           LACP State BPDU-Guard State Curr Features   
+-|------|---------|-------|----------|----------|------------------------|----------|----------------|---------------|
+1 R1L1   R1L1-eth1 leaf    up         up         None                     inactive   inactive         10gb-fd, copper
+2 R1L1   R1L1-eth2 unknown down       down       Interface Admin Shutdown inactive   inactive         10gb-fd, copper
+3 R1L1   R1L1-eth3 spine   up         up         None                     inactive   inactive         10gb-fd, copper
+4 R1L1   R1L1-eth4 spine   up         up         None                     inactive   inactive         10gb-fd, copper
+5 R1L1   R1L1-eth5 edge    up         up         None                     inactive   inactive         10gb-fd, copper
+6 R1L1   R1L1-eth6 edge    up         up         None                     inactive   inactive         10gb-fd, copper
+7 R1L1   local     unknown down       down       Link Down                inactive   inactive         10gb-fd, copper
+bcf-jas(config-switch-if)# sho link |grep R1L1
+1  R1L1        R1L1-eth1 R1L2        R1L2-eth1 peer
+9  S2          S2-eth1   R1L1        R1L1-eth3 leaf-spine
+15 S3          S3-eth1   R1L1        R1L1-eth4 leaf-spine
+bcf-jas(config-switch-if)# sho link |grep R1L1w switch R1L1 interface |grep -i shut
+2 R1L1   R1L1-eth2 unknown down       down       Interface Admin Shutdown inactive   inactive         10gb-fd, copper
+bcf-jas(config-switch-if)# sho fab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : NOT OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 1
+# of warnings                                                          : 14
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 3
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 6
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 3
+# of interface-groups configured                                       : 0
+# of bidirectional spine to leaf links                                 : 17
+# of bidirectional links between switches in same leaf group           : 3
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 14
+# of tenants                                                           : 0
+# of segments                                                          : 0
+# of active endpoints                                                  : 0
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 0
+# of logical-router routes (static + dynamic routes)                   : 0
+# of logical-router system routes                                      : 0
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+bcf-jas(config-switch-if)# sho lini[K
+#  Switch Name IF Name   Switch Name IF Name   Link Type  
+--|-----------|---------|-----------|---------|----------|
+1  R1L1        R1L1-eth1 R1L2        R1L2-eth1 peer
+2  R2L1        R2L1-eth1 R2L2        R2L2-eth1 peer
+3  R3L1        R3L1-eth1 R3L2        R3L2-eth1 peer
+4  S1          S1-eth2   R1L2        R1L2-eth2 leaf-spine
+5  S1          S1-eth3   R2L1        R2L1-eth2 leaf-spine
+6  S1          S1-eth4   R2L2        R2L2-eth2 leaf-spine
+7  S1          S1-eth5   R3L1        R3L1-eth2 leaf-spine
+8  S1          S1-eth6   R3L2        R3L2-eth2 leaf-spine
+9  S2          S2-eth1   R1L1        R1L1-eth3 leaf-spine
+10 S2          S2-eth2   R1L2        R1L2-eth3 leaf-spine
+11 S2          S2-eth3   R2L1        R2L1-eth3 leaf-spine
+12 S2          S2-eth4   R2L2        R2L2-eth3 leaf-spine
+13 S2          S2-eth5   R3L1        R3L1-eth3 leaf-spine
+14 S2          S2-eth6   R3L2        R3L2-eth3 leaf-spine
+15 S3          S3-eth1   R1L1        R1L1-eth4 leaf-spine
+16 S3          S3-eth2   R1L2        R1L2-eth4 leaf-spine
+17 S3          S3-eth3   R2L1        R2L1-eth4 leaf-spine
+18 S3          S3-eth4   R2L2        R2L2-eth4 leaf-spine
+19 S3          S3-eth5   R3L1        R3L1-eth4 leaf-spine
+20 S3          S3-eth6   R3L2        R3L2-eth4 leaf-spine
+bcf-jas(config-switch-if)# !p[K P(9)
+bcf-jas(config-switch-if)# if
+Error: Unknown command: if
+bcf-jas(config-switch-if)# int
+interface        interface-group 
+bcf-jas(config-switch-if)# interface-group PG-R1H1
+bcf-jas(config-interface-group)# member switch 
+R1L1  R1L2  R2L1  R2L2  R3L1  R3L2 
+bcf-jas(config-interface-group)# member switch R1
+R1L1  R1L2 
+bcf-jas(config-interface-group)# member switch R1L1 
+Error: Unexpected end of command
+bcf-jas(config-interface-group)# member switch R1L1 interface 
+R1L1-eth1  R1L2-eth4  R2L2-eth1  R3L1-eth4  R3L2-eth6  S2-eth2    S3-eth5
+R1L1-eth2  R1L2-eth5  R2L2-eth2  R3L1-eth5  R3L2-eth7  S2-eth3    S3-eth6
+R1L1-eth3  R1L2-eth6  R2L2-eth3  R3L1-eth6  S1-eth1    S2-eth4    local
+R1L1-eth4  R2L1-eth1  R2L2-eth4  R3L1-eth7  S1-eth2    S2-eth5
+R1L1-eth5  R2L1-eth2  R2L2-eth5  R3L2-eth1  S1-eth3    S2-eth6
+R1L1-eth6  R2L1-eth3  R2L2-eth6  R3L2-eth2  S1-eth4    S3-eth1
+R1L2-eth1  R2L1-eth4  R3L1-eth1  R3L2-eth3  S1-eth5    S3-eth2
+R1L2-eth2  R2L1-eth5  R3L1-eth2  R3L2-eth4  S1-eth6    S3-eth3
+R1L2-eth3  R2L1-eth6  R3L1-eth3  R3L2-eth5  S2-eth1    S3-eth4
+bcf-jas(config-interface-group)# member switch R1L1 interface R
+R1L1-eth1  R1L2-eth1  R2L1-eth1  R2L2-eth1  R3L1-eth1  R3L1-eth7  R3L2-eth6
+R1L1-eth2  R1L2-eth2  R2L1-eth2  R2L2-eth2  R3L1-eth2  R3L2-eth1  R3L2-eth7
+R1L1-eth3  R1L2-eth3  R2L1-eth3  R2L2-eth3  R3L1-eth3  R3L2-eth2
+R1L1-eth4  R1L2-eth4  R2L1-eth4  R2L2-eth4  R3L1-eth4  R3L2-eth3
+R1L1-eth5  R1L2-eth5  R2L1-eth5  R2L2-eth5  R3L1-eth5  R3L2-eth4
+R1L1-eth6  R1L2-eth6  R2L1-eth6  R2L2-eth6  R3L1-eth6  R3L2-eth5
+bcf-jas(config-interface-group)# member switch R1L1 interface R1
+R1L1-eth1  R1L1-eth3  R1L1-eth5  R1L2-eth1  R1L2-eth3  R1L2-eth5
+R1L1-eth2  R1L1-eth4  R1L1-eth6  R1L2-eth2  R1L2-eth4  R1L2-eth6
+bcf-jas(config-interface-group)# member switch R1L1 interface R1L1
+R1L1-eth1  R1L1-eth2  R1L1-eth3  R1L1-eth4  R1L1-eth5  R1L1-eth6 
+bcf-jas(config-interface-group)# member switch R1L1 interface R1L1-eth5
+bcf-jas(config-interface-group)# member switch R1L1 interface R1L1-eth5[1P-eth52-eth5[1P[1@2
+bcf-jas(config-interface-group)# sh t[K[Ko thi
+
+! interface-group
+interface-group PG-R1H1
+  member switch R1L1 interface R1L1-eth5
+  member switch R1L2 interface R1L2-eth5
+bcf-jas(config-interface-group)# sho in
+inband-port      interface-group 
+bcf-jas(config-interface-group)# sho int
+# Name    Mode   Discovery Leaf Group State 
+-|-------|------|---------|----------|-----|
+1 PG-R1H1 static           R1         up
+bcf-jas(config-interface-group)# sho int 
+ <cr>    PG-R1H1  all     
+bcf-jas(config-interface-group)# sho int PG-R1H1 
+# Name    Mode   Discovery Leaf Group State 
+-|-------|------|---------|----------|-----|
+1 PG-R1H1 static           R1         up
+bcf-jas(config-interface-group)# sho int PG-R1H1 members 
+# Name    Mode   Discovery Switch Name Interface Name Member Type Phy. State Op. State Leaf Group IF Down Reason 
+-|-------|------|---------|-----------|--------------|-----------|----------|---------|----------|--------------|
+1 PG-R1H1 static           R1L2        R1L2-eth5                  up         up        R1         None
+2 PG-R1H1 static           R1L1        R1L1-eth5                  up         up        R1         None
+bcf-jas(config-interface-group)# sho int PG-R1H1 members [K[Kthimember switch R1L2 interface R1L2-eth51 interface R1L1-eth5[Kinterface-group PG-R1H1[K2
+bcf-jas(config-interface-group)# interface-group PG-R1H2sho int PG-R1H1 members [K[Kthimember switch R1L2 interface R1L2-eth5[K6
+bcf-jas(config-interface-group)# member switch R1L2 interface R1L2-eth6[1P-eth61-eth6[1P[1@1
+bcf-jas(config-interface-group)# member switch R1L1 interface R1L1-eth62 interface R1L2-eth6[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pinterface-group PG-R1H2[1PH22H2
+bcf-jas(config-interface-group)# interface-group PG-R2H2member switch R1L1 interface R1L1-eth6[1P-eth62-eth6[1PL2-eth62L2-eth6[1P[1@2[1P[1@2
+bcf-jas(config-interface-group)# member switch R2L2 interface R2L2-eth6[1P-eth61-eth6[1P[1@1
+bcf-jas(config-interface-group)# member switch R2L1 interface R2L1-eth62 interface R2L2-eth6[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pinterface-group PG-R2H2[K1
+bcf-jas(config-interface-group)# interface-group PG-R2H1member switch R2L1 interface R2L1-eth6[K5
+bcf-jas(config-interface-group)# member switch R2L1 interface R2L1-eth5[1P-eth52-eth5[1P[1@2
+bcf-jas(config-interface-group)# sho interface-group 
+# Name    Mode   Discovery Leaf Group State 
+-|-------|------|---------|----------|-----|
+1 PG-R1H1 static           R1         up
+2 PG-R1H2 static           R1         up
+3 PG-R2H1 static           R2         up
+4 PG-R2H2 static           R2         up
+bcf-jas(config-interface-group)# interface-group PG-test
+bcf-jas(config-interface-group)# member 
+chassis-mac  host         switch      
+bcf-jas(config-interface-group)# member switch 
+R1L1  R1L2  R2L1  R2L2  R3L1  R3L2 
+bcf-jas(config-interface-group)# member switch R4l[KL1 k[Kinterface 
+Interrupt.
+bcf-jas(config-interface-group)# ! pick up at P9([K[K9)(9)[C[C, pdf page 149
+bcf-jas(config-interface-group)# end
+bcf-jas# 
+bcf-jas> 
+Connection to 54.236.14.112 closed.
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[15:01:06][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m exit
+
+Script done on Tue 17 Oct 2017 03:01:07 PM EDT

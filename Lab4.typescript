@@ -1,0 +1,1400 @@
+Script started on Wed 18 Oct 2017 02:19:49 PM EDT
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[14:19:49][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m # ph[Kdf page 299, Lab4 page (1)
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[14:20:10][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m # pdf page 299, Lab4 page (1)[7Pssh admin@52.203.4.224
+Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+Log in as 'admin' to configure
+
+admin@52.203.4.224's password: 
+Last login: Wed Oct 18 13:35:42 2017 from 140.131.21.198.guest.wifi.dyn.clemson.edu
+Big Cloud Fabric 4.1.0 (bcf-4.1.0 #66)
+Logged in as admin, 2017-10-18 18:20:21.336000 UTC, auth from 198.21.131.140
+controller> en
+controller# conf
+controller(config)# ex
+controller# copy sn
+snapshot://                snapshot://BCF-Config3     snapshot://BCF-Config6
+snapshot://BCF-Config1     snapshot://BCF-Config4     snapshot://BCF-Config7
+snapshot://BCF-Config2     snapshot://BCF-Config5     snapshot://initial-config
+controller# copy snapshot://B
+snapshot://BCF-Config1  snapshot://BCF-Config3  snapshot://BCF-Config5  snapshot://BCF-Config7
+snapshot://BCF-Config2  snapshot://BCF-Config4  snapshot://BCF-Config6
+controller# copy snapshot://BCF-Config4 run
+controller# 
+Timeout: exiting 'enable' mode to 'login' mode
+controller> sh cont
+Cluster Name          : bigswitchcluster
+Redundancy Status     : standalone
+Last Role Change Time : 2017-10-18 13:25:46.042000 UTC
+Failover Reason       : Changed connection state: cluster configuration changed
+Cluster Uptime        : 5 hours, 10 minutes
+# IP          @ State  Uptime              
+-|-----------|-|------|-------------------|
+1 10.10.12.20 * active 5 hours, 10 minutes
+controller> sh controller 
+Cluster Name          : bigswitchcluster
+Redundancy Status     : standalone
+Last Role Change Time : 2017-10-18 13:25:46.042000 UTC
+Failover Reason       : Changed connection state: cluster configuration changed
+Cluster Uptime        : 5 hours, 11 minutes
+# IP          @ State  Uptime              
+-|-----------|-|------|-------------------|
+1 10.10.12.20 * active 5 hours, 11 minutes
+controller> sh sw
+# Switch Name Switch MAC Address IP Address  Connection State Fabric Role Leaf Group 
+-|-----------|------------------|-----------|----------------|-----------|----------|
+1 R1L1        00:00:00:02:00:01  10.10.12.30 connected        leaf        R1
+2 R1L2        00:00:00:02:00:02  10.10.12.30 connected        leaf        R1
+3 R2L1        00:00:00:02:00:03  10.10.12.30 connected        leaf        R2
+4 R2L2        00:00:00:02:00:04  10.10.12.30 connected        leaf        R2
+5 R3L1        00:00:00:02:00:05  10.10.12.30 connected        leaf        R3
+6 R3L2        00:00:00:02:00:06  10.10.12.30 connected        leaf        R3
+7 S1          00:00:00:01:00:01  10.10.12.30 connected        spine
+8 S2          00:00:00:01:00:02  10.10.12.30 connected        spine
+9 S3          00:00:00:01:00:03  10.10.12.30 connected        spine
+controller> sh fab
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fabric Status ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall Status                                                         : OK
+CPSEC Status                                                           : off
+QoS Status                                                             : disabled
+GTP Hash Status                                                        : disabled
+Forwarding Mode                                                        : default
+Pod Role                                                               : leaf
+# of errors                                                            : 0
+# of warnings                                                          : 0
+# of controller nodes                                                  : 1
+# of spines configured                                                 : 3
+# of spines connected                                                  : 3
+# of leaves configured                                                 : 6
+# of leaves connected                                                  : 6
+# of vswitches connected                                               : 0
+# of leaf-groups configured                                            : 3
+# of interface-groups configured                                       : 7
+# of bidirectional spine to leaf links                                 : 18
+# of bidirectional links between switches in same leaf group           : 3
+# of bidirectional links between leaf and virtual switches             : 0
+# of edge interfaces                                                   : 14
+# of tenants                                                           : 4
+# of segments                                                          : 6
+# of active endpoints                                                  : 7
+# of inactive endpoints                                                : 0
+# of inactive member rules                                             : 0
+# of blocked endpoints                                                 : 0
+# of active NAT profiles                                               : 0
+# of sflow collectors configured                                       : 0
+# of span-local sessions configured                                    : 0
+# of span-fabric sessions configured                                   : 0
+# of logical-router interface segment subnets (connected routes)       : 6
+# of logical-router routes (static + dynamic routes)                   : 6
+# of logical-router system routes                                      : 1
+# of logical-router bgp speaker routes (protocol-ip routes)            : 0
+# of ingress ACLs on leaf switches consumed by tenant logical routers  : 0
+# of ingress ACLs on leaf switches permitted on tenant logical routers : 1499
+# of ingress ACLs consumed by system router                            : 0
+# of ingress ACLs permitted on system router                           : 1500
+controller> sh fab err
+None.
+controller> sh fab err[K[K[Kwarn
+None.
+controller> sh link
+#  Switch Name IF Name   Switch Name IF Name   Link Type  
+--|-----------|---------|-----------|---------|----------|
+1  R1L1        R1L1-eth1 R1L2        R1L2-eth1 peer
+2  R2L1        R2L1-eth1 R2L2        R2L2-eth1 peer
+3  R3L1        R3L1-eth1 R3L2        R3L2-eth1 peer
+4  S1          S1-eth1   R1L1        R1L1-eth2 leaf-spine
+5  S1          S1-eth2   R1L2        R1L2-eth2 leaf-spine
+6  S1          S1-eth3   R2L1        R2L1-eth2 leaf-spine
+7  S1          S1-eth4   R2L2        R2L2-eth2 leaf-spine
+8  S1          S1-eth5   R3L1        R3L1-eth2 leaf-spine
+9  S1          S1-eth6   R3L2        R3L2-eth2 leaf-spine
+10 S2          S2-eth1   R1L1        R1L1-eth3 leaf-spine
+11 S2          S2-eth2   R1L2        R1L2-eth3 leaf-spine
+12 S2          S2-eth3   R2L1        R2L1-eth3 leaf-spine
+13 S2          S2-eth4   R2L2        R2L2-eth3 leaf-spine
+14 S2          S2-eth5   R3L1        R3L1-eth3 leaf-spine
+15 S2          S2-eth6   R3L2        R3L2-eth3 leaf-spine
+16 S3          S3-eth1   R1L1        R1L1-eth4 leaf-spine
+17 S3          S3-eth2   R1L2        R1L2-eth4 leaf-spine
+18 S3          S3-eth3   R2L1        R2L1-eth4 leaf-spine
+19 S3          S3-eth4   R2L2        R2L2-eth4 leaf-spine
+20 S3          S3-eth5   R3L1        R3L1-eth4 leaf-spine
+21 S3          S3-eth6   R3L2        R3L2-eth4 leaf-spine
+controller> sh debug event module FabricManager ev
+event-name  events     
+controller> sh debug event module FabricManager event-name f
+fabric-interface-physical-status-change-event  fabric-switch-connect-disconnect-event
+fabric-lag-update-event                        fabric-switch-logical-flap-event
+fabric-link-event
+controller> sh debug event module FabricManager event-name fabric-s
+fabric-switch-connect-disconnect-event  fabric-switch-logical-flap-event       
+controller> sh debug event module FabricManager event-name fabric-switch-connect-disconnect-event last 
+Show last X events
+controller> sh debug event module FabricManager event-name fabric-switch-connect-disconnect-event last 20 events 
+Timestamp         : 2017-10-18 13:27:15.332000 UTC
+Module Event Name : FabricManager/fabric-switch-connect-disconnect-event
+DataFields        : [swId:00:00:00:00:00:02:00:06, eventType:CONNECT]
+Timestamp         : 2017-10-18 13:27:15.306000 UTC
+Module Event Name : FabricManager/fabric-switch-connect-disconnect-event
+DataFields        : [swId:00:00:00:00:00:02:00:05, eventType:CONNECT]
+Timestamp         : 2017-10-18 13:27:15.279000 UTC
+Module Event Name : FabricManager/fabric-switch-connect-disconnect-event
+DataFields        : [swId:00:00:00:00:00:02:00:02, eventType:CONNECT]
+Timestamp         : 2017-10-18 13:27:15.262000 UTC
+Module Event Name : FabricManager/fabric-switch-connect-disconnect-event
+DataFields        : [swId:00:00:00:00:00:01:00:03, eventType:CONNECT]
+Timestamp         : 2017-10-18 13:27:15.254000 UTC
+Module Event Name : FabricManager/fabric-switch-connect-disconnect-event
+DataFields        : [swId:00:00:00:00:00:02:00:01, eventType:CONNECT]
+Timestamp         : 2017-10-18 13:27:15.243000 UTC
+Module Event Name : FabricManager/fabric-switch-connect-disconnect-event
+DataFields        : [swId:00:00:00:00:00:01:00:01, eventType:CONNECT]
+Timestamp         : 2017-10-18 13:27:15.224000 UTC
+Module Event Name : FabricManager/fabric-switch-connect-disconnect-event
+DataFields        : [swId:00:00:00:00:00:02:00:04, eventType:CONNECT]
+Timestamp         : 2017-10-18 13:27:15.200000 UTC
+Module Event Name : FabricManager/fabric-switch-connect-disconnect-event
+DataFields        : [swId:00:00:00:00:00:02:00:03, eventType:CONNECT]
+Timestamp         : 2017-10-18 13:27:14.934000 UTC
+Module Event Name : FabricManager/fabric-switch-connect-disconnect-event
+DataFields        : [swId:00:00:00:00:00:01:00:02, eventType:CONNECT]
+controller> date
+Error: Unknown command: date
+controller> time
+Error: Unknown command: time
+controller> sh date
+Error: Command Not Found: Unexpected argument "date"; expected one of "banner", "bgp", "boot", "bpdu-guard", "clock", "controller", "debug", "dump", ... and 45 more
+controller> sh clock
+System time : 2017-10-18 18:39:04.220000 UTC
+controller> sh clock[1Pdate[3Ptimedatesh debug event module FabricManager event-name fabric-switch-connect-disconnect-event last 20 events [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+fabric-interface-physical-status-change-event  fabric-switch-connect-disconnect-event
+fabric-lag-update-event                        fabric-switch-logical-flap-event
+fabric-link-event
+controller> sh debug event module FabricManager event-name fabric-interface-physical-status-change-event 
+ <cr>   events  last   
+controller> sh debug event module FabricManager event-name fabric-interface-physical-status-change-event last 20 events [K[K[K[K[K[K[K
+Error: Unexpected end of command
+controller> sh debug event module FabricManager event-name fabric-interface-physical-status-change-event last 20 events 
+None.
+controller> shut[K[K[K[Ken 
+controller# shu[K[K[Ksw[K
+set      show     support  sync     system  
+controller# s[Kcon
+Error: con is ambiguous: choices "connect", "configure"
+controller# configure 
+controller(config)# s
+secure                 show                   span-local             switch
+set                    snmp-server            storm-control-profile  sync
+sflow                  span-fabric            support                system
+controller(config)# switch S
+S1  S2  S3 
+controller(config)# switch S1
+controller(config-switch)# switch S1configure [Ken [105@sh debug event module FabricManager event-name fabric-interface-physical-status-change-event last 20 events[C
+Error: sh is ambiguous: choices "show", "shutdown"
+controller(config-switch)# sh debug event module FabricManager event-name fabric-interface-physical-status-change-event last 20 events [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@o
+None.
+controller(config-switch)# shu
+controller(config-switch)# shuo debug event module FabricManager event-name fabric-interface-physical-status-change-event last 20 events 
+Timestamp         : 2017-10-18 18:41:27.485000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L2, ifName:R3L2-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.508000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R1L1, ifName:R1L1-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.508000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L1, ifName:R3L1-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth6, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth5, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth4, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.499000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth3, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.499000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.499000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth1, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.498000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R2L2, ifName:R2L2-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.498000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R2L1, ifName:R2L1-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.497000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R1L2, ifName:R1L2-eth2, state:DOWN]
+controller(config-switch)# no shut
+controller(config-switch)# no shutsho debug event module FabricManager event-name fabric-interface-physical-status-change-event last 20 events 
+Timestamp         : 2017-10-18 18:41:49.427000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L2, ifName:R3L2-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.393000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R2L2, ifName:R2L2-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.383000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R2L1, ifName:R2L1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.377000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L1, ifName:R3L1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.376000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R1L1, ifName:R1L1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.373000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R1L2, ifName:R1L2-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.371000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth6, state:UP]
+Timestamp         : 2017-10-18 18:41:49.370000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth5, state:UP]
+Timestamp         : 2017-10-18 18:41:49.369000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth4, state:UP]
+Timestamp         : 2017-10-18 18:41:49.369000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth3, state:UP]
+Timestamp         : 2017-10-18 18:41:49.368000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.366000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth1, state:UP]
+Timestamp         : 2017-10-18 18:41:27.485000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L2, ifName:R3L2-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.508000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R1L1, ifName:R1L1-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.508000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L1, ifName:R3L1-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth6, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth5, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth4, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.499000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth3, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.499000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth2, state:DOWN]
+controller(config-switch)# sho debug event module FabricManager event-name fabric-interface-physical-status-change-event last 20 events 
+Timestamp         : 2017-10-18 18:41:49.427000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L2, ifName:R3L2-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.393000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R2L2, ifName:R2L2-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.383000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R2L1, ifName:R2L1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.377000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L1, ifName:R3L1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.376000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R1L1, ifName:R1L1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.373000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R1L2, ifName:R1L2-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.371000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth6, state:UP]
+Timestamp         : 2017-10-18 18:41:49.370000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth5, state:UP]
+Timestamp         : 2017-10-18 18:41:49.369000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth4, state:UP]
+Timestamp         : 2017-10-18 18:41:49.369000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth3, state:UP]
+Timestamp         : 2017-10-18 18:41:49.368000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.366000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth1, state:UP]
+Timestamp         : 2017-10-18 18:41:27.485000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L2, ifName:R3L2-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.508000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R1L1, ifName:R1L1-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.508000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L1, ifName:R3L1-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth6, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth5, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth4, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.499000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth3, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.499000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth2, state:DOWN]
+controller(config-switch)# sho debug event module FabricManager event-name fabric-interface-physical-status-change-event last 20 events 
+Timestamp         : 2017-10-18 18:41:49.427000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L2, ifName:R3L2-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.393000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R2L2, ifName:R2L2-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.383000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R2L1, ifName:R2L1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.377000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L1, ifName:R3L1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.376000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R1L1, ifName:R1L1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.373000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R1L2, ifName:R1L2-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.371000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth6, state:UP]
+Timestamp         : 2017-10-18 18:41:49.370000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth5, state:UP]
+Timestamp         : 2017-10-18 18:41:49.369000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth4, state:UP]
+Timestamp         : 2017-10-18 18:41:49.369000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth3, state:UP]
+Timestamp         : 2017-10-18 18:41:49.368000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth2, state:UP]
+Timestamp         : 2017-10-18 18:41:49.366000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth1, state:UP]
+Timestamp         : 2017-10-18 18:41:27.485000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L2, ifName:R3L2-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.508000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R1L1, ifName:R1L1-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.508000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:R3L1, ifName:R3L1-eth2, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth6, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth5, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.501000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth4, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.499000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth3, state:DOWN]
+Timestamp         : 2017-10-18 18:41:26.499000 UTC
+Module Event Name : FabricManager/fabric-interface-physical-status-change-event
+DataFields        : [swName:S1, ifName:S1-eth2, state:DOWN]
+controller(config-switch)# sh fab err
+Error: sh is ambiguous: choices "show", "shutdown"
+controller(config-switch)# sho fab err
+None.
+controller(config-switch)# ! ba[K[Kpdf p 300[1P300[C[C[C, lab page(2)
+controller(config-switch)# connect switch 
+R1L1  R1L2  R2L1  R2L2  R3L1  R3L2  S1    S2    S3   
+controller(config-switch)# connect switch R
+R1L1  R1L2  R2L1  R2L2  R3L1  R3L2 
+controller(config-switch)# connect switch R1
+R1L1  R1L2 
+controller(config-switch)# connect switch R1L1
+Error: Invalid Use: No host key for switch: R1L1
+controller(config-switch)# connect switch R1L1 
+<cr>
+controller(config-switch)# connect switch R1L1 
+Error: Invalid Use: No host key for switch: R1L1
+controller(config-switch)# end[K[K[Ksho e[K[K[K[K[K! pin[K[K[Kfrom R1H1: pingd rh21, r2h2, world successfully
+controller(config-switch)# ! 2.
+controller(config-switch)# sh end
+Error: sh is ambiguous: choices "show", "shutdown"
+controller(config-switch)# sho end
+# Tenant   Segment  Name MAC                       IP Address IP State Attachment Point Attach Point State VLAN     State  
+-|--------|--------|----|-------------------------|----------|--------|----------------|------------------|--------|------|
+1 External Ext-01        00:00:00:00:00:06 (XEROX) 10.0.3.2   learned  PG-RTR1          learned            untagged Active
+2 External Ext-02        00:00:00:00:00:07 (XEROX) 10.0.4.2   learned  PG-RTR2          learned            untagged Active
+3 Green    QA            00:00:00:00:00:04 (XEROX) 10.0.2.2   learned  PG-R2H2          learned            untagged Active
+4 Red      App           00:00:00:00:00:03 (XEROX) 10.0.1.2   learned  PG-R2H1          learned            untagged Active
+5 Red      Services      00:00:00:00:00:05 (XEROX) 10.0.5.2   learned  PG-FW            learned            untagged Active
+6 Red      Web           00:00:00:00:00:01 (XEROX) 10.0.0.2   learned  PG-R1H1          learned            untagged Active
+7 Red      Web           00:00:00:00:00:02 (XEROX) 10.0.0.3   learned  PG-R1H2          learned            untagged Active
+controller(config-switch)# sh ten Red endpoint 
+Error: sh is ambiguous: choices "show", "shutdown"
+controller(config-switch)# sh ten Red endpoint [1@o
+# Tenant Segment  Name MAC                       IP Address IP State Attachment Point Attach Point State VLAN     State  
+-|------|--------|----|-------------------------|----------|--------|----------------|------------------|--------|------|
+1 Red    App           00:00:00:00:00:03 (XEROX) 10.0.1.2   learned  PG-R2H1          learned            untagged Active
+2 Red    Services      00:00:00:00:00:05 (XEROX) 10.0.5.2   learned  PG-FW            learned            untagged Active
+3 Red    Web           00:00:00:00:00:01 (XEROX) 10.0.0.2   learned  PG-R1H1          learned            untagged Active
+4 Red    Web           00:00:00:00:00:02 (XEROX) 10.0.0.3   learned  PG-R1H2          learned            untagged Active
+controller(config-switch)# sho ten Red endpoint [1P[1P[1P
+ <Tenant Name>   <cr>           External        Green           Red             all             system         
+controller(config-switch)# sho ten  endpoint [1@G
+None.
+controller(config-switch)# sho ten G endpoint [5@reen 
+# Tenant Segment Name MAC                       IP Address IP State Attachment Point Attach Point State VLAN     State  
+-|------|-------|----|-------------------------|----------|--------|----------------|------------------|--------|------|
+1 Green  QA           00:00:00:00:00:04 (XEROX) 10.0.2.2   learned  PG-R2H2          learned            untagged Active
+controller(config-switch)# sho end details 
+
+Tenant             : Red
+Segment            : Web
+MAC                : 00:00:00:00:00:01 (XEROX)
+IP Address         : 10.0.0.2
+IP State           : learned
+Leaf Group         : R1
+Attachment Point   : PG-R1H1
+Attach Point State : learned
+VLAN               : untagged
+State              : Active
+Active Since       : 2017-10-18 14:23:35.034000 UTC
+
+Tenant             : Red
+Segment            : Web
+MAC                : 00:00:00:00:00:02 (XEROX)
+IP Address         : 10.0.0.3
+IP State           : learned
+Leaf Group         : R1
+Attachment Point   : PG-R1H2
+Attach Point State : learned
+VLAN               : untagged
+State              : Active
+Active Since       : 2017-10-18 14:38:31.278000 UTC
+
+Tenant             : Red
+Segment            : App
+MAC                : 00:00:00:00:00:03 (XEROX)
+IP Address         : 10.0.1.2
+IP State           : learned
+Leaf Group         : R2
+Attachment Point   : PG-R2H1
+Attach Point State : learned
+VLAN               : untagged
+State              : Active
+Active Since       : 2017-10-18 14:31:17.272000 UTC
+
+Tenant             : Green
+Segment            : QA
+MAC                : 00:00:00:00:00:04 (XEROX)
+IP Address         : 10.0.2.2
+IP State           : learned
+Leaf Group         : R2
+Attachment Point   : PG-R2H2
+Attach Point State : learned
+VLAN               : untagged
+State              : Active
+Active Since       : 2017-10-18 14:47:46.164000 UTC
+
+Tenant             : Red
+Segment            : Services
+MAC                : 00:00:00:00:00:05 (XEROX)
+IP Address         : 10.0.5.2
+IP State           : learned
+Leaf Group         : R3
+Attachment Point   : PG-FW
+Attach Point State : learned
+VLAN               : untagged
+State              : Active
+Active Since       : 2017-10-18 18:20:57.412000 UTC
+
+Tenant             : External
+Segment            : Ext-01
+MAC                : 00:00:00:00:00:06 (XEROX)
+IP Address         : 10.0.3.2
+IP State           : learned
+Leaf Group         : R3
+Attachment Point   : PG-RTR1
+Attach Point State : learned
+VLAN               : untagged
+State              : Active
+Active Since       : 2017-10-18 18:20:52.412000 UTC
+
+Tenant             : External
+Segment            : Ext-02
+MAC                : 00:00:00:00:00:07 (XEROX)
+IP Address         : 10.0.4.2
+IP State           : learned
+Leaf Group         : R3
+Attachment Point   : PG-RTR2
+Attach Point State : learned
+VLAN               : untagged
+State              : Active
+Active Since       : 2017-10-18 18:20:52.413000 UTC
+controller(config-switch)# sho cal[K[K[K
+banner                fabric                logging               secure                tacacs
+bgp                   file                  logical-router        segment               tenant
+boot                  forwarding            mac-membership        session               test
+bpdu-guard            group                 member-rule           sflow                 this
+clock                 image                 multicast             snapshot              upgrade
+controller            inband-port           nat-endpoint          span-fabric           user
+debug                 interface-group       nat-pool              span-local            vcenter
+dump                  ipv6-external-router  ntp                   storm-control         version
+endpoint              lag                   pswitch               support               vswitch
+endpoint-manager      link                  radius                switch                vxlan
+environment           local                 running-config        system                where
+controller(config-switch)# sho clo
+System time : 2017-10-18 18:48:34.265000 UTC
+controller(config-switch)# ! 3.
+controller(config-switch)# clear sw all int all cou
+controller(config-switch)# clear te
+tenant  test   
+controller(config-switch)# clear tenant 
+External  Green     Red       all       system   
+controller(config-switch)# clear tenant all counters 
+controller(config-switch)# clear s
+segment      session      sflow        span-fabric  span-local   switch      
+controller(config-switch)# clear se
+segment  session 
+controller(config-switch)# clear segment all counters 
+controller(config-switch)# clear segment all counters [K[K[K[K[K[K[K[K[K[K
+Error: Unexpected end of command
+controller(config-switch)# ! page(3) p301
+controller(config-switch)# 1.
+Error: Unknown command: 1.
+controller(config-switch)# sho sw all i
+interface  inventory 
+controller(config-switch)# sho sw all interface 
+ <cr>      R1L1-eth6  R1L2-eth6  R2L1-eth6  R2L2-eth6  R3L1-eth6  R3L2-eth5  S1-eth4    S2-eth4    S3-eth4
+R1L1-eth1  R1L2-eth1  R2L1-eth1  R2L2-eth1  R3L1-eth1  R3L1-eth7  R3L2-eth6  S1-eth5    S2-eth5    S3-eth5
+R1L1-eth2  R1L2-eth2  R2L1-eth2  R2L2-eth2  R3L1-eth2  R3L2-eth1  R3L2-eth7  S1-eth6    S2-eth6    S3-eth6
+R1L1-eth3  R1L2-eth3  R2L1-eth3  R2L2-eth3  R3L1-eth3  R3L2-eth2  S1-eth1    S2-eth1    S3-eth1    all
+R1L1-eth4  R1L2-eth4  R2L1-eth4  R2L2-eth4  R3L1-eth4  R3L2-eth3  S1-eth2    S2-eth2    S3-eth2    local
+R1L1-eth5  R1L2-eth5  R2L1-eth5  R2L2-eth5  R3L1-eth5  R3L2-eth4  S1-eth3    S2-eth3    S3-eth3
+controller(config-switch)# sho sw all interface 
+  <cr>            Show fabric interface information
+ all              Select All Interfaces
+<IF Name>         Select Interface Name
+<Interface Name>  Select Interface Name: Specify an interface name
+ R1L1-eth1        Interface selection
+ R1L1-eth2        Interface selection
+ R1L1-eth3        Interface selection
+ R1L1-eth4        Interface selection
+ R1L1-eth5        Interface selection
+ R1L1-eth6        Interface selection
+ R1L2-eth1        Interface selection
+ R1L2-eth2        Interface selection
+ R1L2-eth3        Interface selection
+ R1L2-eth4        Interface selection
+ R1L2-eth5        Interface selection
+ R1L2-eth6        Interface selection
+ R2L1-eth1        Interface selection
+ R2L1-eth2        Interface selection
+ R2L1-eth3        Interface selection
+ R2L1-eth4        Interface selection
+ R2L1-eth5        Interface selection
+ R2L1-eth6        Interface selection
+ R2L2-eth1        Interface selection
+ R2L2-eth2        Interface selection
+ R2L2-eth3        Interface selection
+ R2L2-eth4        Interface selection
+ R2L2-eth5        Interface selection
+ R2L2-eth6        Interface selection
+ R3L1-eth1        Interface selection
+ R3L1-eth2        Interface selection
+ R3L1-eth3        Interface selection
+ R3L1-eth4        Interface selection
+ R3L1-eth5        Interface selection
+ R3L1-eth6        Interface selection
+ R3L1-eth7        Interface selection
+ R3L2-eth1        Interface selection
+ R3L2-eth2        Interface selection
+ R3L2-eth3        Interface selection
+ R3L2-eth4        Interface selection
+ R3L2-eth5        Interface selection
+ R3L2-eth6        Interface selection
+ R3L2-eth7        Interface selection
+ S1-eth1          Interface selection
+ S1-eth2          Interface selection
+ S1-eth3          Interface selection
+ S1-eth4          Interface selection
+ S1-eth5          Interface selection
+ S1-eth6          Interface selection
+ S2-eth1          Interface selection
+ S2-eth2          Interface selection
+ S2-eth3          Interface selection
+ S2-eth4          Interface selection
+ S2-eth5          Interface selection
+ S2-eth6          Interface selection
+ S3-eth1          Interface selection
+ S3-eth2          Interface selection
+ S3-eth3          Interface selection
+ S3-eth4          Interface selection
+ S3-eth5          Interface selection
+ S3-eth6          Interface selection
+ local            Interface selection
+controller(config-switch)# sho sw all interface all c
+connected-devices  counters          
+controller(config-switch)# sho sw all interface all counters o[K
+ <cr>     all       drops     errors    incoming  outgoing 
+controller(config-switch)# sho sw all interface all counters outgoing 
+<cr>
+controller(config-switch)# sho sw all interface all counters outgoing 
+~~~~~~~~~~~~~~~~~~~~~~~~ Interface Tx Counters  ~~~~~~~~~~~~~~~~~~~~~~~~
+#  Switch Name IF Name   Tx Byte Tx Ucast Pkt Tx Mcast Pkt Tx Bcast Pkt 
+--|-----------|---------|-------|------------|------------|------------|
+1  R1L1        R1L1-eth1 5684    11           0            2
+2  R1L1        R1L1-eth2 21722   171          0            0
+3  R1L1        R1L1-eth3 5110    0            0            0
+4  R1L1        R1L1-eth4 109310  100          0            0
+5  R1L1        R1L1-eth5 230268  371          0            0
+6  R1L1        R1L1-eth6 5110    0            0            0
+7  R1L2        R1L2-eth1 5390    4            0            2
+8  R1L2        R1L2-eth2 109164  100          0            0
+9  R1L2        R1L2-eth3 5110    0            0            0
+10 R1L2        R1L2-eth4 109310  100          0            0
+11 R1L2        R1L2-eth5 109310  100          0            0
+12 R1L2        R1L2-eth6 5110    0            0            0
+13 R2L1        R2L1-eth1 5558    8            0            2
+14 R2L1        R2L1-eth2 109206  101          0            0
+15 R2L1        R2L1-eth3 5110    0            0            0
+16 R2L1        R2L1-eth4 109366  100          0            1
+17 R2L1        R2L1-eth5 109422  101          0            1
+18 R2L1        R2L1-eth6 109366  101          0            0
+19 R2L2        R2L2-eth1 5516    7            0            2
+20 R2L2        R2L2-eth2 4964    0            0            0
+21 R2L2        R2L2-eth3 5278    4            0            0
+22 R2L2        R2L2-eth4 5110    0            0            0
+23 R2L2        R2L2-eth5 5222    2            0            0
+24 R2L2        R2L2-eth6 5110    0            0            0
+25 R3L1        R3L1-eth1 5572    7            0            3
+26 R3L1        R3L1-eth2 5020    0            0            1
+27 R3L1        R3L1-eth3 21868   171          0            0
+28 R3L1        R3L1-eth4 5292    3            0            1
+29 R3L1        R3L1-eth5 5222    1            0            1
+30 R3L1        R3L1-eth6 5166    1            0            0
+31 R3L1        R3L1-eth7 109422  101          0            1
+32 R3L2        R3L2-eth1 5502    8            0            1
+33 R3L2        R3L2-eth2 5216    6            0            0
+34 R3L2        R3L2-eth3 109310  100          0            0
+35 R3L2        R3L2-eth4 5208    1            0            1
+36 R3L2        R3L2-eth5 5166    1            0            0
+37 R3L2        R3L2-eth6 5222    1            0            1
+38 R3L2        R3L2-eth7 5222    2            0            0
+39 S1          S1-eth1   4782    7            0            0
+40 S1          S1-eth2   108744  100          0            1
+41 S1          S1-eth3   108940  106          0            0
+42 S1          S1-eth4   4544    0            0            1
+43 S1          S1-eth5   21288   175          0            0
+44 S1          S1-eth6   4488    0            0            0
+45 S2          S2-eth1   125704  274          0            0
+46 S2          S2-eth2   4530    1            0            0
+47 S2          S2-eth3   4620    0            0            0
+48 S2          S2-eth4   4488    0            0            0
+49 S2          S2-eth5   4614    3            0            0
+50 S2          S2-eth6   4530    1            0            0
+51 S3          S3-eth1   108974  101          0            2
+52 S3          S3-eth2   4802    3            0            1
+53 S3          S3-eth3   108918  101          0            1
+54 S3          S3-eth4   4802    3            0            1
+55 S3          S3-eth5   108876  100          0            1
+56 S3          S3-eth6   4620    0            0            0
+controller(config-switch)# sho sw all interface all counters outgoing |grep R2L
+13 R2L1        R2L1-eth1 6602    12           0            2
+14 R2L1        R2L1-eth2 110166  103          0            0
+15 R2L1        R2L1-eth3 5986    0            0            0
+16 R2L1        R2L1-eth4 110242  100          0            1
+17 R2L1        R2L1-eth5 110298  101          0            1
+18 R2L1        R2L1-eth6 110242  101          0            0
+19 R2L2        R2L2-eth1 6448    7            0            3
+20 R2L2        R2L2-eth2 5840    0            0            0
+21 R2L2        R2L2-eth3 6154    4            0            0
+22 R2L2        R2L2-eth4 6042    0            0            1
+23 R2L2        R2L2-eth5 6098    2            0            0
+24 R2L2        R2L2-eth6 6098    1            0            1
+controller(config-switch)# sho tenant all 
+ <cr>                 endpoint              logical-router        nat-endpoint          switch
+bgp                   interface-group       mac-membership        rates                 vxlan
+counters              ipv6-external-router  member-rule           segment
+controller(config-switch)# sho tenant all counters 
+# Tenant Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|-------|------|-------|------|
+1 External    104504  105    104710  110
+2 Green       104384  103    123886  296
+3 Red         435804  598    436040  604
+controller(config-switch)# show s
+secure         session        snapshot       span-local     support        system
+segment        sflow          span-fabric    storm-control  switch
+controller(config-switch)# show se
+secure   segment  session 
+controller(config-switch)# show segment 
+ <cr>     App       Ext-01    Ext-02    QA        Services  Web       all      
+controller(config-switch)# show segment all 
+ <cr>     counters  rates    
+controller(config-switch)# show segment all counters 
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       120     2      204     4
+2 External    Ext-02       104384  103    104506  106
+3 Green       QA           104384  103    128272  339
+4 Red         App          104444  104    104608  108
+5 Red         Services     120     2      204     4
+6 Red         Web          336080  546    335948  544
+controller(config-switch)# show segment all counters [1@w[1@a[1@t[1@c[1@h[1@ 
+Command: "show segment all counters"
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       180     3      306     6
+2 External    Ext-02       104384  103    104506  106
+3 Green       QA           104384  103    135208  407
+4 Red         App          104444  104    104608  108
+5 Red         Services     180     3      306     6
+6 Red         Web          342744  614    342612  612
+
+Command: "show segment all counters"
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       180     3      306     6
+2 External    Ext-02       104384  103    104506  106
+3 Green       QA           104384  103    135412  409
+4 Red         App          104444  104    104608  108
+5 Red         Services     180     3      306     6
+6 Red         Web          342744  614    342612  612
+Command: "show segment all counters"
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       180     3      306     6
+2 External    Ext-02       104384  103    104506  106
+3 Green       QA           104384  103    135616  411
+4 Red         App          104444  104    104608  108
+5 Red         Services     180     3      306     6
+6 Red         Web          343038  617    342906  615
+Command: "show segment all counters"
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       180     3      306     6
+2 External    Ext-02       104384  103    104506  106
+3 Green       QA           104384  103    135820  413
+4 Red         App          104444  104    104608  108
+5 Red         Services     180     3      306     6
+6 Red         Web          343234  619    343102  617
+Command: "show segment all counters"
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       180     3      306     6
+2 External    Ext-02       104384  103    104506  106
+3 Green       QA           104384  103    136024  415
+4 Red         App          104444  104    104608  108
+5 Red         Services     180     3      306     6
+6 Red         Web          343528  622    343396  620
+Command: "show segment all counters"
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       180     3      306     6
+2 External    Ext-02       104384  103    104506  106
+3 Green       QA           104384  103    136228  417
+4 Red         App          104444  104    104608  108
+5 Red         Services     180     3      306     6
+6 Red         Web          343724  624    343592  622
+Command: "show segment all counters"
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       180     3      306     6
+2 External    Ext-02       104384  103    104506  106
+3 Green       QA           104384  103    136432  419
+4 Red         App          104444  104    104608  108
+5 Red         Services     180     3      306     6
+6 Red         Web          343920  626    343788  624
+Command: "show segment all counters"
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       180     3      306     6
+2 External    Ext-02       104444  104    104608  108
+3 Green       QA           104384  103    136636  421
+4 Red         App          104444  104    104608  108
+5 Red         Services     180     3      306     6
+6 Red         Web          344214  629    344082  627
+Command: "show segment all counters"
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       180     3      306     6
+2 External    Ext-02       104444  104    104608  108
+3 Green       QA           104384  103    136840  423
+4 Red         App          104504  105    104710  110
+5 Red         Services     180     3      306     6
+6 Red         Web          344410  631    344278  629
+Command: "show segment all counters"
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       180     3      306     6
+2 External    Ext-02       104444  104    104608  108
+3 Green       QA           104384  103    137044  425
+4 Red         App          104504  105    104710  110
+5 Red         Services     180     3      306     6
+6 Red         Web          344410  631    344278  629
+Command: "show segment all counters"
+# Tenant Name Segment Name Rx Byte Rx Pkt Tx Byte Tx Pkt 
+-|-----------|------------|-------|------|-------|------|
+1 External    Ext-01       180     3      306     6
+2 External    Ext-02       104444  104    104608  108
+3 Green       QA           104384  103    137248  427
+4 Red         App          104504  105    104710  110
+5 Red         Services     180     3      306     6
+6 Red         Web          344606  633    344474  631
+^C
+Interrupt.
+controller(config-switch)# ! page (4) p302
+controller(config-switch)# ! 1.
+controller(config-switch)# ten Red 
+controller(config-tenant)# log
+logical-router  logout         
+controller(config-tenant)# logical-router 
+controller(config-tenant-lrouter)# policy-list p1
+controller(config-tenant-lrouter-policy)# 10 [K[K[K
+<rule number>     bgp               logical-router    nat-profile       policy-list       route-map
+apply             description       multicast-enable  next-hop-group    prefix-list       segment
+as-path-list      interface         multicast-group   origination       route             vtep
+controller(config-tenant-lrouter-policy)# 10 
+deny                   isolate-segment-group  permit                
+controller(config-tenant-lrouter-policy)# 10 permit 
+ <Source IP CIDR>  any                proto              segment-interface  tenant             tenant-interface  
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface 
+App       Services  Web      
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web 
+ <Source IP CIDR>  any                tenant            
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web any 
+port  to   
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web any to 
+ <Destination IP CIDR>  any                     tenant                 
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web any to 
+ any                   Specify a wildcard destination
+ tenant                Qualify the destination by a tenant
+<Destination IP CIDR>  Specify the destination IP subnet
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web any to tenant Red 
+ <cr>     ethtype   log       next-hop  port      segment  
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web any to tenant Red segment 
+App       Services  Web      
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web any to tenant Red segment App 
+ <cr>     ethtype   log       next-hop  port     
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web any to tenant Red segment App 
+controller(config-tenant-lrouter-policy-rule)# 10 permit segment-interface Web any to tenant Red segment App [1P[1@2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P [1P [1P [K[1P [1P [1P [1P [1P [1P [1P [K[1P [1P [1P [K[C Red  [K[1P [1P [1P G r e e n 
+controller(config-tenant-lrouter-policy-rule)#       99 permit any to any
+controller(config-tenant-lrouter-policy-rule)# sh tenant 
+ <Tenant Name>   <cr>           External        Green           Red             all             system         
+controller(config-tenant-lrouter-policy-rule)# sh tenant Red 
+ <cr>                 endpoint              logical-router        nat-endpoint          segment
+bgp                   interface-group       mac-membership        rates                 switch
+counters              ipv6-external-router  member-rule           security-group        vxlan
+controller(config-tenant-lrouter-policy-rule)# sh tenant Red logical-router 
+ <cr>                   dhcp                    interface               policy-counter          route
+applied-policy          dynamic-route-next-hop  nat-profile             policy-list             route-map
+as-path-list            floating-ip             next-hop-group          policy-log              vtep
+detail                  incomplete              pat-profile             prefix-list
+controller(config-tenant-lrouter-policy-rule)# sh tenant Red logical-router p
+pat-profile     policy-counter  policy-list     policy-log      prefix-list    
+controller(config-tenant-lrouter-policy-rule)# sh tenant Red logical-router po
+policy-counter  policy-list     policy-log     
+controller(config-tenant-lrouter-policy-rule)# sh tenant Red logical-router policy-counter 
+ <Seq>  all    
+controller(config-tenant-lrouter-policy-rule)# sh tenant Red logical-router policy-counter 
+Error: Unexpected end of command
+controller(config-tenant-lrouter-policy-rule)# sh tenant Red logical-router policy-counter all 
+None.
+controller(config-tenant-lrouter-policy-rule)# apply[Ky policy-list 
+Error: Unexpected end of command
+controller(config-tenant-lrouter-policy-rule)# apply policy-list p1 
+<cr>
+controller(config-tenant-lrouter-policy-rule)# apply policy-list p1 
+controller(config-tenant-lrouter-policy-rule)# apply policy-list p1 [K[30@sh tenant Red logical-router policy-counter all[C
+# Tenant Name Rule                                                           Byte Pkt 
+-|-----------|--------------------------------------------------------------|----|---|
+1 Red         10 permit segment-interface Web any to tenant Red segment App  0    0
+2 Red         20 permit segment-interface Web any to tenant Green            294  3
+3 Red         99 permit any to any                                           294  3
+controller(config-tenant-lrouter-policy-rule)# sh tenant Red logical-router policy-counter all 
+# Tenant Name Rule                                                           Byte Pkt 
+-|-----------|--------------------------------------------------------------|----|---|
+1 Red         10 permit segment-interface Web any to tenant Red segment App  490  5
+2 Red         20 permit segment-interface Web any to tenant Green            6762 69
+3 Red         99 permit any to any                                           9236 94
+controller(config-tenant-lrouter-policy-rule)# clear t
+tenant  test   
+controller(config-tenant-lrouter-policy-rule)# clear tenant 
+External  Green     Red       all       system   
+controller(config-tenant-lrouter-policy-rule)# clear tenant Red 
+bgp             counters        logical-router  segment        
+controller(config-tenant-lrouter-policy-rule)# clear tenant Red counters 
+<cr>
+controller(config-tenant-lrouter-policy-rule)# clear tenant Red counters 
+controller(config-tenant-lrouter-policy-rule)# sho th
+
+! tenant
+tenant Red
+  logical-router
+    policy-list p1
+      99 permit any to any
+controller(config-tenant-lrouter-policy-rule)# ex
+controller(config-tenant-lrouter-policy)# exsho th
+
+! tenant
+tenant Red
+  logical-router
+    policy-list p1
+      10 permit segment-interface Web any to tenant Red segment App
+      20 permit segment-interface Web any to tenant Green
+      99 permit any to any
+controller(config-tenant-lrouter-policy)# sho th[4Pexsho thclear tenant Red counters [22@sh tenant Red logical-router policy-counter all[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[27Papply policy-list p1[C[K[30@sh tenant Red logical-router policy-counter all[C[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18P      99 permit any to any20 permit segment-interface Web any to tenant Green [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[10@10 permit segment-interface Web any to tenant Red segment App[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KGreen[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@t
+tenant            tenant-interface 
+controller(config-tenant-lrouter-policy)# 10 permit t tenant Green[5@enant[C[1@ [1@R[3@ed [1@t[1@o
+controller(config-tenant-lrouter-policy-rule)# 210 permit tenant Red to tenant Greensho th[K[4Pexsho thclear tenant Red counters [22@sh tenant Red logical-router policy-counter all[C[27Papply policy-list p1[C[K[30@sh tenant Red logical-router policy-counter all[C[K[18P      99 permit any to any20 permit segment-interface Web any to tenant Green [K[K[K[K[K[KExternal[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P
+controller(config-tenant-lrouter-policy-rule)# ex
+controller(config-tenant-lrouter-policy)# sh thi
+
+! tenant
+tenant Red
+  logical-router
+    policy-list p1
+      10 permit tenant Red to tenant Green
+      20 permit any to tenant External
+      99 permit any to any
+controller(config-tenant-lrouter-policy)# apply policy-list p1 
+controller(config-tenant-lrouter-policy)# apply policy-list p1 sh thi[K[4Pex20 permit any to tenant External10 permit tenant Red to tenant Greensho th[K[4Pexsho thclear tenant Red counters [22@sh tenant Red logical-router policy-counter all[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[27Papply policy-list p1[C[27@sh tenant Red logical-router policy-counter all[C
+# Tenant Name Rule                                  Byte  Pkt 
+-|-----------|-------------------------------------|-----|---|
+1 Red         10 permit tenant Red to tenant Green  12054 123
+2 Red         20 permit any to tenant External      490   5
+3 Red         99 permit any to any                  47872 488
+controller(config-tenant-lrouter-policy)# sh tenant all logical-router p
+pat-profile     policy-counter  policy-list     policy-log      prefix-list    
+controller(config-tenant-lrouter-policy)# sh tenant all logical-router po
+policy-counter  policy-list     policy-log     
+controller(config-tenant-lrouter-policy)# sh tenant all logical-router policy-counter all
+# Tenant Name Rule                                  Byte  Pkt 
+-|-----------|-------------------------------------|-----|---|
+1 Red         10 permit tenant Red to tenant Green  17346 177
+2 Red         20 permit any to tenant External      490   5
+3 Red         99 permit any to any                  53164 542
+controller(config-tenant-lrouter-policy)# ! page(50[K) p303
+controller(config-tenant-lrouter-policy)# policy-list p2
+controller(config-tenant-lrouter-policy)# sho thi
+
+! tenant
+tenant Red
+  logical-router
+    policy-list p2
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web A[Kany to 
+ <Destination IP CIDR>  any                     tenant                 
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web any to tenant Red 
+ <cr>     ethtype   log       next-hop  port      segment  
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web any to tenant Red segment 
+App       Services  Web      
+controller(config-tenant-lrouter-policy)# 10 permit segment-interface Web any to tenant Red segment App log
+controller(config-tenant-lrouter-policy-rule)# 99 permit any 
+port  to   
+controller(config-tenant-lrouter-policy-rule)# 99 permit any to any 
+ <cr>     ethtype   log       next-hop  port     
+controller(config-tenant-lrouter-policy-rule)# 99 permit any to any 
+controller(config-tenant-lrouter-policy-rule)# apply policy-list 
+p1  p2 
+controller(config-tenant-lrouter-policy-rule)# apply policy-list p2
+controller(config-tenant-lrouter-policy-rule)# ex
+controller(config-tenant-lrouter-policy)# sh thi
+
+! tenant
+tenant Red
+  logical-router
+    policy-list p2
+      10 permit segment-interface Web any to tenant Red segment App log
+      99 permit any to any
+controller(config-tenant-lrouter-policy)# ex
+controller(config-tenant-lrouter)# exsh thi
+
+! tenant
+tenant Red
+  !
+  logical-router
+    route 0.0.0.0/0 next-hop tenant system
+    apply policy-list p2
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Services
+      ip address 10.0.5.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+    interface tenant system
+    !
+    next-hop-group FW
+      ip 10.0.5.2
+    policy-list p1
+      10 permit tenant Red to tenant Green
+      20 permit any to tenant External
+      99 permit any to any
+    policy-list p2
+      10 permit segment-interface Web any to tenant Red segment App log
+      99 permit any to any
+controller(config-tenant-lrouter)# ex
+controller(config-tenant)# exsh thi
+
+! tenant
+tenant Red
+  !
+  logical-router
+    route 0.0.0.0/0 next-hop tenant system
+    apply policy-list p2
+    interface segment App
+      ip address 10.0.1.1/24
+    interface segment Services
+      ip address 10.0.5.1/24
+    interface segment Web
+      ip address 10.0.0.1/24
+    interface tenant system
+    !
+    next-hop-group FW
+      ip 10.0.5.2
+    policy-list p1
+      10 permit tenant Red to tenant Green
+      20 permit any to tenant External
+      99 permit any to any
+    policy-list p2
+      10 permit segment-interface Web any to tenant Red segment App log
+      99 permit any to any
+  segment App
+    member interface-group PG-R2H1 vlan untagged
+  segment Services
+    member interface-group PG-FW vlan untagged
+  segment Web
+    member interface-group PG-R1H1 vlan untagged
+    member interface-group PG-R1H2 vlan untagged
+controller(config-tenant)# ! pinging...
+controller(config-tenant)# show t
+tacacs  tenant  test    this   
+controller(config-tenant)# show te
+tenant  test   
+controller(config-tenant)# show tenant Red logical-router po
+policy-counter  policy-list     policy-log     
+controller(config-tenant)# show tenant Red logical-router policy-l
+policy-list  policy-log  
+controller(config-tenant)# show tenant Red logical-router policy-log 
+# Tenant Name Interface   Src IP   Dst IP   IP Protocol Src Port Dst Port Byte Pkt First Seen                     Last Seen                      
+-|-----------|-----------|--------|--------|-----------|--------|--------|----|---|------------------------------|------------------------------|
+1 Red         segment Web 10.0.0.2 10.0.1.2 1                             510  5   2017-10-18 19:20:13.587000 UTC 2017-10-18 19:20:17.584000 UTC
+controller(config-tenant)# Connection to 52.203.4.224 closed.
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[15:21:42][1;34m(255)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m ssh admin@52.203.4.224
+^C
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[15:22:36][1;34m(130)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m ping 52.203.4.224
+PING 52.203.4.224 (52.203.4.224) 56(84) bytes of data.
+From 198.21.131.140: icmp_seq=1 Destination Host Unreachable
+From 198.21.131.140: icmp_seq=2 Destination Host Unreachable
+From 198.21.131.140: icmp_seq=3 Destination Host Unreachable
+From 198.21.131.140: icmp_seq=4 Destination Host Unreachable
+^C
+--- 52.203.4.224 ping statistics ---
+4 packets transmitted, 0 received, +4 errors, 100% packet loss, time 3041ms
+pipe 3
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[15:22:49][1;34m(1)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 brd 127.255.255.255 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 28:16:ad:45:58:a3 brd ff:ff:ff:ff:ff:ff
+    inet 198.21.131.140/21 brd 198.21.135.255 scope global dynamic wlan0
+       valid_lft 457sec preferred_lft 457sec
+    inet6 fe80::bcb:31cd:9db1:3894/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN group default qlen 1000
+    link/ether 54:ee:75:cb:a8:c9 brd ff:ff:ff:ff:ff:ff
+4: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 02:42:46:c8:b3:45 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 scope global docker0
+       valid_lft forever preferred_lft forever
+5: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1400 qdisc pfifo_fast state UNKNOWN group default qlen 500
+    link/none 
+    inet 172.23.195.77/32 scope global tun0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::d64:f86f:2d59:b696/64 scope link flags 800 
+       valid_lft forever preferred_lft forever
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[15:23:42][1;34m(0)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m ping google.com
+ping: unknown host google.com
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[15:24:29][1;34m(2)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m sudo wic
+wicd         wicd-cli     wicd-client  wicd-curses  wicd-gtk     
+[40m[33miac[1;33m[15:24:29][1;34m(2)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m sudo wicd-gtk 
+Password: 
+Pauses for audience applause, not a sausage
+Password: 
+Importing pynotify failed, notifications disabled.
+Has notifications support False
+Notifications disabled during setup.py configure
+Loading...
+Connecting to daemon...
+Connected.
+/usr/share/wicd/gtk/gui.py:191: GtkWarning: Theme directory 256x256@2/animations of theme hicolor has no size field
+
+  self.wTree.add_from_file(gladefile)
+displaytray True
+Done loading.
+refreshing...
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : DIRECT-YOSURFACEBESSIEmsdM
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : resmedianet
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : clemsonguest
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : eduroam
+ESSID : HP-Print-a9-LaserJet 400 color
+/usr/share/wicd/gtk/wicd-client.py:1200: GtkWarning: Theme directory 256x256@2/animations of theme hicolor has no size field
+
+  mainloop.run()
+setting encryption info...
+/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 55 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+ERROR:dbus.connection:Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/share/wicd/gtk/gui.py", line 281, in handle_connection_results
+    error(self.window, language[results], block=False)
+KeyError: dbus.String(u'bad_pass')
+/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 6343 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+ERROR:dbus.connection:Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/share/wicd/gtk/gui.py", line 281, in handle_connection_results
+    error(self.window, language[results], block=False)
+KeyError: dbus.String(u'bad_pass')
+refreshing...
+ESSID : DIRECT-YOSURFACEBESSIEmsdM
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : HP-Print-a9-LaserJet 400 color
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : resmedianet
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : resmedianet
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : clemsonguest
+ESSID : <hidden>
+ESSID : eduroam
+ESSID : <hidden>
+ESSID : clemsonguest
+/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 8560 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+ERROR:dbus.connection:Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/share/wicd/gtk/gui.py", line 281, in handle_connection_results
+    error(self.window, language[results], block=False)
+KeyError: dbus.String(u'bad_pass')
+setting encryption info...
+/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 17053 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+ERROR:dbus.connection:Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/share/wicd/gtk/gui.py", line 281, in handle_connection_results
+    error(self.window, language[results], block=False)
+KeyError: dbus.String(u'bad_pass')
+setting encryption info...
+/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 19604 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+ERROR:dbus.connection:Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/share/wicd/gtk/gui.py", line 281, in handle_connection_results
+    error(self.window, language[results], block=False)
+KeyError: dbus.String(u'bad_pass')
+setting encryption info...
+/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 23034 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+ERROR:dbus.connection:Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/share/wicd/gtk/gui.py", line 281, in handle_connection_results
+    error(self.window, language[results], block=False)
+KeyError: dbus.String(u'bad_pass')
+/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 25830 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+ERROR:dbus.connection:Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/share/wicd/gtk/gui.py", line 281, in handle_connection_results
+    error(self.window, language[results], block=False)
+KeyError: dbus.String(u'dhcp_failed')
+/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 28384 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+ERROR:dbus.connection:Exception in handler for D-Bus signal:
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/site-packages/dbus/connection.py", line 230, in maybe_handle_message
+    self._handler(*args, **kwargs)
+  File "/usr/share/wicd/gtk/gui.py", line 281, in handle_connection_results
+    error(self.window, language[results], block=False)
+KeyError: dbus.String(u'dhcp_failed')
+^CTraceback (most recent call last):
+  File "/usr/share/wicd/gtk/wicd-client.py", line 1204, in <module>
+    main(sys.argv)
+  File "/usr/share/wicd/gtk/wicd-client.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/share/wicd/gtk/wicd-client.py", line 1200, in main
+    mainloop.run()
+KeyboardInterrupt
+_eckard@iac:/home/eckard/src/BigCloudFabric\[40m[33miac[1;33m[15:39:53][1;34m(1)[1;35m[1;36m~/src/BigCloudFabric[31m$[0m exit
+
+Script done on Wed 18 Oct 2017 03:39:56 PM EDT
